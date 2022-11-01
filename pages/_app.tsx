@@ -96,7 +96,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
           height: calc(100vh - var(--top-nav-height));
           flex-grow: 1;
           font-size: 16px;
-          padding: 2rem;
+          padding: 0.5rem 1.5rem;
         }
       `}
     </style>

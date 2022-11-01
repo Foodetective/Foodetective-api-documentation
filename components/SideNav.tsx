@@ -100,7 +100,7 @@ export function SideNav() {
             height: calc(100vh - var(--top-nav-height));
             flex: 0 0 auto;
             overflow-y: auto;
-            padding: 2rem;
+            padding: 1.5rem;
             background-color: #fbfcfd;
             // border-right: 1px solid var(--border-color);
           }
@@ -109,10 +109,10 @@ export function SideNav() {
           }
           .sidenav-sub {
             color: #43485e;
-            padding-top: 20px;
+            padding-top: 15px;
           }
           span {
-            font-size: 16px;
+            font-size: 14px;
             text-transform: uppercase;
             font-weight: 600;
             padding: 0.5rem 0 0.5rem;
@@ -123,7 +123,6 @@ export function SideNav() {
           }
           li {
             list-style: none;
-            padding: 0.5rem;
             margin: 0.2rem 0;
           }
           li:hover {
@@ -134,6 +133,8 @@ export function SideNav() {
             text-decoration: none;
             color: #57575a;
             font-weight: 500;
+            font-size: 14px;
+            padding: 0.5rem 0.6rem;
           }
           li a:hover {
             color: #57575a;

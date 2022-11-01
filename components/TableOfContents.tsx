@@ -42,8 +42,9 @@ export function TableOfContents({toc}) {
             height: calc(100vh - var(--top-nav-height));
             flex: 0 0 auto;
             overflow-y: auto;
-            padding: 2rem;
+            padding: 1.5rem;
             background-color: #fbfcfd;
+            width: 250px;
             // border-left: 1px solid var(--border-color);
           }
           ul {
@@ -55,7 +56,9 @@ export function TableOfContents({toc}) {
           }
           li {
             list-style: none;
-            padding: 0.5rem;
+            margin: 0.2rem 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           li:hover {
             background-color: rgba(141, 151, 161, 0.15);
@@ -65,6 +68,9 @@ export function TableOfContents({toc}) {
             text-decoration: none;
             color: #57575a;
             font-weight: 500;
+            font-size: 14px;
+            padding: 0.5rem 0.6rem;
+            white-space: nowrap;
           }
           li a:hover {
             color: #57575a;
