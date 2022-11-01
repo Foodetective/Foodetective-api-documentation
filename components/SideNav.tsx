@@ -101,10 +101,7 @@ export function SideNav() {
             flex: 0 0 auto;
             overflow-y: auto;
             padding: 2rem;
-            border-right: 1px solid var(--border-color);
-          }
-          .sidenav {
-            width: 225px
+            // border-right: 1px solid var(--border-color);
           }
           .sidenav-sub:first-child {
             padding-top: 0px;
@@ -124,7 +121,7 @@ export function SideNav() {
           }
           li {
             list-style: none;
-            margin: 0.5rem 0;
+            padding: 0.5rem;
           }
           li a {
             text-decoration: none;
@@ -135,6 +132,10 @@ export function SideNav() {
           li.active > a {
             color: white;
           }
+          // li.active {
+          //   background-color: #1a1f36;
+          //   border-radius: 8px;
+          // }
         `}
       </style>
     </nav>
