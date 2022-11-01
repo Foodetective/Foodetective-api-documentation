@@ -1,6 +1,6 @@
 //@ts-nocheck
 import React from "react";
-import { CodeBlock, TableOfContents } from "../../components";
+import { CodeBlock } from "../../components";
 
 export const getStaticProps = async () => {
   const res = await fetch('https://api.staging.foodtekk.com/api/docs', {
