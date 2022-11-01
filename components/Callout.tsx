@@ -14,6 +14,7 @@ export function Callout({ title, children }) {
             background: #1a1f36;
             border: 1px solid #1a1f36;
             border-radius: 4px;
+            color: #fbfcfd;
           }
           .callout :global(p) {
             margin: 0;

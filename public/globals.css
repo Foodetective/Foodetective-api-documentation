@@ -14,29 +14,30 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: white;
+  color: #57575a;
   margin: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
+  width: 5px;
+  height: 5px;
 }
  
 ::-webkit-scrollbar-track:vertical {
-  background: #27284e;
-  border-left: 4px solid #0f113b;
-  border-right: 4px solid #0f113b;
+  background: #dfdfdf;
+  border-left: 2px solid #fbfcfd;
+  border-right: 2px solid #fbfcfd;
 }
 
 ::-webkit-scrollbar-track:horizontal {
-  background: #27284e;
-  border-top: 4px solid #0f113b;
-  border-bottom: 4px solid #0f113b;
+  background: #dfdfdf;
+  border-top: 2px solid #fbfcfd;
+  border-bottom: 2px solid #fbfcfd;
 }
  
 ::-webkit-scrollbar-thumb {
   background: #888;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -44,7 +45,7 @@ body {
 }
 
 ::-webkit-scrollbar-corner {
-  background: #0f113b;
+  background: #fbfcfd;
 }
 
 p {
@@ -87,6 +88,7 @@ thead tr th {
 }
 
 tbody tr td {
+  font-weight: 600;
   vertical-align: top;
 }
 

@@ -33,16 +33,17 @@ export function ListItem({title, type, children}) {
           .list-item-label {
             margin: 0.5rem 0;
             font-size: 16px;
+            font-weight: 400;
           }
           .list-item-label span {
             font-size: 14px;
           }
           .list-item-label-name {
-            font-weight: 600;
+            font-weight: 400;
           }
           .list-description {
             text-shadow: none;
-            font-weight: 300;
+            font-weight: 500;
             min-width: 450px;
             font-size: 14px;
             width: 100%;
@@ -50,13 +51,13 @@ export function ListItem({title, type, children}) {
           .badge-required {
             padding-left: 0.5rem;
             color: #a32c36;
-            font-weight: 600;
+            font-weight: 700;
           }
           .badge-optional {
             padding-left: 0.5rem;
             // color: #a3acb9; 
             color: #7ec67f;
-            font-weight: 300;
+            font-weight: 500;
           }
         `}
       </style>

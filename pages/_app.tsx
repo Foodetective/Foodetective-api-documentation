@@ -89,7 +89,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
           display: flex;
           width: 100vw;
           flex-grow: 1;
-          background-color: #0f113b;
+          background-color: #fbfcfd;
         }
         main {
           overflow: auto;

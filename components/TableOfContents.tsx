@@ -43,6 +43,7 @@ export function TableOfContents({toc}) {
             flex: 0 0 auto;
             overflow-y: auto;
             padding: 2rem;
+            background-color: #fbfcfd;
             // border-left: 1px solid var(--border-color);
           }
           ul {
@@ -54,16 +55,26 @@ export function TableOfContents({toc}) {
           }
           li {
             list-style: none;
-            margin: 0.5rem 0;
+            padding: 0.5rem;
+          }
+          li:hover {
+            background-color: rgba(141, 151, 161, 0.15);
+            border-radius: 6px;
           }
           li a {
             text-decoration: none;
-            color: #a3acb9;
-            font-weight: 600;
+            color: #57575a;
+            font-weight: 500;
           }
-          li a:hover,
+          li a:hover {
+            color: #57575a;
+          }
+          li.active {
+            background-color: rgba(141, 151, 161, 0.15);
+            border-radius: 6px;
+          }
           li.active a {
-            color: white;
+            color: #4c68ff;
           }
         `}
       </style>
