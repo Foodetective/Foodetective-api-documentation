@@ -60,8 +60,6 @@ title: Blog Posts
   Response
   ```bash
       {
-        "url": "/api/v1/blog_posts",
-        "method": "GET",
         "data":[
       {
         "id": "62a05bd2-2f0e-4bac-8f8b-63947f4df16f",

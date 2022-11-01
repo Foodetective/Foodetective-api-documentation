@@ -1,5 +1,5 @@
 ---
-title: Businesses Clients
+title: Business Clients
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -49,10 +49,10 @@ title: Businesses Clients
    {% /listitem %}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/clients
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/clients`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +62,40 @@ title: Businesses Clients
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
-          }
-        }
+  {
+  "data": [
+    {
+      "id": "583c82ab-04c7-4ce3-91f3-aceaa12a020e",
+      "type": "users",
+      "links": {
+        "self": "/users/583c82ab-04c7-4ce3-91f3-aceaa12a020e"
+      },
+      "attributes": {
+        "accepted-food-detective": false,
+        "allergies": "peanuts, cats",
+        "avatar": {
+          "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/user/avatar/583c82ab-04c7-4ce3-91f3-aceaa12a020e/9bb59f08-aee8-43ce-810c-cbbaa2532234.jpeg"
+        },
+        "birthday": "2000-06-10",
+        "email": "bo@example.com",
+        "favourite-drink": "beer & whisky",
+        "favourite-food": "burger",
+        "gender": "male",
+        "monthly-bars-budget": 100,
+        "monthly-delivery-takeaway-budget": 200,
+        "monthly-restaurants-budget": 545,
+        "name": "BOs Example 2",
+        "phone": "8005555535",
+        "phone-country-code": "RU",
+        "phone-country-prefix": "7"
       }
-    }
+    },
+  ],
+  "meta": {
+    "total-count": 16,
+    "total-pages": 2
+  }
+}
   ```
 *
 {% /table %}

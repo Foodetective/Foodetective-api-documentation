@@ -4,10 +4,9 @@ title: Bookings
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET ${BASE_URL}/api/v1/bookings/{id}
 {% table %}
-* ### **Parameters**
----
-* 
+* Parameters {% align="left" %}
    {% listitem %}
     [type] **Required**
    {% /listitem %}
@@ -47,12 +46,10 @@ title: Bookings
    {% listitem %}
     [region_code]Optional
    {% /listitem %}
-*
-*
-  ### Example Request GET /v1/banners/newsroom
+* Example {% align="left" %}
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/bookings/{id}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -60,29 +57,34 @@ title: Bookings
           const data = await res.json();
     }
   ```
-  ### Response
+  Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
-          }
+     {
+  "data": {
+    "id": "8f9399eb-e629-4756-a929-83a4fab16d3a",
+    "type": "bookings",
+    "links": {
+      "self": "/bookings/8f9399eb-e629-4756-a929-83a4fab16d3a"
+    },
+    "attributes": {
+      "seats-taken": 2
+    },
+    "relationships": {
+      "reservation": {
+        "links": {
+          "self": "/bookings/8f9399eb-e629-4756-a929-83a4fab16d3a/relationships/reservation",
+          "related": "/bookings/8f9399eb-e629-4756-a929-83a4fab16d3a/reservation"
+        }
+      },
+      "table": {
+        "links": {
+          "self": "/bookings/8f9399eb-e629-4756-a929-83a4fab16d3a/relationships/table",
+          "related": "/bookings/8f9399eb-e629-4756-a929-83a4fab16d3a/table"
         }
       }
     }
+  }
+}
   ```
-*
+
 {% /table %}

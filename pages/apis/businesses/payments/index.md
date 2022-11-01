@@ -1,5 +1,5 @@
 ---
-title: Cities
+title: Business Payments
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -49,10 +49,10 @@ title: Cities
    {% /listitem %}
 *
 *
-  ### Example Request GET /api/v1/cities
+  ### Example Request GET /api/v1/businesses/{id}/payments
   ```bash
       {
-          const res = await fetch(`${BASE_URL}/api/v1/cities`', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/payments`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +62,32 @@ title: Cities
   ```
   ### Response
   ```bash
-      {
-      "data": [
-        {
-          "id": "4b166dbe-d99d-5091-abdd-95b83330ed3a",
-          "type": "cities",
-          "links": {
-            "self": "/cities/4b166dbe-d99d-5091-abdd-95b83330ed3a"
-          },
-          "attributes": {
-            "businesses-count": 1,
-            "geolocation-lat": null,
-            "geolocation-lng": null,
-            "name": "2"
-          }
-        },
-      ],
-      "meta": {
-        "total-count": 18,
-        "total-pages": 2
+  {
+  "data": [
+    {
+      "id": "9c736f42-f299-4028-b7eb-bfe6f9f0db76",
+      "type": "payments",
+      "links": {
+        "self": "/payments/9c736f42-f299-4028-b7eb-bfe6f9f0db76"
+      },
+      "attributes": {
+        "amount-cents": 2000,
+        "created-at": "2021-10-06T09:34:43.754Z",
+        "currency": "GBP",
+        "delivery-price-business-participation": false,
+        "for-delivery": false,
+        "state": "finished",
+        "user-name": "olka clientttt"
       }
-    }
+    },
+  ],
+  "meta": {
+    "total-count": 364,
+    "total-pages": 37
+  }
+}
   ```
 *
 {% /table %}
+
+- - -

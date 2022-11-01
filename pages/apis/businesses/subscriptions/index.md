@@ -49,10 +49,10 @@ title: Businesses Subscriptions
    {% /listitem %}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/subscriptions
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/subscriptions`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +62,56 @@ title: Businesses Subscriptions
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
-          }
-        }
+  {
+  "data": [
+    {
+      "id": "5139a3c6-d939-4fa9-97ba-9817de6b096f",
+      "type": "subscriptions",
+      "links": {
+        "self": "/subscriptions/5139a3c6-d939-4fa9-97ba-9817de6b096f"
+      },
+      "attributes": {
+        "amount-cents": 39900,
+        "cancel-at": "2021-12-01T00:00:00.000Z",
+        "currency": "EUR",
+        "interval": "month",
+        "interval-count": 1,
+        "name": "Ultimate Monthly EUR",
+        "next-payment-at": "2021-12-01T00:00:00.000Z",
+        "not-terminated": false,
+        "slug": "sherlock-ultimate-monthly-eur-v2",
+        "status": "canceled",
+        "stripe-source-id": "pm_1Jw7FIBtvCfXmRItGquxmkDn",
+        "trial-ends-at": "2021-11-15T15:37:31.303Z"
+      }
+    },
+    {
+      "id": "76f47f3f-c299-4bb4-af0d-b1df717c3a99",
+      "type": "subscriptions",
+      "links": {
+        "self": "/subscriptions/76f47f3f-c299-4bb4-af0d-b1df717c3a99"
+      },
+      "attributes": {
+        "amount-cents": 8900,
+        "cancel-at": null,
+        "currency": "EUR",
+        "interval": "month",
+        "interval-count": 1,
+        "name": "Basic Monthly EUR",
+        "next-payment-at": "2022-11-16T10:27:56.000Z",
+        "not-terminated": true,
+        "slug": "sherlock-basic-monthly-eur-v2",
+        "status": "unpaid",
+        "stripe-source-id": "pm_1K7ML5BtvCfXmRItKd18rTN7",
+        "trial-ends-at": "2021-12-16T10:27:59.489Z"
       }
     }
+  ],
+  "meta": {
+    "total-count": 2,
+    "total-pages": 1
+  }
+}
   ```
 *
 {% /table %}

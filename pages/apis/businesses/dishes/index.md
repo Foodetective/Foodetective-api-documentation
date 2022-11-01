@@ -1,5 +1,5 @@
 ---
-title: Businesses Dishes
+title: Business Dishes
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -49,10 +49,10 @@ title: Businesses Dishes
    {% /listitem %}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/dishes
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dishes`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +62,59 @@ title: Businesses Dishes
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
-          }
-        }
-      }
+     {
+     "data": [
+       {
+         "id": "ef7eccdc-e214-438d-8cdb-4d4f04efa593",
+         "type": "dishes",
+         "links": {
+           "self": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593"
+         },
+         "attributes": {
+           "currency": "GBP",
+           "description": "eggs, beans, and everything you like",
+           "name": "english breakfast",
+           "on-uber-eats": true,
+           "price-per-item-cents": 699,
+           "sku-ref": "BR_1",
+           "unavailable": false
+         },
+         "relationships": {
+           "pictures": {
+             "links": {
+               "self": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/relationships/pictures",
+               "related": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/pictures"
+             }
+           },
+           "dish-option-categories": {
+             "links": {
+               "self": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/relationships/dish-option-categories",
+               "related": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/dish-option-categories"
+             }
+           },
+           "business": {
+             "links": {
+               "self": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/relationships/business",
+               "related": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/business"
+             }
+           },
+           "category": {
+             "links": {
+               "self": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/relationships/category",
+               "related": "/dishes/ef7eccdc-e214-438d-8cdb-4d4f04efa593/category"
+             }
+           }
+         }
+       },
+     ],
+     "meta": {
+       "total-count": 27,
+       "total-pages": 3
+     }
     }
+
   ```
 *
 {% /table %}
+
+- - -

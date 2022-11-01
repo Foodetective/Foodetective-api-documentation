@@ -1,5 +1,5 @@
 ---
-title: Businesses Dashboard
+title: Business Dashboard
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -49,10 +49,10 @@ title: Businesses Dashboard
    {% /listitem %}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/dashboard/average_ticket_size
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/average_ticket_size`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -63,24 +63,343 @@ title: Businesses Dashboard
   ### Response
   ```bash
       {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
       "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
+        "id": "2022-10-31 14:49:54 UTC",
+        "type": "average_ticket_size",
         "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
+          "average_today": 0,
+          "average_yesterday": 0,
+          "average_this_month": 0,
+          "average_previous_month": 0,
+          "average_this_quarter": 0,
+          "average_previous_quarter": 6111,
+          "average_this_year": 3742,
+          "average_previous_year": 26044
+        }
+      }
+    }
+
+  ```
+*
+{% /table %}
+
+- - -
+
+{% table %}
+* ### **Parameters**
+---
+* 
+   {% listitem %}
+    [type] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [name] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [city] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [country_code] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [post_code] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [street] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [street_number] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [address_line]Optional
+   {% /listitem %}
+   {% listitem %}
+    [notes]Optional 
+   {% /listitem %}
+   {% listitem %}
+    [region_code]Optional
+   {% /listitem %}
+   {% listitem %}
+     [order][data][type]Optional
+   {% /listitem %}
+   {% listitem %}
+    [order][data][id]Optional
+   {% /listitem %}
+   {% listitem %}
+    [region_code]Optional
+   {% /listitem %}
+*
+*
+  ### Example Request GET /api/v1/businesses/{id}/dashboard/earnings
+  ```bash
+      {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/earnings`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+                }});
+          const data = await res.json();
+    }
+  ```
+  ### Response
+  ```bash
+  {
+     "data": {
+       "id": "2022-10-31 14:43:52 UTC",
+       "type": "earnings",
+       "attributes": {
+         "sum_today": 0,
+         "sum_yesterday": 0,
+         "sum_this_month": 0,
+         "sum_previous_month": 5364,
+         "sum_this_quarter": 0,
+         "sum_previous_quarter": 170398,
+         "sum_this_year": 625110,
+         "sum_previous_year": 483243
+       }
+     }
+  }
+  ```
+*
+{% /table %}
+
+- - -
+
+{% table %}
+* ### **Parameters**
+---
+* 
+   {% listitem %}
+    [type] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [name] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [city] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [country_code] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [post_code] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [street] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [street_number] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [address_line]Optional
+   {% /listitem %}
+   {% listitem %}
+    [notes]Optional 
+   {% /listitem %}
+   {% listitem %}
+    [region_code]Optional
+   {% /listitem %}
+   {% listitem %}
+     [order][data][type]Optional
+   {% /listitem %}
+   {% listitem %}
+    [order][data][id]Optional
+   {% /listitem %}
+   {% listitem %}
+    [region_code]Optional
+   {% /listitem %}
+*
+*
+  ### Example Request GET /api/v1/businesses/{id}/dashboard/revenue_breakdown
+  ```bash
+      {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/revenue_breakdown`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+                }});
+          const data = await res.json();
+    }
+  ```
+  ### Response
+  ```bash
+    {
+      "data": {
+        "id": "2022-10-31 14:41:47 UTC",
+        "type": "revenue_breakdown",
+        "attributes": {
+          "revenue": {
+            "sum_today": 0,
+            "sum_yesterday": 0,
+            "sum_this_month": 0,
+            "sum_previous_month": 0,
+            "sum_this_quarter": 0,
+            "sum_previous_quarter": 132500,
+            "sum_this_year": 504149,
+            "sum_previous_year": 2198012,
+            "sum_all": 2709631
+          },
+          "on_site_revenue": {
+            "sum_today": 0,
+            "sum_yesterday": 0,
+            "sum_this_month": 0,
+            "sum_previous_month": 0,
+            "sum_this_quarter": 0,
+            "sum_previous_quarter": 0,
+            "sum_this_year": 0,
+            "sum_previous_year": 0,
+            "sum_all": 0
+          },
+          "delivery_revenue": {
+            "sum_today": 0,
+            "sum_yesterday": 0,
+            "sum_this_month": 0,
+            "sum_previous_month": 0,
+            "sum_this_quarter": 0,
+            "sum_previous_quarter": 123300,
+            "sum_this_year": 275300,
+            "sum_previous_year": 1320287,
+            "sum_all": 1603057
+          },
+          "takeaway_revenue": {
+            "sum_today": 0,
+            "sum_yesterday": 0,
+            "sum_this_month": 0,
+            "sum_previous_month": 0,
+            "sum_this_quarter": 0,
+            "sum_previous_quarter": 9200,
+            "sum_this_year": 228849,
+            "sum_previous_year": 877725,
+            "sum_all": 1106574
+          },
+          "other_revenue": {
+            "sum_today": 0,
+            "sum_yesterday": 0,
+            "sum_this_month": 0,
+            "sum_previous_month": 0,
+            "sum_this_quarter": 0,
+            "sum_previous_quarter": 0,
+            "sum_this_year": 0,
+            "sum_previous_year": 0,
+            "sum_all": 0
           }
         }
+      }
+    }
+  ```
+*
+{% /table %}
+
+- - -
+
+{% table %}
+* ### **Parameters**
+---
+* 
+   {% listitem %}
+    [type] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [name] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [city] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [country_code] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [post_code] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [street] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [street_number] **Required**
+   {% /listitem %}
+   {% listitem %}
+    [address_line]Optional
+   {% /listitem %}
+   {% listitem %}
+    [notes]Optional 
+   {% /listitem %}
+   {% listitem %}
+    [region_code]Optional
+   {% /listitem %}
+   {% listitem %}
+     [order][data][type]Optional
+   {% /listitem %}
+   {% listitem %}
+    [order][data][id]Optional
+   {% /listitem %}
+   {% listitem %}
+    [region_code]Optional
+   {% /listitem %}
+*
+*
+  ### Example Request GET /api/v1/businesses/{id}/dashboard/worst_sales
+  ```bash
+      {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/worst_sales`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+                }});
+          const data = await res.json();
+    }
+  ```
+  ### Response
+  ```bash
+      {
+      "data": [
+        {
+          "id": "cd75805c-4952-4414-800e-988dea9988da",
+          "type": "dishes",
+          "links": {
+            "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da"
+          },
+          "attributes": {
+            "currency": "EUR",
+            "description": null,
+            "name": "Make your own pasta",
+            "on-uber-eats": true,
+            "ordered-units-count-current": 18,
+            "ordered-units-count-previous": 0,
+            "price-per-item-cents": 1500,
+            "sku-ref": "127",
+            "unavailable": false
+          },
+          "relationships": {
+            "pictures": {
+              "links": {
+                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/pictures",
+                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/pictures"
+              }
+            },
+            "dish-option-categories": {
+              "links": {
+                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/dish-option-categories",
+                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/dish-option-categories"
+              }
+            },
+            "business": {
+              "links": {
+                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/business",
+                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/business"
+              }
+            },
+            "category": {
+              "links": {
+                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/category",
+                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/category"
+              }
+            }
+          }
+        },
+      ],
+      "meta": {
+        "total-count": 2,
+        "total-pages": 1
       }
     }
   ```

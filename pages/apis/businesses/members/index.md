@@ -1,5 +1,5 @@
 ---
-title: Businesses Permitted
+title: Business Members
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -49,10 +49,10 @@ title: Businesses Permitted
    {% /listitem %}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses{id}/members
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses{id}/members`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +62,43 @@ title: Businesses Permitted
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
+  {
+  "data": [
+    {
+      "id": "2249233b-baad-4c67-8914-947b3e5dc06e",
+      "type": "members",
+      "links": {
+        "self": "/members/2249233b-baad-4c67-8914-947b3e5dc06e"
+      },
+      "attributes": {
+        "business-manager": false,
+        "email": "aleksandra.bochenska+TFDmember@netguru.com",
+        "role": "business_member",
+        "status": "pending"
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/members/2249233b-baad-4c67-8914-947b3e5dc06e/relationships/business",
+            "related": "/members/2249233b-baad-4c67-8914-947b3e5dc06e/business"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "/members/2249233b-baad-4c67-8914-947b3e5dc06e/relationships/user",
+            "related": "/members/2249233b-baad-4c67-8914-947b3e5dc06e/user"
           }
         }
       }
     }
+  ],
+  "meta": {
+    "total-count": 1,
+    "total-pages": 1
+  }
+}
   ```
 *
 {% /table %}
+
+- - -
