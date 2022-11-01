@@ -13,12 +13,59 @@ const items = [
     ],
   },
   {
-    title: 'Addresses',
+    title: 'Banners',
     links: [
-      {href: '/apis/addresses', children: 'Addresses'},
-      {href: '/apis/get-addresses', children: 'Get-address'},
-      {href: '/apis/post-addresses', children: 'Delete-address'},
-      {href: '/apis/delete-addresses', children: 'Addresses'}
+      {href: '/apis/banners', children: 'Banners'}
+    ],
+  },
+  {
+    title: 'Blog posts',
+    links: [
+      {href: '/apis/blog-posts', children: 'Blog posts'}
+    ],
+  },
+  {
+    title: 'Bookings',
+    links: [
+      {href: '/apis/bookings', children: 'Bookings'}
+    ],
+  },
+  {
+    title: 'Businesses',
+    links: [
+      {href: '/apis/businesses/cards', children: 'Cards'},
+      {href: '/apis/businesses/catering', children: 'Catering'},
+      {href: '/apis/businesses/clients', children: 'Clients'},
+      {href: '/apis/businesses/deliveries', children: 'Deliveries'},
+      {href: '/apis/businesses/dishes', children: 'Dishes'},
+      {href: '/apis/businesses/dashboard', children: 'Dashboard'},
+      {href: '/apis/businesses/external', children: 'External'},
+      {href: '/apis/businesses/favourite-suppliers', children: 'Favourite Suppliers'},
+      {href: '/apis/businesses/guides', children: 'Guides'},
+      {href: '/apis/businesses/invoice', children: 'Invoice'},
+      {href: '/apis/businesses/orders', children: 'Orders'},
+      {href: '/apis/businesses/partners', children: 'Partners'},
+      {href: '/apis/businesses/privitisation', children: 'Privitisation'},
+      {href: '/apis/businesses/reviews', children: 'Reviews'},
+      {href: '/apis/businesses/setup', children: 'Setup'},
+      {href: '/apis/businesses/similar', children: 'Similar'},
+      {href: '/apis/businesses/subscriptions', children: 'Subscriptions'},
+      {href: '/apis/businesses/tables', children: 'Tables'},
+      {href: '/apis/businesses/permitted', children: 'Permitted'},
+      {href: '/apis/businesses/subscriptions', children: 'Subscriptions'},
+      {href: '/apis/businesses/tables', children: 'Tables'}
+    ],
+  },
+  {
+    title: 'Categories',
+    links: [
+      {href: '/apis/categories', children: 'Categories'}
+    ],
+  },
+  {
+    title: 'Cities',
+    links: [
+      {href: '/apis/cities', children: 'Cities'}
     ],
   },
 ];
