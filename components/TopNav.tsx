@@ -40,8 +40,8 @@ export function TopNav({children}) {
             display: flex;
             align-items: center;
             padding: 1rem 2rem;
-            background: #0f113b;
-            border-bottom: 1px solid var(--border-color);
+            background: #fbfcfd;
+            border-bottom: 1px solid #dfdfdf;
           }
           .navbar-inner {
             display: flex;
@@ -55,12 +55,9 @@ export function TopNav({children}) {
           }
           nav:global(a) {
             text-decoration: none;
-            color: #a3acb9;
+            color: #8d97a1;
             font-size: 16px;
             font-weight: 600;
-          }
-          nav:global(a):hover {
-            color: white;
           }
           section {
             display: flex;

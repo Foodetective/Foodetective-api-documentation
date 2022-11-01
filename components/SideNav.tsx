@@ -101,12 +101,14 @@ export function SideNav() {
             flex: 0 0 auto;
             overflow-y: auto;
             padding: 2rem;
+            background-color: #fbfcfd;
             // border-right: 1px solid var(--border-color);
           }
           .sidenav-sub:first-child {
             padding-top: 0px;
           }
           .sidenav-sub {
+            color: #43485e;
             padding-top: 20px;
           }
           span {
@@ -117,20 +119,30 @@ export function SideNav() {
           }
           ul {
             padding: 0;
-            margin: 0.5rem 0;
+            margin: 0;
           }
           li {
             list-style: none;
             padding: 0.5rem;
           }
+          li:hover {
+            background-color: rgba(141, 151, 161, 0.15);
+            border-radius: 6px;
+          }
           li a {
             text-decoration: none;
-            color: #a3acb9;
-            font-weight: 600;
+            color: #57575a;
+            font-weight: 500;
           }
-          li a:hover,
+          li a:hover {
+            color: #57575a;
+          }
+          li.active {
+            background-color: rgba(141, 151, 161, 0.15);
+            border-radius: 6px;
+          }
           li.active > a {
-            color: white;
+            color: #4c68ff;
           }
           // li.active {
           //   background-color: #1a1f36;
