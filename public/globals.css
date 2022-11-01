@@ -76,3 +76,11 @@ a {
   font-size: 16px;
   color: rgba(75, 85, 99, 1);
 }
+
+thead tr th {
+  vertical-align: top;
+}
+
+tbody tr td {
+  vertical-align: top;
+}

@@ -7,46 +7,11 @@ title: Businesses Tables
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
 *
 *
   ### Example Request GET /api/v1/businesses/{id}/tables
