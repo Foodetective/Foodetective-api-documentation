@@ -85,9 +85,7 @@ title: Blog Posts
       "total-pages":1
    }
   ```
-
 {% /table %}
-
 - - -
 
 ### GET /api/v1/blog_posts/{id}
@@ -163,5 +161,4 @@ title: Blog Posts
     }
   }
   ```
-
 {% /table %}

@@ -2,6 +2,14 @@ import * as React from 'react';
 
 export function ListItem({title, type, children}) {
   const getType = (type: string): string => {
+    // switch (type) {
+    //   case value:
+        
+    //     break;
+    
+    //   default:
+    //     break;
+    // }
 		return type == "Required" ? 'badge-required' : 'badge-optional'
 	}
 
@@ -37,8 +45,6 @@ export function ListItem({title, type, children}) {
             font-weight: 300;
             min-width: 450px;
             font-size: 14px;
-            display: inline-block;
-            white-space: nowrap;
             width: 100%;
           }
           .badge-required {
