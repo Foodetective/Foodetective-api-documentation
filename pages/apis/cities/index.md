@@ -4,16 +4,14 @@ title: Cities
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET ${BASE_URL}/api/v1/cities
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="sort" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
-*
-*
-  ### Example Request GET /api/v1/cities
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/cities`', {
@@ -24,7 +22,7 @@ title: Cities
           const data = await res.json();
     }
   ```
-  ### Response
+  Response
   ```bash
       {
       "data": [
@@ -48,5 +46,4 @@ title: Cities
       }
     }
   ```
-*
 {% /table %}
