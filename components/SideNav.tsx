@@ -51,9 +51,7 @@ const items = [
       {href: '/apis/businesses/similar', children: 'Similar'},
       {href: '/apis/businesses/subscriptions', children: 'Subscriptions'},
       {href: '/apis/businesses/tables', children: 'Tables'},
-      {href: '/apis/businesses/permitted', children: 'Permitted'},
-      {href: '/apis/businesses/subscriptions', children: 'Subscriptions'},
-      {href: '/apis/businesses/tables', children: 'Tables'}
+      {href: '/apis/businesses/permitted', children: 'Permitted'}
     ],
   },
   {

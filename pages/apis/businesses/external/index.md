@@ -1,5 +1,5 @@
 ---
-title: Bookings
+title: Businesses External
 ---
 
 ## {% $markdoc.frontmatter.title %}

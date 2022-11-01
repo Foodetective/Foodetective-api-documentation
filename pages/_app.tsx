@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { CodeBlock, SideNav, TableOfContents, TopNav } from '../components';
+import { SideNav, TableOfContents, TopNav } from '../components';
 
 import 'prismjs';
 // Import other Prism themes here

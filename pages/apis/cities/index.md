@@ -1,5 +1,5 @@
 ---
-title: Bookings
+title: Cities
 ---
 
 ## {% $markdoc.frontmatter.title %}
