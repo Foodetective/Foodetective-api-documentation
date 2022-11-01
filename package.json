@@ -12,13 +12,13 @@
     "next": "latest",
     "prismjs": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "tags": "link:@markdoc/next.js/tags"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "tags": "link:@markdoc/next.js/tags",
     "typescript": "latest"
   }
 }
