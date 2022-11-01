@@ -47,7 +47,7 @@ const items = [
       {href: '/apis/businesses/orders', children: 'Orders'},
       {href: '/apis/businesses/partners', children: 'Partners'},
       {href: '/apis/businesses/payments', children: 'Payments'},
-      {href: '/apis/businesses/privitisation', children: 'Privitisation'},
+      {href: '/apis/businesses/privatization', children: 'Privatization'},
       {href: '/apis/businesses/reservations', children: 'Reservations'},
       {href: '/apis/businesses/reviews', children: 'Reviews'},
       {href: '/apis/businesses/setup', children: 'Setup'},

@@ -4,15 +4,12 @@ title: Banners
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET ${BASE_URL}/api/v1/banners/${target}
 {% table %}
----
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="target" type="Required" /%}
-*
-*
-  ### Example Request GET /v1/banners/newsroom
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/banners/${target}`, {
@@ -21,9 +18,9 @@ title: Banners
                 'Content-Type': 'application/json'
                 }});
           const data = await res.json();
-    }
+      }
   ```
-  ### Response
+  Response
   ```bash
       {
         "data": {
@@ -45,5 +42,4 @@ title: Banners
         }
       }
   ```
-*
 {% /table %}

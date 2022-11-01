@@ -4,17 +4,15 @@ title: Business Dishes
 
 ## {% $markdoc.frontmatter.title %}
 
+ ### GET /api/v1/businesses/{id}/dishes
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/dishes
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dishes`, {
@@ -79,7 +77,4 @@ title: Business Dishes
     }
 
   ```
-*
 {% /table %}
-
-- - -
