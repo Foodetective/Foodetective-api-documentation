@@ -69,6 +69,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       <meta name="description" content={description} />
       <link rel="shortcut icon" href="/favicon.ico" />
       <link rel="icon" href="/favicon.ico" />
+      <link rel="font" href="" />
     </Head>
     <TopNav>
       <Link href="/docs" legacyBehavior>Docs</Link>

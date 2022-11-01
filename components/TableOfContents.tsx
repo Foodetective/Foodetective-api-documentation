@@ -43,10 +43,7 @@ export function TableOfContents({toc}) {
             flex: 0 0 auto;
             overflow-y: auto;
             padding: 2rem;
-            border-left: 1px solid var(--border-color);
-          }
-          .tocnav {
-            width: 225px
+            // border-left: 1px solid var(--border-color);
           }
           ul {
             padding: 0;

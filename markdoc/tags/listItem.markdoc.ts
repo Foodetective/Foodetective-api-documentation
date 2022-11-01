@@ -7,5 +7,8 @@ export const listitem = {
     title: {
       type: String,
     },
+    type: {
+      type: String,
+    }
   },
 };
