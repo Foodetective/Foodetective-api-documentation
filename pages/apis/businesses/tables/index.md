@@ -7,52 +7,17 @@ title: Businesses Tables
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/tables
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/tables`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +27,33 @@ title: Businesses Tables
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
-          }
-        }
-      }
-    }
+  {
+     "data": [
+       {
+         "id": "d13fc44c-7757-42f7-b872-f187fad12d10",
+         "type": "tables",
+         "links": {
+           "self": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10"
+         },
+         "attributes": {
+           "number": "1",
+           "number-of-seats": 2
+         },
+         "relationships": {
+           "business": {
+             "links": {
+               "self": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10/relationships/business",
+               "related": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10/business"
+             }
+           }
+         }
+       }
+     ],
+     "meta": {
+       "total-count": 1,
+       "total-pages": 1
+     }
+}
   ```
 *
 {% /table %}

@@ -1,5 +1,5 @@
 ---
-title: Businesses Orders
+title: Business Orders
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -7,52 +7,23 @@ title: Businesses Orders
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="sort" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="filter[channel]" type="Optional" /%}
+  {% listitem title="filter[day]" type="Optional" /%}
+  {% listitem title="filter[states]" type="Optional" /%}
+  {% listitem title="filter[order_type]" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/orders
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/orders`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +33,77 @@ title: Businesses Orders
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
+  {
+  "data": [
+    {
+      "id": "7122ef0d-1138-4112-8f7a-c8b4ae2c38a3",
+      "type": "orders",
+      "links": {
+        "self": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3"
+      },
+      "attributes": {
+        "accepted-at": "2021-10-06T09:37:38.122Z",
+        "collection-at": null,
+        "collection-code": null,
+        "currency": "GBP",
+        "customer-name": null,
+        "dishes-cost-cents": 2000,
+        "driver-location-lat": null,
+        "driver-location-long": null,
+        "estimated-delivery-in": 15,
+        "estimated-time-of-dropoff": null,
+        "estimated-time-of-pickup": null,
+        "notes": {},
+        "other-rejection-reason": null,
+        "origin": null,
+        "hubrise-source": null,
+        "hubrise-service-type": null,
+        "pickup-at-business": false,
+        "placed-at": "2021-10-06T09:34:27.088Z",
+        "reject-reason": null,
+        "shipping-cost-cents": 535,
+        "shipping-cost-for-business-cents": 0,
+        "shipping-cost-for-customer-cents": 535,
+        "short-id": 1,
+        "state": "completed",
+        "time-wish": "as soon as possible",
+        "total-cost-cents": 2535,
+        "unavailable-elements": null,
+        "updated-at": "2021-10-06T09:38:59.847Z",
+        "user-email": "aleksandra.bochenska+client@netguru.com",
+        "user-phone": "7912123456",
+        "user-phone-country-code": "GB",
+        "user-phone-country-prefix": "44",
+        "with-orkestro-delivery": true
+      },
+      "relationships": {
+        "addresses": {
+          "links": {
+            "self": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3/relationships/addresses",
+            "related": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3/addresses"
+          }
+        },
+        "elements": {
+          "links": {
+            "self": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3/relationships/elements",
+            "related": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3/elements"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3/relationships/business",
+            "related": "/orders/7122ef0d-1138-4112-8f7a-c8b4ae2c38a3/business"
           }
         }
       }
-    }
+    },
+  ],
+  "meta": {
+    "total-count": 430,
+    "total-pages": 43
+  }
+}
+
   ```
 *
 {% /table %}

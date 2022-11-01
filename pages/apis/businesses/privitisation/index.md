@@ -7,52 +7,20 @@ title: Businesses Privitisation
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="sort" type="Optional" /%}
+  {% listitem title="filter[start_date]" type="Optional" /%}
+  {% listitem title="filter[end_date]" type="Optional" /%}
+  {% listitem title="filter[statuses]" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/privatisations
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/privatisations`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +30,61 @@ title: Businesses Privitisation
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
+{
+  "data": [
+    {
+      "id": "49d9ba83-782a-432a-b2af-3098f7a2b53e",
+      "type": "privatisations",
+      "links": {
+        "self": "/privatisations/49d9ba83-782a-432a-b2af-3098f7a2b53e"
+      },
+      "attributes": {
+        "user-name": "Abc",
+        "name": "Test",
+        "email": "aleksandra.bochenska@netguru.com",
+        "phone": "999999999",
+        "phone-country-prefix": "41",
+        "phone-country-code": "CH",
+        "corporate-event": true,
+        "date": "2022-08-20",
+        "number-of-servings": 3,
+        "company-name": null,
+        "price-cents": 0,
+        "from": 7200,
+        "to": 10800,
+        "number-of-waiters": 0,
+        "type-of-event": "Yes",
+        "chef-attendance": true,
+        "specifications": null,
+        "menu": {
+          "url": null
+        },
+        "offer-send-at": null,
+        "currency": null,
+        "status": "draft",
+        "created-at": "2022-08-19T13:07:35.041Z"
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/privatisations/49d9ba83-782a-432a-b2af-3098f7a2b53e/relationships/business",
+            "related": "/privatisations/49d9ba83-782a-432a-b2af-3098f7a2b53e/business"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "/privatisations/49d9ba83-782a-432a-b2af-3098f7a2b53e/relationships/user",
+            "related": "/privatisations/49d9ba83-782a-432a-b2af-3098f7a2b53e/user"
           }
         }
       }
-    }
+    },
+  ],
+  "meta": {
+    "total-count": 2,
+    "total-pages": 1
+  }
+}
   ```
 *
 {% /table %}

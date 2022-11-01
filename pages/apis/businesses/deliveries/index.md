@@ -1,5 +1,5 @@
 ---
-title: Businesses Deliveries
+title: Business Deliveries
 ---
 
 ## {% $markdoc.frontmatter.title %}
@@ -7,52 +7,16 @@ title: Businesses Deliveries
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
+  {% listitem title="code" type="Required" /%}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/deliveries/{code}
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/deliveries/{code}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +26,89 @@ title: Businesses Deliveries
   ```
   ### Response
   ```bash
+     {
+     "data": {
+       "id": "2b96692f-4e1e-49d7-80b5-658611b908d2",
+       "type": "deliveries",
+       "links": {
+         "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2"
+       },
+       "attributes": {
+         "code": "CH-1005",
+         "currency": "EUR",
+         "free-from-cents": 3500,
+         "price-cents": 600
+       },
+       "relationships": {
+         "business": {
+           "links": {
+             "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/relationships/business",
+             "related": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/business"
+           }
+         }
+       }
+     }
+    }
+  ```
+*
+{% /table %}
+
+- - -
+
+{% table %}
+* ### **Parameters**
+---
+* Parameters {% align="left" %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
+*
+*
+  ### Example Request GET /api/v1/businesses/{id}/deliveries
+  ```bash
       {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/deliveries`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+                }});
+          const data = await res.json();
+    }
+  ```
+  ### Response
+  ```bash
+  {
+  "url": "/api/v1/businesses/{id}/deliveries",
+  "method": "GET",
+  "data": [
+    {
+      "id": "2b96692f-4e1e-49d7-80b5-658611b908d2",
+      "type": "deliveries",
+      "links": {
+        "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2"
+      },
+      "attributes": {
+        "code": "CH-1005",
+        "currency": "EUR",
+        "free-from-cents": 3500,
+        "price-cents": 600
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/relationships/business",
+            "related": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/business"
           }
         }
       }
-    }
+    },
+  ],
+  "meta": {
+    "total-count": 4,
+    "total-pages": 1
+  }
+}
   ```
 *
 {% /table %}
