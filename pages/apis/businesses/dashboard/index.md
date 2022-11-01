@@ -7,46 +7,8 @@ title: Business Dashboard
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="id" type="Required" /%}
 *
 *
   ### Example Request GET /api/v1/businesses/{id}/dashboard/average_ticket_size
@@ -88,46 +50,8 @@ title: Business Dashboard
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="id" type="Required" /%}
 *
 *
   ### Example Request GET /api/v1/businesses/{id}/dashboard/earnings
@@ -168,46 +92,8 @@ title: Business Dashboard
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="id" type="Required" /%}
 *
 *
   ### Example Request GET /api/v1/businesses/{id}/dashboard/revenue_breakdown
@@ -295,46 +181,12 @@ title: Business Dashboard
 {% table %}
 * ### **Parameters**
 ---
-* 
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+* Parameters {% align="left" %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="comparison" type="Optional" /%}
+  {% listitem title="page" type="Optional" /%}
+  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
 *
 *
   ### Example Request GET /api/v1/businesses/{id}/dashboard/worst_sales

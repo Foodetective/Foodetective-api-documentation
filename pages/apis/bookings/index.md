@@ -6,46 +6,10 @@ title: Bookings
 
 ### GET ${BASE_URL}/api/v1/bookings/{id}
 {% table %}
+---
 * Parameters {% align="left" %}
-   {% listitem %}
-    [type] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [name] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [city] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [country_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [post_code] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [street_number] **Required**
-   {% /listitem %}
-   {% listitem %}
-    [address_line]Optional
-   {% /listitem %}
-   {% listitem %}
-    [notes]Optional 
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
-   {% listitem %}
-     [order][data][type]Optional
-   {% /listitem %}
-   {% listitem %}
-    [order][data][id]Optional
-   {% /listitem %}
-   {% listitem %}
-    [region_code]Optional
-   {% /listitem %}
+  {% listitem title="include" type="Optional" /%}
+  {% listitem title="id" type="Required" /%}
 * Example {% align="left" %}
   ```bash
       {
