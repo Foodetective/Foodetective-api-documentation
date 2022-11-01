@@ -4,17 +4,15 @@ title: Businesses Setup
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET api/v1/businesses/{id}/similar
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET api/v1/businesses/{id}/similar
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}api/v1/businesses/{id}/similar`, {
@@ -25,7 +23,7 @@ title: Businesses Setup
           const data = await res.json();
     }
   ```
-  ### Response
+  Response
   ```bash
   {
   "data": [
@@ -193,6 +191,5 @@ title: Businesses Setup
     }
   ]
 }
-  ```
-*
+```
 {% /table %}

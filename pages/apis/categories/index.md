@@ -4,17 +4,15 @@ title: Categories
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET /api/v1/categories
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="language" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
-*
-*
-  ### Example Request GET /api/v1/categories
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${Base_url}/api/v1/categories`, {
@@ -25,7 +23,7 @@ title: Categories
           const data = await res.json();
     }
   ```
-  ### Response
+  Response
   ```bash
   {
   "data": [
@@ -53,21 +51,17 @@ title: Categories
     "total-pages": 5
   }
   ```
-*
 {% /table %}
+- - -
 
----
-
+### GET /api/v1/categories/{id}
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="language" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/categories/{id}
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${Base_url}/api/v1/categories/{id}`, {
@@ -78,7 +72,7 @@ title: Categories
           const data = await res.json();
     }
   ```
-  ### Response
+  Response
   ```bash
   {
   "url": "/api/v1/categories/{id}",
@@ -103,5 +97,4 @@ title: Categories
   }
 }
   ```
-*
 {% /table %}

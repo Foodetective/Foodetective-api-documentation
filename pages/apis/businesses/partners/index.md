@@ -4,8 +4,8 @@ title: Business Partners
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET /api/v1/businesses/{id}/preferred_partners
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
@@ -14,9 +14,7 @@ title: Business Partners
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/preferred_partners
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/preferred_partners`, {
@@ -27,60 +25,59 @@ title: Business Partners
           const data = await res.json();
     }
   ```
-  ### Response
+  Response
   ```bash
   {
-  "data": [
-    {
-      "id": "609881f5-3b64-4a4f-9d72-022fb9a6a58a",
-      "type": "partners",
-      "links": {
-        "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a"
-      },
-      "attributes": {
-        "active": true,
-        "book-meeting": null,
-        "categories": ["wholesaler"],
-        "description": null,
-        "display-credentials-prompt": false,
-        "email": null,
-        "logo": {
-          "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/partner/logo/609881f5-3b64-4a4f-9d72-022fb9a6a58a/5b95b96a-8a99-4725-b4b8-05c06b05b143.png"
+    "data": [
+      {
+        "id": "609881f5-3b64-4a4f-9d72-022fb9a6a58a",
+        "type": "partners",
+        "links": {
+          "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a"
         },
-        "name": "Coca Cola HBC",
-        "status": null,
-        "partner-integration-active": null,
-        "partner-integration-requested": null,
-        "phone": null,
-        "preferred": null,
-        "user-integration-requested": null,
-        "video-url": "https://www.youtube.com/watch?v=vsmWaX53-eU",
-        "website-supports-iframe": true,
-        "website-url": "https://www.netguru.com",
-        "wholesaler-category": 8,
-        "wholesaler-types": ["soft_drinks"]
-      },
-      "relationships": {
-        "users": {
-          "links": {
-            "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/users",
-            "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/users"
-          }
+        "attributes": {
+          "active": true,
+          "book-meeting": null,
+          "categories": ["wholesaler"],
+          "description": null,
+          "display-credentials-prompt": false,
+          "email": null,
+          "logo": {
+            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/partner/logo/609881f5-3b64-4a4f-9d72-022fb9a6a58a/5b95b96a-8a99-4725-b4b8-05c06b05b143.png"
+          },
+          "name": "Coca Cola HBC",
+          "status": null,
+          "partner-integration-active": null,
+          "partner-integration-requested": null,
+          "phone": null,
+          "preferred": null,
+          "user-integration-requested": null,
+          "video-url": "https://www.youtube.com/watch?v=vsmWaX53-eU",
+          "website-supports-iframe": true,
+          "website-url": "https://www.netguru.com",
+          "wholesaler-category": 8,
+          "wholesaler-types": ["soft_drinks"]
         },
-        "partner-integrations": {
-          "links": {
-            "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/partner-integrations",
-            "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/partner-integrations"
+        "relationships": {
+          "users": {
+            "links": {
+              "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/users",
+              "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/users"
+            }
+          },
+          "partner-integrations": {
+            "links": {
+              "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/partner-integrations",
+              "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/partner-integrations"
+            }
           }
         }
-      }
-    },
-  ],
-  "meta": {
-    "total-count": 2,
-    "total-pages": 1
+      },
+    ],
+    "meta": {
+      "total-count": 2,
+      "total-pages": 1
+    }
   }
-}
-  ```
-*
+```
 {% /table %}
