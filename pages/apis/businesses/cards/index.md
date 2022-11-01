@@ -49,10 +49,10 @@ title: Business Cards
    {% /listitem %}
 *
 *
-  ### Example Request GET /v1/banners/newsroom
+  ### Example Request GET /api/v1/businesses/{id}/cards
   ```bash
       {
-          const res = await fetch(Base_url + '/v1/banners/newsroom', {
+          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/cards`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,27 +62,37 @@ title: Business Cards
   ```
   ### Response
   ```bash
-      {
-      "url": "/v1/banners/newsroom",
-      "method": "GET",
-      "data": {
-        "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
-        "type": "banners",
-        "links": { "self": "/banners/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49" },
-        "attributes": {
-          "target": "newsroom",
-          "picture": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/ 59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg",
-            "desktop": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   desktop_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            },
-            "tablet": {
-              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/banner/picture/bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49/   tablet_59a3926a-4b6c-4a5a-b046-5dae06327465.jpeg"
-            }
+  {
+  "url": "/api/v1/businesses/{id}/cards",
+  "method": "GET",
+  "data": [
+    {
+      "id": "15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8",
+      "type": "cards",
+      "links": {
+        "self": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8"
+      },
+      "attributes": {
+        "stripe-source-id": "pm_1Jw7FIBtvCfXmRItGquxmkDn",
+        "last4": "4242",
+        "expiration-date": "2022-02-01",
+        "brand": "visa"
+      },
+      "relationships": {
+        "user": {
+          "links": {
+            "self": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8/relationships/user",
+            "related": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8/user"
           }
         }
       }
-    }
+    },
+  ],
+  "meta": {
+    "total-count": 3,
+    "total-pages": 1
+  }
+}
   ```
 *
 {% /table %}
