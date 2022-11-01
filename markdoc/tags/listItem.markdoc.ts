@@ -1,7 +1,7 @@
-import { Callout } from '../../components';
+import { ListItem } from '../../components';
 
-export const callout = {
-  render: Callout,
+export const listitem = {
+  render: ListItem,
   children: ['paragraph', 'tag', 'list'],
   attributes: {
     title: {

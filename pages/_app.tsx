@@ -1,20 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+
+import { CodeBlock, SideNav, TableOfContents, TopNav } from '../components';
+
 import 'prismjs';
+// Import other Prism themes here
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/themes/prism-tomorrow.css';
-import '../styles/globals.css'
-import { SideNav, TableOfContents, TopNav } from '../components';
+
+import '../public/globals.css'
 
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 
 const TITLE = 'Foodetective API reference';
-const DESCRIPTION = 'A powerful, flexible, Markdown-based authoring framework';
+const DESCRIPTION = 'Foodetective API reference';
 
 function collectHeadings(node, sections = []) {
-  
   if (node) {
     if (node.name === 'Heading') {
       const title = node.children[0];
@@ -39,8 +42,7 @@ function collectHeadings(node, sections = []) {
 
 export type MyAppProps = MarkdocNextJsPageProps
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  
+export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
   const { markdoc } = pageProps;
 
   let title = TITLE;
@@ -58,27 +60,43 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     ? collectHeadings(pageProps.markdoc.content)
     : [];
 
-  return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="referrer" content="strict-origin" />
-        <meta name="title" content={title} />
-        <meta name="description" content={description} />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <TopNav>
-        <Link href="/docs">Docs</Link>
-      </TopNav>
-      <div className="fixed flex w-screen grow top-0">
-        <SideNav />
-        <main className="flex column overflow-auto grow text-base pt-20 pl-4 h-screen">
-          <Component {...pageProps} />
-        </main>
-        <TableOfContents toc={toc} />
-      </div>
-    </>
-  );
+  return <>
+    <Head>
+      <title>{title}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="referrer" content="strict-origin" />
+      <meta name="title" content={title} />
+      <meta name="description" content={description} />
+      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <TopNav>
+      <Link href="/docs" legacyBehavior>Docs</Link>
+    </TopNav>
+    <div className="page">
+      <SideNav />
+      <main className="flex column">
+        <Component {...pageProps} />
+      </main>
+      <TableOfContents toc={toc} />
+    </div>
+    <style jsx>
+      {`
+        .page {
+          position: fixed; 
+          top: var(--top-nav-height);
+          display: flex;
+          width: 100vw;
+          flex-grow: 1;
+        }
+        main {
+          overflow: auto;
+          height: calc(100vh - var(--top-nav-height));
+          flex-grow: 1;
+          font-size: 16px;
+          padding: 0 2rem 2rem;
+        }
+      `}
+    </style>
+  </>;
 }
