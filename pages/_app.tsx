@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import { SideNav, TableOfContents, TopNav } from '../components';
+import { CodeBlock, SideNav, TableOfContents, TopNav } from '../components';
 
 import 'prismjs';
 // Import other Prism themes here
@@ -88,13 +88,14 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
           display: flex;
           width: 100vw;
           flex-grow: 1;
+          background-color: #0f113b;
         }
         main {
           overflow: auto;
           height: calc(100vh - var(--top-nav-height));
           flex-grow: 1;
           font-size: 16px;
-          padding: 0 2rem 2rem;
+          padding: 2rem;
         }
       `}
     </style>

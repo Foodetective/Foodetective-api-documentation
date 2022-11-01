@@ -74,7 +74,7 @@ export function SideNav() {
   return (
     <nav className="sidenav">
       {items.map((item) => (
-        <div key={item.title}>
+        <div key={item.title} className="sidenav-sub">
           <span>{item.title}</span>
           <ul className="flex column">
             {item.links.map((link) => {
@@ -98,27 +98,40 @@ export function SideNav() {
             height: calc(100vh - var(--top-nav-height));
             flex: 0 0 auto;
             overflow-y: auto;
-            padding: 2.5rem 2rem 2rem;
+            padding: 2rem;
             border-right: 1px solid var(--border-color);
           }
+          .sidenav {
+            width: 225px
+          }
+          .sidenav-sub:first-child {
+            padding-top: 0px;
+          }
+          .sidenav-sub {
+            padding-top: 20px;
+          }
           span {
-            font-size: larger;
-            font-weight: 500;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 600;
             padding: 0.5rem 0 0.5rem;
           }
           ul {
             padding: 0;
+            margin: 0.5rem 0;
           }
           li {
             list-style: none;
-            margin: 0;
+            margin: 0.5rem 0;
           }
           li a {
             text-decoration: none;
+            color: #a3acb9;
+            font-weight: 600;
           }
           li a:hover,
           li.active > a {
-            text-decoration: underline;
+            color: white;
           }
         `}
       </style>

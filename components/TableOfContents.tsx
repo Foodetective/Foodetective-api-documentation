@@ -11,7 +11,7 @@ export function TableOfContents({toc}) {
   }
 
   return (
-    <nav className="toc">
+    <nav className="tocnav">
       <ul className="flex column">
         {items.map((item) => {
           const href = `#${item.id}`;
@@ -38,31 +38,35 @@ export function TableOfContents({toc}) {
         {`
           nav {
             position: sticky;
-            top: calc(2.5rem + var(--top-nav-height));
-            max-height: calc(100vh - var(--top-nav-height));
+            top: var(--top-nav-height);
+            height: calc(100vh - var(--top-nav-height));
             flex: 0 0 auto;
-            align-self: flex-start;
-            margin-bottom: 1rem;
-            padding: 0.5rem 0 0;
+            overflow-y: auto;
+            padding: 2rem;
             border-left: 1px solid var(--border-color);
           }
+          .tocnav {
+            width: 225px
+          }
           ul {
+            padding: 0;
             margin: 0;
-            padding: 0 1.5rem;
+          }
+          li:first-child {
+            margin: 0;
           }
           li {
-            list-style-type: none;
-            margin: 0 0 1rem;
+            list-style: none;
+            margin: 0.5rem 0;
           }
           li a {
             text-decoration: none;
+            color: #a3acb9;
+            font-weight: 600;
           }
           li a:hover,
           li.active a {
-            text-decoration: underline;
-          }
-          li.padded {
-            padding-left: 1rem;
+            color: white;
           }
         `}
       </style>

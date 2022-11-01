@@ -26,6 +26,7 @@ export function CodeBlock({children, 'data-language': language}) {
           .code :global(pre[class*='language-']) {
             text-shadow: none;
             border-radius: 8px;
+            background-color: #1a1f36;
             font-size: 12px;
           }
         `}
