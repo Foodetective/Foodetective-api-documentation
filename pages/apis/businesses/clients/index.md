@@ -4,8 +4,9 @@ title: Business Clients
 
 ## {% $markdoc.frontmatter.title %}
 
+ ### GET /api/v1/businesses/{id}/clients
+
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="sort" type="Optional" /%}
@@ -13,9 +14,7 @@ title: Business Clients
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/clients
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/clients`, {
@@ -63,5 +62,4 @@ title: Business Clients
   }
 }
   ```
-*
 {% /table %}

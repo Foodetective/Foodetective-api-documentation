@@ -4,16 +4,14 @@ title: Business Deliveries
 
 ## {% $markdoc.frontmatter.title %}
 
+ ### GET /api/v1/businesses/{id}/deliveries/{code}
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
   {% listitem title="code" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/deliveries/{code}
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/deliveries/{code}`, {
@@ -50,22 +48,19 @@ title: Business Deliveries
      }
     }
   ```
-*
 {% /table %}
 
 - - -
 
+ ### GET /api/v1/businesses/{id}/deliveries
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/deliveries
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/deliveries`, {
@@ -110,5 +105,4 @@ title: Business Deliveries
   }
 }
   ```
-*
 {% /table %}

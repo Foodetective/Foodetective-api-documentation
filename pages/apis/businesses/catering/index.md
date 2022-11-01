@@ -4,8 +4,8 @@ title: Business Catering
 
 ## {% $markdoc.frontmatter.title %}
 
+### GET ${BASE_URL}/api/v1/businesses/{id}/caterings`
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
@@ -16,9 +16,7 @@ title: Business Catering
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/caterings
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/caterings`, {

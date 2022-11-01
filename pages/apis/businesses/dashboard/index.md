@@ -4,14 +4,12 @@ title: Business Dashboard
 
 ## {% $markdoc.frontmatter.title %}
 
+###  GET /api/v1/businesses/{id}/dashboard/average_ticket_size
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/dashboard/average_ticket_size
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/average_ticket_size`, {
@@ -42,19 +40,15 @@ title: Business Dashboard
     }
 
   ```
-*
 {% /table %}
 
 - - -
-
+### GET /api/v1/businesses/{id}/dashboard/earnings
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/dashboard/earnings
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/earnings`, {
@@ -84,19 +78,17 @@ title: Business Dashboard
      }
   }
   ```
-*
 {% /table %}
 
 - - -
 
+###  GET /api/v1/businesses/{id}/dashboard/revenue_breakdown
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/dashboard/revenue_breakdown
+* Example {% align="left" %}
+
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/revenue_breakdown`, {
@@ -173,13 +165,12 @@ title: Business Dashboard
       }
     }
   ```
-*
 {% /table %}
 
 - - -
 
+  ### GET /api/v1/businesses/{id}/dashboard/worst_sales
 {% table %}
-* ### **Parameters**
 ---
 * Parameters {% align="left" %}
   {% listitem title="include" type="Optional" /%}
@@ -187,9 +178,7 @@ title: Business Dashboard
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-*
-*
-  ### Example Request GET /api/v1/businesses/{id}/dashboard/worst_sales
+* Example {% align="left" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/worst_sales`, {
@@ -255,5 +244,4 @@ title: Business Dashboard
       }
     }
   ```
-*
 {% /table %}
