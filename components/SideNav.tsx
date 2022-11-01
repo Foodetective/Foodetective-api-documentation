@@ -124,6 +124,7 @@ export function SideNav() {
           li {
             list-style: none;
             padding: 0.5rem;
+            margin: 0.2rem 0;
           }
           li:hover {
             background-color: rgba(141, 151, 161, 0.15);
