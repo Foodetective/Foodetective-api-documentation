@@ -6,10 +6,9 @@ title: Blog Posts
 
 ### GET ${BASE_URL}/api/v1/blog_posts
 {% table %}
+---
 * Parameters {% align="left" %}
-  {% listitem title="include" type="Optional" %}
-    Bring back all blog posts by type
-  {% /listitem %}
+  {% listitem title="include" type="Optional" /%}
   {% listitem title="sort" type="Optional" /%}
   {% listitem title="lang" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
@@ -88,13 +87,12 @@ title: Blog Posts
       "total-pages":1
    }
   ```
-
 {% /table %}
-
 - - -
 
 ### GET /api/v1/blog_posts/{id}
 {% table %}
+---
 *  Parameters {% align="left" %}
    {% listitem %}
     [type] **Required**
@@ -201,5 +199,4 @@ title: Blog Posts
     }
   }
   ```
-
 {% /table %}
