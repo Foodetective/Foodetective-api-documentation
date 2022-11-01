@@ -48,7 +48,7 @@ body {
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
   margin: 0.5rem 0;
   line-height: 1.5em;
 }
@@ -75,4 +75,26 @@ h4 {
 a {
   font-size: 16px;
   color: rgba(75, 85, 99, 1);
+}
+
+table {
+  table-layout: fixed;
+  width: fit-content;
+}
+
+thead tr th {
+  vertical-align: top;
+}
+
+tbody tr td {
+  vertical-align: top;
+}
+
+tbody tr td:first-child {
+  width: 40%;
+  padding-right: 15px;
+}
+
+tbody tr td:last-child {
+  width: 60%;
 }
