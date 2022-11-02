@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const items = [
   {
@@ -70,52 +72,92 @@ const items = [
   },
 ];
 
-export function SideNav() {
+interface navItemProps {
+  item: {
+    title: string
+    links: {
+        href: string
+        children: string
+    }[]
+  }
+}
+
+export const NavItem: React.FC<navItemProps> = ({item}) => {
+  const [show, setShow] = useState<Boolean>(true)
   const router = useRouter();
+  const hasActive = item.links.some(itm => itm.href === router.pathname)
+
+  useEffect(() => {
+    if (hasActive) {
+      setShow(true)
+    }
+  }, [router.pathname])
+
+  const hide = (): void => {
+    setShow(!show)
+  } 
 
   return (
-    <nav className="sidenav">
-      {items.map((item) => (
-        <div key={item.title} className="sidenav-sub">
-          <span>{item.title}</span>
-          <ul className="flex column">
-            {item.links.map((link) => {
-              const active = router.pathname === link.href;
-              return (
-                <li key={link.href} className={active ? 'active' : ''}>
-                  <Link {...link} legacyBehavior>
-                    <a href={link.href}>{link.children}</a>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      ))}
+    <div key={item.title} className={`sidenav-sub ${show ? 'show' : ''}`}>
+      <div className='sidenav-sub-title' onClick={() => hide()}>
+        <p>{item.title}</p>
+        {show ? (
+          <FontAwesomeIcon icon={faChevronDown} size='xs' />
+        ) : (
+          <FontAwesomeIcon icon={faChevronLeft} size='xs' />
+        )}
+      </div>
+      <ul className="flex column ">
+        {item.links.map((link) => {
+          const active = router.pathname === link.href;
+          return (
+            <li key={link.href} className={active ? 'active' : ''}>
+              <Link {...link} legacyBehavior>
+                <a href={link.href}>{link.children}</a>
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
       <style jsx>
         {`
-          nav {
-            position: sticky;
-            top: var(--top-nav-height);
-            height: calc(100vh - var(--top-nav-height));
-            flex: 0 0 auto;
-            overflow-y: auto;
-            padding: 1.5rem;
-            background-color: #fbfcfd;
-            // border-right: 1px solid var(--border-color);
-          }
           .sidenav-sub:first-child {
             padding-top: 0px;
           }
           .sidenav-sub {
             color: #43485e;
-            padding-top: 15px;
+            overflow: hidden;
+            height: auto;
+            margin: 0.5rem 0;
+          }
+          .sidenav-sub ul {
+            height: 0;
+          }
+          .sidenav-sub.show ul {
+            height: auto;
+            padding-bottom: 10px;
+          }
+          .sidenav-sub-title {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          .sidenav-sub-title svg {
+            color: #43485e;
+          }
+          .sidenav-sub-title p {
+            font-size: 14px;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: 600;
           }
           span {
             font-size: 14px;
             text-transform: uppercase;
             font-weight: 600;
             padding: 0.5rem 0 0.5rem;
+            cursor: pointer;
           }
           ul {
             padding: 0;
@@ -146,10 +188,32 @@ export function SideNav() {
           li.active > a {
             color: #4c68ff;
           }
-          // li.active {
-          //   background-color: #1a1f36;
-          //   border-radius: 8px;
-          // }
+        `}
+      </style>
+    </div>
+  )
+}
+
+export function SideNav() {
+  const router = useRouter();
+
+  return (
+    <nav className="sidenav">
+      {items.map((item, index) => (
+        <NavItem key={index} item={item}/>
+      ))}
+      <style jsx>
+        {`
+          nav {
+            position: sticky;
+            top: var(--top-nav-height);
+            height: calc(100vh - var(--top-nav-height));
+            flex: 0 0 auto;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background-color: #fbfcfd;
+            // border-right: 1px solid var(--border-color);
+          }
         `}
       </style>
     </nav>

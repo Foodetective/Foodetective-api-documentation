@@ -47,6 +47,9 @@ export function TableOfContents({toc}) {
             width: 250px;
             // border-left: 1px solid var(--border-color);
           }
+          .tocnav ul {
+            margin: 0.5rem 0;
+          }
           ul {
             padding: 0;
             margin: 0;
