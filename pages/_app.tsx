@@ -8,6 +8,9 @@ import 'prismjs/themes/prism-solarizedlight.css';
 import '../public/globals.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 const TITLE = 'Foodetective API reference';
 const DESCRIPTION = 'Foodetective API reference';
@@ -91,7 +94,9 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
           height: calc(100vh - var(--top-nav-height));
           flex-grow: 1;
           font-size: 16px;
-          padding: 2rem;
+          padding: 0.5rem 1.5rem;
+          border-left: 1px solid #dfdfdf;
+          border-right: 1px solid #dfdfdf;
         }
       `}
     </style>
