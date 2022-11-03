@@ -15,7 +15,7 @@ export function Logo() {
         </div>
         <p className='logo-title'>Foodetective Business</p>
       </a>
-      <style jsx>
+      {/* <style jsx>
         {`
           .logo {
             margin-right: 2.5rem;
@@ -59,7 +59,7 @@ export function Logo() {
             stroke-miterlimit: 10;
           }
         `}
-      </style>
+      </style> */}
     </div>
   )
 }
