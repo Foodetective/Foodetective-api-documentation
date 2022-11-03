@@ -5,7 +5,7 @@ import { SideNav, TableOfContents, TopNav } from '../components';
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/themes/prism-solarizedlight.css';
-import '../public/globals.css'
+import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import "@fortawesome/fontawesome-svg-core/styles.css";

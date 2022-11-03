@@ -107,7 +107,7 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
           <FontAwesomeIcon icon={faChevronLeft} size='xs' />
         )}
       </div>
-      <ul className="flex column ">
+      <ul className="flex-auto">
         {item.links.map((link) => {
           const active = router.pathname === link.href;
           return (

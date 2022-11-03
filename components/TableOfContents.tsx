@@ -12,7 +12,7 @@ export function TableOfContents({toc}) {
 
   return (
     <nav className="tocnav">
-      <ul className="flex column">
+      <ul className="flex-auto">
         {items.map((item) => {
           const href = `#${item.id}`;
           const active =
