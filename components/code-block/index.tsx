@@ -4,13 +4,13 @@ import * as React from 'react';
 
 export function CodeBlock({children, 'data-language': language}) {
   const ref = React.useRef(null);
-
+  console.log(language, 'data-language')
   React.useEffect(() => {
     if (ref.current) Prism.highlightElement(ref.current, false);
   }, [children]);
 
   return (
-    <div className="code" aria-live="polite">
+    <div className="code-block" aria-live="polite">
       <pre
         ref={ref}
         className={`language-${language}`}
@@ -19,11 +19,8 @@ export function CodeBlock({children, 'data-language': language}) {
       </pre>
       <style jsx>
         {`
-          .code {
-            position: relative;
-          }
           /* Override Prism styles */
-          .code :global(pre[class*='language-']) {
+          .code-block :global(pre[class*='language-']) {
             text-shadow: none;
             border-radius: 8px;
             background-color: #1a1f36;

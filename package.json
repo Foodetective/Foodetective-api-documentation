@@ -15,7 +15,8 @@
     "next": "latest",
     "prismjs": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sass": "^1.55.0"
   },
   "devDependencies": {
     "@types/node": "latest",

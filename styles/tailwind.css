@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  :root {
+    --top-nav-height: 69px;
+    --border-color: #334155;
+  }
+  body {
+    @apply font-sans;
+  }
+  .page {
+    @apply flex;
+    padding-top: var(--top-nav-height);
+  }
+  .page main {
+    @apply flex overflow-auto p-20 border-x border-slate-300;
+    height: calc(100vh - var(--top-nav-height));
+  }
+  h1, h2, h3, h4, h5, h6, p, a {
+    @apply text-slate-700;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl
+  }
+  h4 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  p {
+    @apply text-base;
+  }
+  table {
+    @apply table-fixed w-full;
+  }
+  thead tr th {
+    vertical-align: top;
+  }
+  tbody tr td {
+    font-weight: 600;
+    vertical-align: top;
+  }
+  tbody tr td:first-child {
+    width: 40%;
+    padding-right: 15px;
+  }
+  tbody tr td:last-child {
+    width: 60%;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track:vertical {
+    /* background: #dfdfdf; */
+    border-left: 2px solid #fbfcfd;
+    border-right: 2px solid #fbfcfd;
+  }
+  ::-webkit-scrollbar-track:horizontal {
+    /* background: #dfdfdf; */
+    border-top: 2px solid #fbfcfd;
+    border-bottom: 2px solid #fbfcfd;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  ::-webkit-scrollbar-corner {
+    background: #fbfcfd;
+  }
+}
