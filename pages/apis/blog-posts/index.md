@@ -1,33 +1,36 @@
 ---
 title: Blog Posts
 ---
-
+{% section %}
 ## {% $markdoc.frontmatter.title %}
 
-### GET ${BASE_URL}/api/v1/blog_posts
-{% table %}
----
-* Parameters {% align="left" %}
+{% layoutTwoCol %}
+
+{% box %}
+  Parameters
   {% listitem title="include" type="Optional" /%}
   {% listitem title="sort" type="Optional" /%}
   {% listitem title="lang" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
-* Example {% align="left" %}
+{% /box %}
+{% box %}
+{% codeExample title="Example" subTitle="GET ${BASE_URL}/api/v1/blog_posts" %}
   ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+          }});
+      const data = await res.json();
     }
   ```
-  Response
+{% /codeExample %}
+{% codeExample title="Response" %}
   ```bash
-      {
-        "data":[
+    {
+      "data":[
       {
         "id": "62a05bd2-2f0e-4bac-8f8b-63947f4df16f",
         "type": "blog-posts",
@@ -85,17 +88,27 @@ title: Blog Posts
       "total-pages":1
    }
   ```
-{% /table %}
+{% /codeExample %}
+{% /box %}
+
+{% /layoutTwoCol %}
+
+{% /section %}
 - - -
 
-### GET /api/v1/blog_posts/{id}
-{% table %}
----
-* Parameters {% align="left" %}
+{% section %}
+## Blog Post by id
+
+{% layoutTwoCol %}
+
+{% box %}
+  Parameters
   {% listitem title="include" type="Optional" /%}
   {% listitem title="language" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
+{% /box %}
+{% box %}
+{% codeExample title="Example" subTitle="GET /api/v1/blog_posts/{id}" %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/blog_posts/{id}`, {
@@ -106,7 +119,8 @@ title: Blog Posts
           const data = await res.json();
     }
   ```
-  Response
+{% /codeExample %}
+{% codeExample title="Response" %}
   ```bash
   {
   "data": {
@@ -161,4 +175,9 @@ title: Blog Posts
     }
   }
   ```
-{% /table %}
+{% /codeExample %}
+{% /box %}
+
+{% /layoutTwoCol %}
+
+{% /section %}

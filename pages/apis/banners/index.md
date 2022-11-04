@@ -3,6 +3,7 @@ title: Banners
 ---
 {% section %}
 ## {% $markdoc.frontmatter.title %}
+### GET ${BASE_URL}/api/v1/banners/${target}
 
 {% layoutTwoCol %}
 
