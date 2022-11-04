@@ -1,7 +1,6 @@
 ---
 title: Business Members
 ---
-
 ## {% $markdoc.frontmatter.title %}
 
 ### GET /api/v1/businesses{id}/members

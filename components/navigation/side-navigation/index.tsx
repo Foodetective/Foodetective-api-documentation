@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import styles from './index.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -98,8 +99,8 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
   } 
 
   return (
-    <div key={item.title} className={`sidenav-sub ${show ? 'show' : ''}`}>
-      <div className='sidenav-sub-title' onClick={() => hide()}>
+    <div key={item.title} className={`${styles[`sidenav-sub`]} ${show ? styles['show'] : ''}`}>
+      <div className={styles['sidenav-sub-title']} onClick={() => hide()}>
         <p>{item.title}</p>
         {show ? (
           <FontAwesomeIcon icon={faChevronDown} size='xs' />
@@ -107,115 +108,28 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
           <FontAwesomeIcon icon={faChevronLeft} size='xs' />
         )}
       </div>
-      <ul className="flex-auto">
+      <ul className={styles['sidenav-sub-items']}>
         {item.links.map((link) => {
           const active = router.pathname === link.href;
           return (
-            <li key={link.href} className={active ? 'active' : ''}>
+            <li key={link.href} className={active ? styles['active'] : ''}>
               <Link {...link} legacyBehavior>
-                <a href={link.href}>{link.children}</a>
+                {link.children}
               </Link>
             </li>
           )
         })}
       </ul>
-      <style jsx>
-        {`
-          .sidenav-sub:first-child {
-            padding-top: 0px;
-          }
-          .sidenav-sub {
-            color: #43485e;
-            overflow: hidden;
-            height: auto;
-            margin: 0.5rem 0;
-          }
-          .sidenav-sub ul {
-            height: 0;
-          }
-          .sidenav-sub.show ul {
-            height: auto;
-            padding-bottom: 10px;
-          }
-          .sidenav-sub-title {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
-          .sidenav-sub-title svg {
-            color: #43485e;
-          }
-          .sidenav-sub-title p {
-            font-size: 14px;
-            margin: 0;
-            text-transform: uppercase;
-            font-weight: 600;
-          }
-          span {
-            font-size: 14px;
-            text-transform: uppercase;
-            font-weight: 600;
-            padding: 0.5rem 0 0.5rem;
-            cursor: pointer;
-          }
-          ul {
-            padding: 0;
-            margin: 0;
-          }
-          li {
-            list-style: none;
-            margin: 0.2rem 0;
-          }
-          li:hover {
-            background-color: rgba(141, 151, 161, 0.15);
-            border-radius: 6px;
-          }
-          li a {
-            text-decoration: none;
-            color: #57575a;
-            font-weight: 500;
-            font-size: 14px;
-            padding: 0.5rem 0.6rem;
-          }
-          li a:hover {
-            color: #57575a;
-          }
-          li.active {
-            background-color: rgba(141, 151, 161, 0.15);
-            border-radius: 6px;
-          }
-          li.active > a {
-            color: #4c68ff;
-          }
-        `}
-      </style>
     </div>
   )
 }
 
 export function SideNav() {
-  const router = useRouter();
-
   return (
-    <nav className="sidenav">
+    <nav className={styles['sidenav']}>
       {items.map((item, index) => (
         <NavItem key={index} item={item}/>
       ))}
-      <style jsx>
-        {`
-          nav {
-            position: sticky;
-            top: var(--top-nav-height);
-            height: calc(100vh - var(--top-nav-height));
-            flex: 0 0 auto;
-            overflow-y: auto;
-            padding: 1.5rem;
-            background-color: #fbfcfd;
-            // border-right: 1px solid var(--border-color);
-          }
-        `}
-      </style>
     </nav>
   );
 }

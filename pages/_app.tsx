@@ -5,7 +5,7 @@ import { SideNav, TableOfContents, TopNav } from '../components';
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/themes/prism-solarizedlight.css';
-import '../styles/globals.css'
+import '../styles/tailwind.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -74,31 +74,10 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
     </TopNav>
     <div className="page">
       <SideNav />
-      <main className="flex column">
+      <main>
         <Component {...pageProps} />
       </main>
       <TableOfContents toc={toc} />
     </div>
-    <style jsx>
-      {`
-        .page {
-          position: fixed; 
-          top: var(--top-nav-height);
-          display: flex;
-          width: 100vw;
-          flex-grow: 1;
-          background-color: #fbfcfd;
-        }
-        main {
-          overflow: auto;
-          height: calc(100vh - var(--top-nav-height));
-          flex-grow: 1;
-          font-size: 16px;
-          padding: 0.5rem 1.5rem;
-          border-left: 1px solid #dfdfdf;
-          border-right: 1px solid #dfdfdf;
-        }
-      `}
-    </style>
   </>;
 }

@@ -1,0 +1,24 @@
+.logo {
+  @apply mr-40;
+  .logo-link {
+    @apply flex flex-row align-middle text-primary text-lg font-semibold;
+    .logo-image {
+      @apply mr-4 text-4xl;
+      .svg-fork-cls-1, .svg-fork-cls-2, .svg-fork-cls-3 {
+        @apply fill-none stroke-currentColor stroke-[3px];
+      }
+      .svg-fork-cls-1 {
+        @apply stroke-linejoin-round;
+      }
+      .svg-fork-cls-1, .svg-fork-cls-3 {
+        @apply stroke-linecap-round;
+      }
+      .svg-fork-cls-2, .svg-fork-cls-3 {
+        @apply stroke-miterlimit-10;
+      }
+    }
+    .logo-title {
+      @apply text-lg text-primary font-bold leading-[18px] w-[125px] m-0 ;
+    }
+  }
+}
