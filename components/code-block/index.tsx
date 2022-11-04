@@ -4,17 +4,14 @@ import * as React from 'react';
 
 export function CodeBlock({children, 'data-language': language}) {
   const ref = React.useRef(null);
-  console.log(language, 'data-language')
+
   React.useEffect(() => {
     if (ref.current) Prism.highlightElement(ref.current, false);
   }, [children]);
 
   return (
     <div className="code-block" aria-live="polite">
-      <pre
-        ref={ref}
-        className={`language-${language}`}
-      >
+      <pre ref={ref} className={`language-${language}`}>
         {children}
       </pre>
       <style jsx>

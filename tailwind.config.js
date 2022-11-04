@@ -22,6 +22,11 @@ module.exports = {
         DEFAULT: '#4c68ff',
         dark: '#4c68ff'
       },
+      prism: {
+        light: '#474b5e',
+        DEFAULT: '#1a1f36',
+        dark: '#30354a'
+      },
       currentColor: 'currentColor',
       black: '#000000',
       white: '#ffffff',
@@ -55,7 +60,7 @@ module.exports = {
     },
     container: {
       center: true,
-      
+
     },
     screens: {
       sm: '480px',
