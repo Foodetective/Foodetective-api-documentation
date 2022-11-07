@@ -1,33 +1,40 @@
-import Prism from 'prismjs';
+import * as React from 'react'
+import { Code } from '../code'
 
-import * as React from 'react';
-
-export function CodeBlock({children, 'data-language': language}) {
-  const ref = React.useRef(null);
-  console.log(language, 'data-language')
-  React.useEffect(() => {
-    if (ref.current) Prism.highlightElement(ref.current, false);
-  }, [children]);
+function Request({request}) {
+  const methodType = (method) => {
+    let type = method != undefined ? method.toLowerCase() : 'default'
+    const methods = {
+      'get': () => 'method text-white text-blue-400 font-semibold pr-3',
+      'post': () => 'method text-white text-success font-semibold pr-3',
+      'put': () => 'method text-white text-blue-400 font-semibold pr-3',
+      'delete': () => 'method text-white text-danger font-semibold pr-3',
+      'default': () => 'method text-white font-semibold pr-3'
+    }
+    return methods[type]()
+  }
 
   return (
-    <div className="code-block" aria-live="polite">
-      <pre
-        ref={ref}
-        className={`language-${language}`}
-      >
+    <p className="request-definition text-sm">
+      <span className={methodType(request.method)}>{request.method}</span>
+      <span className="path text-white">{request.path}</span>
+    </p>
+  )
+}
+
+export function CodeBlock({ title, subTitle, request, children }) {
+  return(
+    <div className='code-block bg-prism rounded-lg'>
+      <div className='topbar p-10 bg-prism-light rounded-lg rounded-b-none'>
+        <div className="topbar-title">
+          {title != undefined && (<p className='text-white text-sm font-semibold'>{title}</p>)}
+          {subTitle != undefined && (<p className='text-white text-sm'>{subTitle}</p>)}
+          {request != undefined && (<Request key='request' request={request} />)}
+        </div>
+      </div>
+      <Code language={'js'}>
         {children}
-      </pre>
-      <style jsx>
-        {`
-          /* Override Prism styles */
-          .code-block :global(pre[class*='language-']) {
-            text-shadow: none;
-            border-radius: 8px;
-            background-color: #1a1f36;
-            font-size: 12px;
-          }
-        `}
-      </style>
+      </Code>
     </div>
-  );
+  )
 }

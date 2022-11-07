@@ -4,7 +4,14 @@ import Link from 'next/link';
 import { SideNav, TableOfContents, TopNav } from '../components';
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
-import '../styles/prism-themes/prism-synthwave84.css';
+import 'prismjs/components/prism-python.min';
+import 'prismjs/components/prism-json.min';
+import 'prismjs/components/prism-java.min';
+import 'prismjs/components/prism-go.min';
+import 'prismjs/components/prism-ruby.min';
+// import 'prismjs/components/prism-php.min';
+// import 'prismjs/components/prism-aspnet.min';
+import '../styles/prism-themes/prism-coldark-dark.css';
 // import 'prismjs/themes/prism-solarizedlight.css';
 import '../styles/tailwind.css'
 import type { AppProps } from 'next/app'
