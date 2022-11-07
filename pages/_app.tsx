@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { SideNav, TableOfContents, TopNav } from '../components';
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
-import 'prismjs/themes/prism-solarizedlight.css';
+import '../styles/prism-themes/prism-synthwave84.css';
+// import 'prismjs/themes/prism-solarizedlight.css';
 import '../styles/tailwind.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
