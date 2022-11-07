@@ -32,9 +32,9 @@ export function CodeBlock({ title, subTitle, request, children }) {
           {request != undefined && (<Request key='request' request={request} />)}
         </div>
       </div>
-      {/* <Code data-language={'json'}> */}
+      <Code language={'js'}>
         {children}
-      {/* </Code> */}
+      </Code>
     </div>
   )
 }

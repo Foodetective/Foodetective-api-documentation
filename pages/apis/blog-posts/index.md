@@ -29,7 +29,7 @@ title: Blog Posts
 ```
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" %}
-  ```bash
+  ```
     {
       "data":[
       {
