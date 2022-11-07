@@ -4,6 +4,6 @@ export * from './listItem.markdoc'
 export * from './section.markdoc'
 export * from './layoutTwoCol.markdoc'
 export * from './box.markdoc'
-export * from './codeExample.markdoc'
+export * from './codeBlock.markdoc'
 //@ts-ignore
 export { comment, head, link, script } from '@markdoc/next.js/tags'

@@ -10,7 +10,7 @@ export function ListItem({title, type, children}) {
     //   default:
     //     break;
     // }
-		return type == "Required" ? 'pl-8 text-[#a32c36] font-bold' : 'pl-8 text-[#7ec67f] font-bold'
+		return type == "Required" ? 'pl-8 text-danger font-bold' : 'pl-8 text-success font-bold'
 	}
 
 

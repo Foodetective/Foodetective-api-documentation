@@ -1,6 +1,6 @@
 export * from './callout'
+export * from './code'
 export * from './code-block'
-export * from './code-example'
 export * from './heading'
 export * from './navigation/side-navigation'
 export * from './navigation/table-of-contents'

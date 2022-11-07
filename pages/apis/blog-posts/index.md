@@ -14,20 +14,21 @@ title: Blog Posts
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
 {% /box %}
+
 {% box %}
-{% codeExample title="Example" subTitle="GET ${BASE_URL}/api/v1/blog_posts" %}
-  ```bash
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-          }});
-      const data = await res.json();
-    }
-  ```
-{% /codeExample %}
-{% codeExample title="Response" %}
+{% codeBlock request={method: "GET", path: "/v1/blog_posts"} %}
+```
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+        }});
+    const data = await res.json();
+  }
+```
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
   ```bash
     {
       "data":[
@@ -88,7 +89,7 @@ title: Blog Posts
       "total-pages":1
    }
   ```
-{% /codeExample %}
+{% /codeBlock %}
 {% /box %}
 
 {% /layoutTwoCol %}
@@ -102,13 +103,13 @@ title: Blog Posts
 {% layoutTwoCol %}
 
 {% box %}
-  Parameters
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="language" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+Parameters
+{% listitem title="include" type="Optional" /%}
+{% listitem title="language" type="Optional" /%}
+{% listitem title="id" type="Required" /%}
 {% /box %}
 {% box %}
-{% codeExample title="Example" subTitle="GET /api/v1/blog_posts/{id}" %}
+{% codeBlock request={method: "GET", path: "/v1/blog_posts/{id}"} %}
   ```bash
       {
           const res = await fetch(`${BASE_URL}/api/v1/blog_posts/{id}`, {
@@ -119,8 +120,8 @@ title: Blog Posts
           const data = await res.json();
     }
   ```
-{% /codeExample %}
-{% codeExample title="Response" %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
   ```bash
   {
   "data": {
@@ -175,7 +176,7 @@ title: Blog Posts
     }
   }
   ```
-{% /codeExample %}
+{% /codeBlock %}
 {% /box %}
 
 {% /layoutTwoCol %}

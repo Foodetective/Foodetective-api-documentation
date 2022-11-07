@@ -30,6 +30,21 @@ module.exports = {
       currentColor: 'currentColor',
       black: '#000000',
       white: '#ffffff',
+      success: '#1ea672',
+      warning: '#cc6649',
+      danger: '#a32c36',
+      'blue': {
+        50: '#f5fbff',
+        100: '#d6ecff',
+        200: '#a4cdfe',
+        300: '#7dabf8',
+        400: '#6c8eef',
+        500: '#556cd6',
+        600: '#3d4eac',
+        700: '#2f3d89',
+        800: '#212d63',
+        900: '#131f41'
+      },
       'slate': {
         50: '#f8fafc',
         100: '#f1f5f9',

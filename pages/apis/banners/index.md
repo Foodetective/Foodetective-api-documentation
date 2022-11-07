@@ -12,7 +12,7 @@ Parameters
 {% listitem title="target" type="Required" /%}
 {% /box %}
 {% box %}
-{% codeExample title="Example" subTitle="GET ${BASE_URL}/api/v1/banners/${target}" %}
+{% codeBlock title="Example" subTitle="GET ${BASE_URL}/api/v1/banners/${target}" %}
   ```bash
     {
       const res = await fetch(`${BASE_URL}/api/v1/banners/${target}`, {
@@ -23,8 +23,8 @@ Parameters
       const data = await res.json();
     }
   ```
-{% /codeExample %}
-{% codeExample title="Response" %}
+{% /codeBlock %}
+{% codeBlock title="Response" %}
   ```bash
     {
       "data": {
@@ -46,7 +46,7 @@ Parameters
       }
     }
   ```
-{% /codeExample %}
+{% /codeBlock %}
 {% /box %}
 {% /layoutTwoCol %}
 
