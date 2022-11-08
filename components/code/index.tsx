@@ -1,17 +1,16 @@
+import React, { useEffect, useRef } from 'react';
 import Prism from 'prismjs';
 
-import * as React from 'react';
+export function Code({children, 'data-language': language}) {
+  const ref = useRef(null);
 
-export function Code({children, language}) {
-  const ref = React.useRef(null);
-
-  React.useEffect(() => {
+  useEffect(() => {
     Prism.highlightElement(ref.current, false);
   }, [children]);
 
   return (
     <div className="code" aria-live="polite">
-      <pre data-language={language} className={`language-${language}`}>
+      <pre data-language={language} className={`code-pre language-${language}`}>
         <code ref={ref} className={`language-${language}`}>
           {children}
         </code>

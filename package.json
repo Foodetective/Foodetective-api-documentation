@@ -12,6 +12,7 @@
     "@markdoc/markdoc": "latest",
     "@markdoc/next.js": "latest",
     "@types/markdown-it": "*",
+    "copy-to-clipboard": "^3.3.2",
     "next": "latest",
     "prismjs": "latest",
     "react": "latest",

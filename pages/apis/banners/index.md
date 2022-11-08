@@ -3,17 +3,18 @@ title: Banners
 ---
 {% section %}
 ## {% $markdoc.frontmatter.title %}
-### GET ${BASE_URL}/api/v1/banners/${target}
 
 {% layoutTwoCol %}
 
 {% box %}
-Parameters
-{% listitem title="target" type="Required" /%}
+  Parameters
+  {% listitem title="target" type="Required" /%}
 {% /box %}
-{% box %}
-{% codeBlock title="Example" subTitle="GET ${BASE_URL}/api/v1/banners/${target}" %}
-  ```bash
+
+{% codeBlock request={method: "GET", path: "/v1/banners/${target}"} %}
+ {% tabs %}
+  {% tab label="js"%} 
+  ```js
     {
       const res = await fetch(`${BASE_URL}/api/v1/banners/${target}`, {
         method: 'GET',
@@ -23,9 +24,32 @@ Parameters
       const data = await res.json();
     }
   ```
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
 {% /codeBlock %}
+
 {% codeBlock title="Response" %}
-  ```bash
+  ```json
     {
       "data": {
         "id": "bd0ce9e1-74ba-4bf4-8f1c-8acee7b69b49",
@@ -47,7 +71,7 @@ Parameters
     }
   ```
 {% /codeBlock %}
-{% /box %}
+
 {% /layoutTwoCol %}
 
 {% /section %}
