@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { SideNav, TableOfContents, TopNav } from '../components';
@@ -20,8 +21,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
-const TITLE = 'Foodetective API reference';
-const DESCRIPTION = 'Foodetective API reference';
+const TITLE = 'Foodetective API reference'
+const DESCRIPTION = 'Foodetective API reference'
 
 function collectHeadings(node, sections = []) {
   if (node) {
@@ -49,18 +50,36 @@ function collectHeadings(node, sections = []) {
 export type MyAppProps = MarkdocNextJsPageProps
 
 export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
-  const { markdoc } = pageProps;
+  const router = useRouter()
+  const { markdoc } = pageProps
 
-  let title = TITLE;
-  let description = DESCRIPTION;
+  const getCookie = (name) => {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+  }
+
+  useEffect(() => {
+    if (getCookie('lang') !== null) {
+      router.push(`${router.route}?lang=${getCookie('lang')}`)
+    }
+  }, [router.route])
+
+  let title = TITLE
+  let description = DESCRIPTION
   if (markdoc) {
     if (markdoc.frontmatter.title) {
-      title = markdoc.frontmatter.title;
+      title = markdoc.frontmatter.title
     }
     if (markdoc.frontmatter.description) {
-      description = markdoc.frontmatter.description;
+      description = markdoc.frontmatter.description
     }
-  }
+  }  
 
   const toc = pageProps.markdoc?.content
     ? collectHeadings(pageProps.markdoc.content)

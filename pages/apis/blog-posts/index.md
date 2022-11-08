@@ -15,21 +15,50 @@ title: Blog Posts
   {% listitem title="per_page" type="Optional" /%}
 {% /box %}
 
-{% box %}
 {% codeBlock request={method: "GET", path: "/v1/blog_posts"} %}
-```
-  {
-    const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-        }});
-    const data = await res.json();
-  }
-```
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+          }});
+      const data = await res.json();
+    }
   ```
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    import stripe
+    charge = stripe.Charge.retrieve(
+      "ch_3M1SVI2eZvKYlo2C07N4spt3",
+      api_key="sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+    )
+    charge.save() # Uses the same API Key.
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+
+{% codeBlock title="RESPONSE" %}
+  ```json
     {
       "data":[
       {
@@ -90,8 +119,6 @@ title: Blog Posts
    }
   ```
 {% /codeBlock %}
-{% /box %}
-
 {% /layoutTwoCol %}
 
 {% /section %}
@@ -108,7 +135,7 @@ Parameters
 {% listitem title="language" type="Optional" /%}
 {% listitem title="id" type="Required" /%}
 {% /box %}
-{% box %}
+
 {% codeBlock request={method: "GET", path: "/v1/blog_posts/{id}"} %}
   ```bash
       {
@@ -177,7 +204,6 @@ Parameters
   }
   ```
 {% /codeBlock %}
-{% /box %}
 
 {% /layoutTwoCol %}
 

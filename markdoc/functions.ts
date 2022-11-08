@@ -8,7 +8,7 @@ export const includes = {
   },
 };
 
-export const upper = {
+export const uppercase = {
   transform(parameters) {
     const string = parameters[0];
     return typeof string === 'string' ? string.toUpperCase() : string;

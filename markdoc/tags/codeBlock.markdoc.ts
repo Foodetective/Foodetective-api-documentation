@@ -12,5 +12,5 @@ export const codeBlock = {
     request: {
       type: Object
     }
-  },
+  }
 }

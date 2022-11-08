@@ -5,5 +5,7 @@ export * from './section.markdoc'
 export * from './layoutTwoCol.markdoc'
 export * from './box.markdoc'
 export * from './codeBlock.markdoc'
+export * from './tabs.markdoc'
+export * from './tab.markdoc'
 //@ts-ignore
 export { comment, head, link, script } from '@markdoc/next.js/tags'
