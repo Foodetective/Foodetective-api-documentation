@@ -22,61 +22,20 @@ export function Logo() {
   )
 }
 
-export function TopNav({children}) {
+export function TopNav({ children }) {
   return (
-    <nav className='navbar'>
-      <div className='navbar-inner'>        
-        <div className='navbar-items'>
+    <nav className={`${styles['navbar']} dark:bg-prism`}>
+      <div className={styles['navbar-inner']}>        
+        <div className={styles['navbar-items']}>
           <Logo />
           <Link href="/" className="flex" legacyBehavior>
             Home
           </Link>
         </div>
-        <div className='navbar-items'>
+        <div className={styles['navbar-items']}>
           {children}
         </div>
       </div>
-      <style jsx>
-        {`
-          .navbar {
-            top: 0;
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            background: #fbfcfd;
-            border-bottom: 1px solid #dfdfdf;
-          }
-          .navbar-inner {
-            display: flex;
-            justify-content: space-between;
-            column-gap: 1rem;
-            flex-direction: row;
-            width: 100%;
-          }
-          .navbar-items {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-          }
-          nav:global(a) {
-            text-decoration: none;
-            color: #57575a;
-            font-size: 16px;
-            font-weight: 600;
-          }
-          section {
-            display: flex;
-            gap: 1rem;
-            padding: 0;
-          }
-          // .logo {
-          //   width: 80px;
-          // }
-        `}
-      </style>
     </nav>
   );
 }
