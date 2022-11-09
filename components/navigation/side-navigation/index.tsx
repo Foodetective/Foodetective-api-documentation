@@ -99,22 +99,22 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
   } 
 
   return (
-    <div key={item.title} className={`${styles[`sidenav-sub`]} ${show ? styles['show'] : ''}`}>
+    <div key={item.title} className={`${styles[`sidenav-sub`]}`}>
       <div className={styles['sidenav-sub-title']} onClick={() => hide()}>
-        <p>{item.title}</p>
+        <p className='dark:text-slate-400'>{item.title}</p>
         {show ? (
-          <FontAwesomeIcon icon={faChevronDown} size='xs' />
+          <FontAwesomeIcon className='text-slate-700 dark:text-slate-400' icon={faChevronDown} size='xs' />
         ) : (
-          <FontAwesomeIcon icon={faChevronLeft} size='xs' />
+          <FontAwesomeIcon className='text-slate-700 dark:text-slate-400' icon={faChevronLeft} size='xs' />
         )}
       </div>
-      <ul className={styles['sidenav-sub-items']}>
+      <ul className={`${show ? 'h-auto pb-10' : 'h-0'}`}>
         {item.links.map((link) => {
           const active = router.pathname === link.href;
           return (
-            <li key={link.href} className={active ? styles['active'] : ''}>
+            <li key={link.href} className={`my-2 rounded-md py-2 px-8 hover:bg-slate-600/[0.15] dark:hover:bg-slate-400/[0.15] ${active ? 'bg-slate-600/[0.15] dark:bg-slate-400/[0.15]' : ''}`}>
               <Link {...link} legacyBehavior>
-                {link.children}
+                <a className='text-slate-700 no-underline font-medium text-sm dark:text-slate-400'>{link.children}</a>
               </Link>
             </li>
           )

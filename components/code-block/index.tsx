@@ -76,7 +76,7 @@ export function CodeBlock({ title, subTitle, request, children }) {
   }
 
   return(
-    <div className='code-block bg-prism rounded-lg'>
+    <div className='code-block bg-prism-light rounded-lg'>
       <div className={`topbar flex ${request ? 'px-10 py-5' : 'p-10'} bg-prism-light rounded-lg rounded-b-none justify-between items-center`}>
         <div className="topbar-title">
           {title && (<p className='text-white font-semibold'>{title}</p>)}
