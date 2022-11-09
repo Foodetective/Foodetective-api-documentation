@@ -25,7 +25,7 @@ export function Logo() {
 
 export function TopNav() {
   return (
-    <nav className={`${styles['navbar']} dark:bg-prism-dark`}>
+    <nav className={`${styles['navbar']} dark:bg-prism-dark dark:border-slate-700`}>
       <div className={styles['navbar-inner']}>        
         <div className={styles['navbar-items']}>
           <Logo />

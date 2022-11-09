@@ -99,7 +99,7 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
   } 
 
   return (
-    <div key={item.title} className={`${styles[`sidenav-sub`]}`}>
+    <div key={item.title} className={`${styles[`sidenav-sub`]} transition-all delay-75 duration-200`}>
       <div className={styles['sidenav-sub-title']} onClick={() => hide()}>
         <p className='dark:text-slate-400'>{item.title}</p>
         {show ? (
