@@ -19,7 +19,6 @@ import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
-import ThemeToggle from '../components/buttons/themeToggleButton';
 config.autoAddCss = false;
 
 const TITLE = 'Foodetective API reference'
@@ -97,11 +96,8 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       <link rel="icon" href="/favicon.ico" />
       <link rel="font" href="" />
     </Head>
-    <TopNav>
-      <Link href="/docs" legacyBehavior>Docs</Link>
-      <ThemeToggle />
-    </TopNav>
-    <div className="page dark:bg-prism">
+    <TopNav />
+    <div className="page dark:bg-prism-dark">
       <SideNav />
       <main>
         <Component {...pageProps} />

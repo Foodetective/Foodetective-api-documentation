@@ -24,9 +24,9 @@ module.exports = {
         dark: '#4c68ff'
       },
       prism: {
-        light: '#474b5e',
-        DEFAULT: '#1a1f36',
-        dark: '#30354a'
+        light: '#5F627E',
+        DEFAULT: '#30344D',
+        dark: '#1A1F36'
       },
       currentColor: 'currentColor',
       black: '#000000',
@@ -75,7 +75,7 @@ module.exports = {
       sans: ['Poppins', 'sans-serif']
     },
     container: {
-      center: true,
+      center: true
     },
     screens: {
       sm: '480px',

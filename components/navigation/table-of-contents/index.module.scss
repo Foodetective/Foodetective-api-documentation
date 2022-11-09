@@ -6,19 +6,4 @@
   .tocnav-title {
     @apply font-semibold uppercase;
   }
-  .tocnav-items {
-    li {
-      @apply my-2 hover:bg-slate-600/[0.15] hover:rounded-md;
-      a {
-        @apply no-underline font-medium text-sm py-8 px-10;
-      }
-    }
-  }
-  /* Active sub menu item */
-  .active {
-    @apply bg-slate-600/[0.15] rounded-md;
-    a {
-      @apply text-tertiary;
-    }
-  }
 }

@@ -74,13 +74,13 @@
   }
   ::-webkit-scrollbar-track:vertical {
     /* background: #dfdfdf; */
-    border-left: 2px solid #fbfcfd;
-    border-right: 2px solid #fbfcfd;
+    /* border-left: 2px solid #fbfcfd;
+    border-right: 2px solid #fbfcfd; */
   }
   ::-webkit-scrollbar-track:horizontal {
     /* background: #dfdfdf; */
-    border-top: 2px solid #fbfcfd;
-    border-bottom: 2px solid #fbfcfd;
+    /* border-top: 2px solid #fbfcfd;
+    border-bottom: 2px solid #fbfcfd; */
   }
   ::-webkit-scrollbar-thumb {
     background: #888;

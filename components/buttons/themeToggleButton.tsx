@@ -28,7 +28,9 @@ export default function ThemeToggle() {
     const root = document.documentElement
     if (theme === 'light') {
       root.classList.remove('dark')
+      root.classList.add('light')
     } else {
+      root.classList.remove('light')
       root.classList.add('dark')
     }
   }, [theme])
@@ -38,19 +40,23 @@ export default function ThemeToggle() {
   }, [])
 
   return isMounted ? (
-    <div className="inline-flex items-center p-[1px] rounded-3xl bg-tertiary dark:bg-tertiary">
+    <div className="inline-flex items-center justify-between p-[1px] w-55 rounded-3xl bg-slate-600/[0.15] dark:bg-slate-400/[0.15]">
       {themes.map(t => {
         const checked = t === theme
         return (
           <button
             key={t}
             className={`${
-              checked ? 'bg-white text-black' : ''
-            } cursor-pointer rounded-3xl p-2`}
+              checked ? 'bg-white' : ''
+            } flex items-center cursor-pointer rounded-3xl p-2`}
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {t === 'light' ? <FontAwesomeIcon icon={faSun} size='lg' /> : <FontAwesomeIcon icon={faMoon} size='lg' />}
+            {t === 'light' ? (
+              <FontAwesomeIcon className={checked ? 'text-tertiary p-2' : 'text-slate-400 p-2'} icon={faSun} size='1x' />
+            ) : (
+              <FontAwesomeIcon className={checked ? 'text-tertiary p-2 w-16' : 'text-slate-400 p-2 w-16'} icon={faMoon} size='1x' />
+            )}
           </button>
         )
       })}
