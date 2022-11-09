@@ -16,7 +16,7 @@
     padding-top: var(--top-nav-height);
   }
   .page main {
-    @apply flex overflow-auto p-20 border-x border-slate-300 w-full;
+    @apply flex overflow-auto border-x border-slate-300 w-full;
     height: calc(100vh - var(--top-nav-height));
   }
   pre[class*="language-"] {

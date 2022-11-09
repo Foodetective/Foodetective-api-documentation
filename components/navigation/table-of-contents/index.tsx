@@ -6,10 +6,11 @@ export function TableOfContents({toc}) {
   const items = toc.filter(
     (item) => item.id && (item.level === 2 || item.level === 3)
   );
+  console.log(items)
 
-  // if (items.length <= 1) {
-  //   return null;
-  // }
+  if (items.length < 1) {
+    return null;
+  }
 
   return (
     <nav className={styles['tocnav']}>

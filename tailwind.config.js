@@ -75,7 +75,6 @@ module.exports = {
     },
     container: {
       center: true,
-
     },
     screens: {
       sm: '480px',

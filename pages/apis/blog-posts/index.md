@@ -2,11 +2,10 @@
 title: Blog Posts
 ---
 {% section %}
-## {% $markdoc.frontmatter.title %}
 
 {% layoutTwoCol %}
-
 {% box %}
+  ## {% $markdoc.frontmatter.title %}
   Parameters
   {% listitem title="include" type="Optional" /%}
   {% listitem title="sort" type="Optional" /%}
