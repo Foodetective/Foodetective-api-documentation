@@ -4,15 +4,25 @@ title: Blog Posts
 {% section %}
 
 {% layoutTwoCol %}
-{% box %}
-  ## {% $markdoc.frontmatter.title %}
-  Parameters
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="lang" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-{% /box %}
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  This will return the blog posts. You can do a custom search by providing a `id`. Example is provided at [Blog post by id](#blog-post-by-id). If any erros occur you can access the [errors guide](/errors)
+{% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="include" validation="string" type="Optional" %}
+  {% /listitem %}
+  {% listitem title="sort" validation="string" type="Optional" %}
+  {% /listitem %}
+  {% listitem title="lang" validation="string" type="Optional" %}
+  {% /listitem %}
+  {% listitem title="page" validation="number" type="Required" %}
+  {% /listitem %}
+  {% listitem title="per_page" validation="number" %}
+  You can return a certain page by providing a `page_number`
+  {% /listitem %}
+{% /list %}
+{% /methodCopy %}
 
 {% codeBlock request={method: "GET", path: "/v1/blog_posts"} %}
 {% tabs %}
@@ -124,16 +134,17 @@ title: Blog Posts
 - - -
 
 {% section %}
-## Blog Post by id
-
 {% layoutTwoCol %}
-
-{% box %}
-Parameters
-{% listitem title="include" type="Optional" /%}
-{% listitem title="language" type="Optional" /%}
-{% listitem title="id" type="Required" /%}
-{% /box %}
+{% methodCopy %}
+  {% methodInfo %}
+  # Blog Post by id
+  {% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="include" validation="string" type="Optional" /%}
+  {% listitem title="language" validation="string" type="Optional" /%}
+  {% listitem title="id" validation="string" type="Required" /%}
+{% /list %}
+{% /methodCopy %}
 
 {% codeBlock request={method: "GET", path: "/v1/blog_posts/{id}"} %}
   ```bash

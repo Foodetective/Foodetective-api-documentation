@@ -17,6 +17,7 @@
     "prismjs": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-loading-skeleton": "^3.1.0",
     "sass": "^1.55.0"
   },
   "devDependencies": {

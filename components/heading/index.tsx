@@ -5,7 +5,7 @@ export function Heading({id = '', level = 1, children, className}) {
     `h${level}`,
     {
       id,
-      className: ['heading', className].filter(Boolean).join(' '),
+      className: ['heading font-bold dark:text-slate-400', className].filter(Boolean).join(' '),
     },
     children
   );

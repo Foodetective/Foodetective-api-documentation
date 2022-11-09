@@ -7,6 +7,9 @@ export const listitem = {
     title: {
       type: String,
     },
+    validation: {
+      type: String,
+    },
     type: {
       type: String,
     }

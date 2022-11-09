@@ -23,10 +23,15 @@ module.exports = {
         DEFAULT: '#4c68ff',
         dark: '#4c68ff'
       },
+      // prism: {
+      //   light: '#5F627E',
+      //   DEFAULT: '#30344D',
+      //   dark: '#1A1F36'
+      // },
       prism: {
-        light: '#5F627E',
-        DEFAULT: '#30344D',
-        dark: '#1A1F36'
+        light: '#5A5A5E',
+        DEFAULT: '#2D2D30',
+        dark: '#18181b'
       },
       currentColor: 'currentColor',
       black: '#000000',

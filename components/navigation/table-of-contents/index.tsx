@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 
 export function TableOfContents({toc}) {
   const items = toc.filter(
-    (item) => item.id && (item.level === 2 || item.level === 3)
+    (item) => item.id && (item.level === 1 || item.level === 3)
   )
 
   if (items.length < 1) {

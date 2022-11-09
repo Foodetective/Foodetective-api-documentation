@@ -15,6 +15,7 @@ import 'prismjs/components/prism-ruby.min';
 import '../styles/prism-themes/prism-coldark-dark.css';
 // import 'prismjs/themes/prism-solarizedlight.css';
 import '../styles/tailwind.css'
+import 'react-loading-skeleton/dist/skeleton.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -97,9 +98,9 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
       <link rel="font" href="" />
     </Head>
     <TopNav />
-    <div className="page dark:bg-prism-dark">
+    <div className="content bg-white dark:bg-prism-dark ">
       <SideNav />
-      <main>
+      <main className='dark:border-slate-700'>
         <Component {...pageProps} />
       </main>
       <TableOfContents toc={toc} />

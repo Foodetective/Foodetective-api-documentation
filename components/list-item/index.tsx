@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export function ListItem({title, type, children}) {
+export function ListItem({title, validation, type, children}) {
   const getType = (type: string): string => {
     // switch (type) {
     //   case value:
@@ -15,13 +15,14 @@ export function ListItem({title, type, children}) {
 
 
   return (
-    <div className='border-b border-dotted border-slate-300' aria-live="polite">
-      <p className='text-sm font-medium my-6'>
-        <span>{title}</span>
-        <span className={getType(type)}>{type}</span>
-      </p>
+    <li className='border-b border-dotted border-slate-300 py-8' aria-live="polite">
+      <h3 className='text-xs font-medium pb-6 dark:text-slate-400'>
+        <span className='font-bold'>{title}</span>
+        {validation && (<span className='pl-6'>{validation}</span>)}
+        {type && (<span className={getType(type)}>{type}</span>)}
+      </h3>
       {children != undefined && (
-        <div className="list-description">
+        <div className="list-description dark:text-slate-400">
           {children}
         </div>
       )}
@@ -36,6 +37,6 @@ export function ListItem({title, type, children}) {
           }
         `}
       </style>
-    </div>
+    </li>
   );
 }
