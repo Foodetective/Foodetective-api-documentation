@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
-import { SideNav, TableOfContents, TopNav } from '../components';
+import { SideNav, TableOfContents, TopNav, MobileNav } from '../components';
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/components/prism-python.min';
@@ -99,11 +99,12 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
     </Head>
     <TopNav />
     <div className="content bg-white dark:bg-prism-dark ">
-      <SideNav />
+      <MobileNav toc={toc} />
+      <SideNav className='hidden lg:block' />
       <main className='dark:border-slate-700'>
         <Component {...pageProps} />
       </main>
-      <TableOfContents toc={toc} />
+      <TableOfContents className='hidden lg:block' toc={toc} />
     </div>
   </>;
 }

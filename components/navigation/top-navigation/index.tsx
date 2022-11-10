@@ -7,7 +7,7 @@ export function Logo() {
   return (
     <>
       <div className={styles['logo']}>
-        <a className={`${styles['logo-link']} dark:text-slate-400`} href="/en/">
+        <a className={`${styles['logo-link']} dark:text-slate-400`} href="/">
           <div className={styles['logo-image']}>
             <svg width="1em" height="1em" viewBox="42.51 38.52 10 59" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line className={styles['svg-fork-cls-1']} x1="44.51" y1="53.1" x2="44.51" y2="61.36"></line>
@@ -29,9 +29,9 @@ export function TopNav() {
       <div className={styles['navbar-inner']}>        
         <div className={styles['navbar-items']}>
           <Logo />
-          <Link href="/" className="flex" legacyBehavior>
+          {/* <Link href="/" className="flex" legacyBehavior>
             <a className='dark:text-slate-400'>Home</a>
-          </Link>
+          </Link> */}
         </div>
         <div className={styles['navbar-items']}>
           <Link href="/docs" legacyBehavior>

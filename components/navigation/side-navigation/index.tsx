@@ -5,7 +5,7 @@ import styles from './index.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-const items = [
+export const items = [
   {
     title: 'Get started',
     links: [
@@ -80,10 +80,11 @@ interface navItemProps {
         href: string
         children: string
     }[]
-  }
+  },
+  onClick?: () => void
 }
 
-export const NavItem: React.FC<navItemProps> = ({item}) => {
+export const NavItem: React.FC<navItemProps> = ({item, onClick}) => {
   const [show, setShow] = useState<Boolean>(true)
   const router = useRouter();
   const hasActive = item.links.some(itm => itm.href === router.pathname)
@@ -99,22 +100,22 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
   } 
 
   return (
-    <div key={item.title} className={`${styles[`sidenav-sub`]} transition-all delay-75 duration-200`}>
-      <div className={styles['sidenav-sub-title']} onClick={() => hide()}>
-        <p className='dark:text-slate-400'>{item.title}</p>
+    <div key={item.title} className={`transition-all delay-75 duration-200`}>
+      <div className='flex items-center justify-between cursor-pointer font-semibold uppercase' onClick={() => hide()}>
+        <p className='font-bold m-0 dark:text-slate-400'>{item.title}</p>
         {show ? (
           <FontAwesomeIcon className='text-slate-700 dark:text-slate-400' icon={faChevronDown} size='xs' />
         ) : (
           <FontAwesomeIcon className='text-slate-700 dark:text-slate-400' icon={faChevronLeft} size='xs' />
         )}
       </div>
-      <ul className={`${show ? 'h-auto pb-10' : 'h-0'}`}>
+      <ul className={`${show ? 'h-auto pb-10' : 'h-0 overflow-hidden'}`}>
         {item.links.map((link) => {
           const active = router.pathname === link.href;
           return (
-            <li key={link.href} className={`my-2 rounded-md py-2 px-8 hover:bg-slate-600/[0.15] dark:hover:bg-slate-400/[0.15] ${active ? 'bg-slate-600/[0.15] dark:bg-slate-400/[0.15]' : ''}`}>
+            <li key={link.href} className={`my-2 rounded-md py-2 px-8 hover:bg-slate-600/[0.15] dark:hover:bg-slate-400/[0.15] ${active ? 'bg-slate-600/[0.15] dark:bg-slate-400/[0.15]' : ''}`} onClick={() => onClick?.()}>
               <Link {...link} legacyBehavior>
-                <a className='text-slate-700 no-underline font-medium text-sm dark:text-slate-400'>{link.children}</a>
+                <a className='text-slate-700 no-underline font-medium text-sm wra dark:text-slate-400'>{link.children}</a>
               </Link>
             </li>
           )
@@ -124,9 +125,9 @@ export const NavItem: React.FC<navItemProps> = ({item}) => {
   )
 }
 
-export function SideNav() {
+export function SideNav({className}) {
   return (
-    <nav className={styles['sidenav']}>
+    <nav className={`${styles['sidenav']} ${className ? className : ''}`}>
       {items.map((item, index) => (
         <NavItem key={index} item={item}/>
       ))}

@@ -26,17 +26,6 @@ export function ListItem({title, validation, type, children}) {
           {children}
         </div>
       )}
-      <style jsx>
-        {`
-          .list-description {
-            text-shadow: none;
-            font-weight: 500;
-            min-width: 450px;
-            font-size: 14px;
-            width: 100%;
-          }
-        `}
-      </style>
     </li>
   );
 }
