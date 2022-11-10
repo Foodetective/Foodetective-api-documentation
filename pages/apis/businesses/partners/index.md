@@ -1,83 +1,116 @@
 ---
-title: Business Partners
+title: Business Prefered Partners
 ---
+{% section %}
+{% layoutTwoCol %}
 
-## {% $markdoc.frontmatter.title %}
-
-### GET /api/v1/businesses/{id}/preferred_partners
-{% table %}
----
-* Parameters {% align="left" %}
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  This will return {% $markdoc.frontmatter.title %} by business `id`.
+{% /methodInfo %}
+{% list title="Parameters" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="sort" type="Optional" /%}
   {% listitem title="filter[categories]" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/preferred_partners`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/preferred_partners"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/preferred_partners`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  Response
-  ```bash
-  {
-    "data": [
-      {
-        "id": "609881f5-3b64-4a4f-9d72-022fb9a6a58a",
-        "type": "partners",
-        "links": {
-          "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a"
-        },
-        "attributes": {
-          "active": true,
-          "book-meeting": null,
-          "categories": ["wholesaler"],
-          "description": null,
-          "display-credentials-prompt": false,
-          "email": null,
-          "logo": {
-            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/partner/logo/609881f5-3b64-4a4f-9d72-022fb9a6a58a/5b95b96a-8a99-4725-b4b8-05c06b05b143.png"
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
+      "data": [
+        {
+          "id": "609881f5-3b64-4a4f-9d72-022fb9a6a58a",
+          "type": "partners",
+          "links": {
+            "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a"
           },
-          "name": "Coca Cola HBC",
-          "status": null,
-          "partner-integration-active": null,
-          "partner-integration-requested": null,
-          "phone": null,
-          "preferred": null,
-          "user-integration-requested": null,
-          "video-url": "https://www.youtube.com/watch?v=vsmWaX53-eU",
-          "website-supports-iframe": true,
-          "website-url": "https://www.netguru.com",
-          "wholesaler-category": 8,
-          "wholesaler-types": ["soft_drinks"]
-        },
-        "relationships": {
-          "users": {
-            "links": {
-              "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/users",
-              "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/users"
-            }
+          "attributes": {
+            "active": true,
+            "book-meeting": null,
+            "categories": ["wholesaler"],
+            "description": null,
+            "display-credentials-prompt": false,
+            "email": null,
+            "logo": {
+              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/partner/logo/609881f5-3b64-4a4f-9d72-022fb9a6a58a/5b95b96a-8a99-4725-b4b8-05c06b05b143.png"
+            },
+            "name": "Coca Cola HBC",
+            "status": null,
+            "partner-integration-active": null,
+            "partner-integration-requested": null,
+            "phone": null,
+            "preferred": null,
+            "user-integration-requested": null,
+            "video-url": "https://www.youtube.com/watch?v=vsmWaX53-eU",
+            "website-supports-iframe": true,
+            "website-url": "https://www.netguru.com",
+            "wholesaler-category": 8,
+            "wholesaler-types": ["soft_drinks"]
           },
-          "partner-integrations": {
-            "links": {
-              "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/partner-integrations",
-              "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/partner-integrations"
+          "relationships": {
+            "users": {
+              "links": {
+                "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/users",
+                "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/users"
+              }
+            },
+            "partner-integrations": {
+              "links": {
+                "self": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/relationships/partner-integrations",
+                "related": "/partners/609881f5-3b64-4a4f-9d72-022fb9a6a58a/partner-integrations"
+              }
             }
           }
-        }
-      },
-    ],
-    "meta": {
-      "total-count": 2,
-      "total-pages": 1
+        },
+      ],
+      "meta": {
+        "total-count": 2,
+        "total-pages": 1
+      }
     }
-  }
-```
-{% /table %}
+  ```
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}

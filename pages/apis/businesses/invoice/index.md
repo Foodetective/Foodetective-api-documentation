@@ -1,30 +1,60 @@
 ---
 title: Business Invoice
 ---
+{% section %}
+{% layoutTwoCol %}
 
-## {% $markdoc.frontmatter.title %}
-
-### GET /api/v1/businesses/{id}/invoices
-{% table %}
----
-* Parameters {% align="left" %}
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  This will return {% $markdoc.frontmatter.title %} by business `id`.
+{% /methodInfo %}
+{% list title="Parameters" %}
   {% listitem title="sort" type="Optional" /%}
   {% listitem title="status" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/invoices`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/invoices"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/invoices`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  Response
-  ```bash
-  {
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
     "data": [
       {
         "id": "49694fce-7c55-493c-a4c0-a44bd32dc9e6",
@@ -103,5 +133,8 @@ title: Business Invoice
       }
     ]
   }
-```
-{% /table %}
+  ```
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}

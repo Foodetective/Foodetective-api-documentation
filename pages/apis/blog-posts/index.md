@@ -7,7 +7,7 @@ title: Blog Posts
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return the blog posts. You can do a custom search by providing a `id`. Example is provided at [Blog post by id](#blog-post-by-id). If any erros occur you can access the [errors guide](/errors)
+  This will return the blog posts. You can do a custom search by providing a `id`. Example is provided at [Blog post by id](#blog-post-by-id). If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="include" validation="string" type="Optional" %}
@@ -135,10 +135,12 @@ title: Blog Posts
 
 {% section %}
 {% layoutTwoCol %}
+
 {% methodCopy %}
-  {% methodInfo %}
+{% methodInfo %}
   # Blog Post by id
-  {% /methodInfo %}
+  This will return {% $markdoc.frontmatter.title %} by `id`.
+{% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="include" validation="string" type="Optional" /%}
   {% listitem title="language" validation="string" type="Optional" /%}
@@ -216,5 +218,4 @@ title: Blog Posts
 {% /codeBlock %}
 
 {% /layoutTwoCol %}
-
 {% /section %}

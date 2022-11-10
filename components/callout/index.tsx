@@ -1,13 +1,11 @@
 import * as React from 'react';
-import styles from './index.module.scss'
 
 export function Callout({ title, children }) {
   return (
-    <div className={styles['callout']}>
+    <div className='callout flex flex-col p-16 my-16 bg-prism rounded-lg'>
       {title != undefined && (
-        <h3>{title}</h3>
+        <h3 className='font-semibold'>{title}</h3>
       )}
-      <h3>Title</h3>
       {children}
     </div>
   );
