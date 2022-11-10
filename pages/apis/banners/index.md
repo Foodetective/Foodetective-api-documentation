@@ -2,14 +2,17 @@
 title: Banners
 ---
 {% section %}
-## {% $markdoc.frontmatter.title %}
-
 {% layoutTwoCol %}
 
-{% box %}
-  Parameters
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  This will return banners associated with the provided `target`.
+{% /methodInfo %}
+{% list title="Parameters" %}
   {% listitem title="target" type="Required" /%}
-{% /box %}
+{% /list %}
+{% /methodCopy %}
 
 {% codeBlock request={method: "GET", path: "/v1/banners/${target}"} %}
  {% tabs %}
@@ -73,5 +76,4 @@ title: Banners
 {% /codeBlock %}
 
 {% /layoutTwoCol %}
-
 {% /section %}

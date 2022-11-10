@@ -1,28 +1,58 @@
 ---
 title: Business Dashboard
 ---
+{% section %}
+{% layoutTwoCol %}
 
-## {% $markdoc.frontmatter.title %}
-
-###  GET /api/v1/businesses/{id}/dashboard/average_ticket_size
-{% table %}
----
-* Parameters {% align="left" %}
+{% methodCopy %}
+{% methodInfo %}
+  # Average Ticket Size
+  This will return {% $markdoc.frontmatter.title %} average ticket size by business `id`.
+{% /methodInfo %}
+{% list title="Parameters" %}
   {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/average_ticket_size`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/dashboard/average_ticket_size"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/average_ticket_size`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  ### Response
-  ```bash
-      {
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
       "data": {
         "id": "2022-10-31 14:49:54 UTC",
         "type": "average_ticket_size",
@@ -38,69 +68,140 @@ title: Business Dashboard
         }
       }
     }
-
   ```
-{% /table %}
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}
 
 - - -
-### GET /api/v1/businesses/{id}/dashboard/earnings
-{% table %}
----
-* Parameters {% align="left" %}
+
+{% section %}
+{% layoutTwoCol %}
+
+{% methodCopy %}
+{% methodInfo %}
+  # Earnings
+  This will return {% $markdoc.frontmatter.title %} earnings by business `id`.
+{% /methodInfo %}
+{% list title="Parameters" %}
   {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/earnings`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/dashboard/earnings"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/earnings`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  ### Response
-  ```bash
-  {
-     "data": {
-       "id": "2022-10-31 14:43:52 UTC",
-       "type": "earnings",
-       "attributes": {
-         "sum_today": 0,
-         "sum_yesterday": 0,
-         "sum_this_month": 0,
-         "sum_previous_month": 5364,
-         "sum_this_quarter": 0,
-         "sum_previous_quarter": 170398,
-         "sum_this_year": 625110,
-         "sum_previous_year": 483243
-       }
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
+      "data": {
+        "id": "2022-10-31 14:43:52 UTC",
+        "type": "earnings",
+        "attributes": {
+          "sum_today": 0,
+          "sum_yesterday": 0,
+          "sum_this_month": 0,
+          "sum_previous_month": 5364,
+          "sum_this_quarter": 0,
+          "sum_previous_quarter": 170398,
+          "sum_this_year": 625110,
+          "sum_previous_year": 483243
+        }
      }
-  }
+    }
   ```
-{% /table %}
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}
 
 - - -
 
-###  GET /api/v1/businesses/{id}/dashboard/revenue_breakdown
-{% table %}
----
-* Parameters {% align="left" %}
-  {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
+{% section %}
+{% layoutTwoCol %}
 
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/revenue_breakdown`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% methodCopy %}
+{% methodInfo %}
+  # Revenue Breakdown
+  This will return {% $markdoc.frontmatter.title %} revenue breakdown by business `id`.
+{% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="id" type="Required" /%}
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/dashboard/revenue_breakdown"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/revenue_breakdown`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  ### Response
-  ```bash
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
     {
       "data": {
         "id": "2022-10-31 14:41:47 UTC",
@@ -165,33 +266,69 @@ title: Business Dashboard
       }
     }
   ```
-{% /table %}
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}
 
 - - -
 
-  ### GET /api/v1/businesses/{id}/dashboard/worst_sales
-{% table %}
----
-* Parameters {% align="left" %}
+{% section %}
+{% layoutTwoCol %}
+
+{% methodCopy %}
+{% methodInfo %}
+  # Worst Sales
+  This will return {% $markdoc.frontmatter.title %} worst sales by provided business `id`.
+{% /methodInfo %}
+{% list title="Parameters" %}
   {% listitem title="include" type="Optional" /%}
   {% listitem title="comparison" type="Optional" /%}
   {% listitem title="page" type="Optional" /%}
   {% listitem title="per_page" type="Optional" /%}
   {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/worst_sales`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/dashboard/worst_sales"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dashboard/worst_sales`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  ### Response
-  ```bash
-      {
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
       "data": [
         {
           "id": "cd75805c-4952-4414-800e-988dea9988da",
@@ -244,4 +381,7 @@ title: Business Dashboard
       }
     }
   ```
-{% /table %}
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}
