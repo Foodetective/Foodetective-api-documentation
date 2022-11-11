@@ -94,7 +94,7 @@ title: Categories
 
 {% methodCopy %}
 {% methodInfo %}
-  # {% $markdoc.frontmatter.title %} by id
+  # Categories by id
   This will return {% $markdoc.frontmatter.title %} by category `id`.
 {% /methodInfo %}
 {% list title="Parameters" %}

@@ -1,11 +1,5 @@
 .sidenav {
-  @apply flex-none p-20 overflow-y-auto sticky;
+  @apply hidden w-[280px] p-20 overflow-y-auto sticky;
   top: var(--top-nav-height);
   height: calc(100vh - var(--top-nav-height));
-  .sidenav-sub {
-    @apply h-auto my-8 overflow-hidden first:mt-0;
-    .sidenav-sub-title {
-      @apply flex items-center justify-between cursor-pointer font-semibold uppercase;
-    }
-  }
 }

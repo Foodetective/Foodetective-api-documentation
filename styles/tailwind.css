@@ -15,11 +15,11 @@
     @apply font-sans;
   }
   .content {
-    @apply flex;
+    @apply flex flex-col lg:flex-row;
     padding-top: var(--top-nav-height);
   }
   .content main {
-    @apply flex overflow-auto border-x border-slate-300 w-full;
+    @apply flex overflow-auto border-x border-slate-300 w-full pt-30 lg:pt-0;
     height: calc(100vh - var(--top-nav-height));
   }
   .content main >div {

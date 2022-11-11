@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './index.module.scss'
 
-export function TableOfContents({toc}) {
+export function TableOfContents({className, toc}) {
   const items = toc.filter(
     (item) => item.id && (item.level === 1 || item.level === 3)
   )
@@ -12,9 +12,9 @@ export function TableOfContents({toc}) {
   }
 
   return (
-    <nav className={styles['tocnav']}>
-      <p className={`${styles['tocnav-title']} dark:text-slate-400`}>Table of contents</p>
-      <ul className={styles['tocnav-items']}>
+    <nav className={`${styles['tocnav']} ${className ? className : ''}`}>
+      <p className={`font-semibold uppercase dark:text-slate-400`}>Table of contents</p>
+      <ul>
         {items.map((item) => {
           const href = `#${item.id}`
           const active =
