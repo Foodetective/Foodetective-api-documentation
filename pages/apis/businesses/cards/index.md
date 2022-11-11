@@ -8,6 +8,8 @@ title: Business Cards
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
   Return all cards successfully used by specific business.
+
+  If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
@@ -17,6 +19,7 @@ title: Business Cards
   Include associations (*delimited with comma*). Available associations: user
   {% /listitem %}
   {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
   {% /listitem %}
   {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
@@ -32,7 +35,7 @@ title: Business Cards
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/cards`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/cards`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

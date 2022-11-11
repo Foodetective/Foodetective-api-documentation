@@ -1,30 +1,42 @@
 ---
-title: Business Prefered Partners
+title: Business Partners
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  # Business Prefered Partners
+  Return preferred partners for specific business
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="filter[categories]" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return preferred partners by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: users, partner_integrations.
+  {% /listitem %}
+  {% listitem title="categories" validation="query Array[string] filter" %}
+  Filter by categories.
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}	
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/preferred_partners"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/preferred_partners"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/preferred_partners`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/preferred_partners`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

@@ -7,29 +7,40 @@ title: Business Payments
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-
-  ### GET /api
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  Return all payments for orders within specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="filter[for_delivery]" type="Optional" /%}
-  {% listitem title="filter[delivery_price_business_participation]" type="Optional" /%}
-  {% listitem title="filter[states]" type="Optional" /%}
-  {% listitem title="filter[from_created_at]" type="Optional" /%}
-  {% listitem title="filter[to_created_at]" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all payments for orders by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="filter[for_delivery]" validation="query string filter" %}
+  {% /listitem %}
+  {% listitem title="filter[delivery_price_business_participation]" validation="query string filter" %}
+  {% /listitem %}
+  {% listitem title="filter[states]" validation="query string filter" %}
+  {% /listitem %}
+  {% listitem title="filter[from_created_at]" validation="query string filter" %}
+  {% /listitem %}
+  {% listitem title="filter[to_created_at]" validation="query string filter" %}
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/payments"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/payments"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/payments`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/payments`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

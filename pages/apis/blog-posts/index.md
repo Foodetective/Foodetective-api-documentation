@@ -18,6 +18,7 @@ title: Blog Posts
   **Example:** `user,chapters`
   {% /listitem %}
   {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
   {% /listitem %}
   {% listitem title="lang" validation="query string" %}
   Get blog post by a certain language.

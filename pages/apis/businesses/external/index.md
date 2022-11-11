@@ -6,22 +6,28 @@ title: Business External
 
 {% methodCopy %}
 {% methodInfo %}
-  # Service Links
-  This will return {% $markdoc.frontmatter.title %} Service Links by business `id`.
+  # External Service Links
+  Return external service links for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return external service links by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/external_service_links"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/external_service_links"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/external_service_links`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/external_service_links`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

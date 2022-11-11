@@ -8,6 +8,8 @@ title: Bookings
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
   This will return a Booking by the provided booking `id`.
+
+  If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}

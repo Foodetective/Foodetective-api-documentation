@@ -7,7 +7,7 @@ title: Banners
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return a {% $markdoc.frontmatter.title %} associated with the provided `target`.
+  Return a Banner.
 
   If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}

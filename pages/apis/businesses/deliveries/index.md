@@ -7,22 +7,30 @@ title: Business Deliveries
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by `id`.
+  Return all deliveries for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Returns all deliveries by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: business.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/deliveries"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/deliveries"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/deliveries`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/deliveries`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -100,21 +108,27 @@ title: Business Deliveries
 {% methodCopy %}
 {% methodInfo %}
   # Business Deliveries By Code
-  This will return {% $markdoc.frontmatter.title %} by `id` and deliveries `code`.
+  Return a delivery for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
-  {% listitem title="code" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return a delivery by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="code" validation="path integer" %}
+  Provided a delivery `code`.
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: business.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/deliveries/{code}"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/deliveries/{code}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/deliveries/{code}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/deliveries/{code}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
