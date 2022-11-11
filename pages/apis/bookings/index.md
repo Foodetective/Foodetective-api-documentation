@@ -7,20 +7,24 @@ title: Bookings
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by `id`.
+  This will return a Booking by the provided booking `id`.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Returns a specific Booking by the provided booking `id`.
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: reservation, table
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/bookings/{id}"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/bookings/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/bookings/{id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/bookings/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

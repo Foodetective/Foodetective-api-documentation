@@ -7,17 +7,37 @@ title: Business Catering
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  Return all caterings for specific business.
+
+  If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="filter[start_date]" type="Optional" /%}
-  {% listitem title="filter[end_date]" type="Optional" /%}
-  {% listitem title="filter[statuses]" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Returns all caterings for specific business by the provided `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: business, user, address. 
+  
+  **Example:** `business,user,address`
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  {% /listitem %}
+  {% listitem title="start_date" validation="query date filter" %}
+  Date should be formated as a **ISO date**. 
+  
+  **Example:** `?filter=${start_date}`
+  {% /listitem %}
+  {% listitem title="end_date" validation="query date filter" %}
+  Date should be formated as a **ISO date**.
+  {% /listitem %}
+  {% listitem title="statuses" validation="query string filter" %}
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 {% codeBlock request={method: "GET", path: "/v1/businesses/{id}/caterings"} %}

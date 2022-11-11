@@ -7,14 +7,18 @@ title: Banners
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return banners associated with the provided `target`.
+  This will return a {% $markdoc.frontmatter.title %} associated with the provided `target`.
+
+  If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="target" type="Required" /%}
+  {% listitem title="target" validation="path string" type="Required" %}
+  Provided the `target` associated with the banners. Try using the following path parameter **newsroom**.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/banners/${target}"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/banners/${target}"} %}
  {% tabs %}
   {% tab label="js"%} 
   ```js
