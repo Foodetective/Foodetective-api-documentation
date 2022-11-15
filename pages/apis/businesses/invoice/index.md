@@ -7,21 +7,27 @@ title: Business Invoice
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  Return all invoices for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="status" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all invoices by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="status" validation="query string" %}
+  Return invoices by a specific status, possible statuses are the following: **draft**, **open**, **paid**, **void** or **uncollectible**.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/invoices"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/invoices"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/invoices`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/invoices`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'

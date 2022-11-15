@@ -7,28 +7,47 @@ title: Business Orders
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  Return all orders for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="filter[channel]" type="Optional" /%}
-  {% listitem title="filter[day]" type="Optional" /%}
-  {% listitem title="filter[states]" type="Optional" /%}
-  {% listitem title="filter[order_type]" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all orders by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (delimited with comma). Available associations: addresses, elements, business.
+
+  **Example:** `addresses,elements,business`
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="channel" validation="query string filter" %}
+  Filter by channel.
+  {% /listitem %}
+  {% listitem title="day" validation="query date filter" %}
+  Filter by Date, the format should be **ISO date**. 
+  {% /listitem %}
+  {% listitem title="states" validation="query string filter" %}
+  Filter by states.
+  {% /listitem %}
+  {% listitem title="order_type" validation="query string filter" %}
+  Filter by order type.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/orders"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/orders"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/orders`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/orders`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -131,6 +150,72 @@ title: Business Orders
         "total-pages": 43
       }
     }
+  ```
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}
+
+- - -
+
+{% section %}
+{% layoutTwoCol %}
+
+{% methodCopy %}
+{% methodInfo %}
+  # Business Prefered Partners
+  Return all business partners used to make orders.
+{% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all business partners used to make orders by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: addresses, elements, business.
+
+  **Example:** `addresses,elements,business`
+  {% /listitem %}
+{% /list %}
+{% /methodCopy %}
+
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/orders/orders_partners"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/orders/orders_partners`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
+    }
+  ```
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
   ```
 {% /codeBlock %}  
 

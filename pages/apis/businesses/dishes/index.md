@@ -7,22 +7,32 @@ title: Business Dishes
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by `id`.
+  Return all dishes for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: pictures, dish_option_categories, business, category.
+
+  **Example:** `business,category`
+  {% /listitem %}
+  {% listitem title="page" validation="query string" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all dishes by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/dishes"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/dishes"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/dishes`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/dishes`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
