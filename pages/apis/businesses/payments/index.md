@@ -13,18 +13,23 @@ title: Business Payments
   {% listitem title="id" validation="path integer" type="Required" %}
   Return all payments for orders by the specific business `id`. You can retrieve this `id` from ...
   {% /listitem %}
-  {% listitem title="filter[for_delivery]" validation="query string filter" %}
-  {% /listitem %}
-  {% listitem title="filter[delivery_price_business_participation]" validation="query string filter" %}
-  {% /listitem %}
-  {% listitem title="filter[states]" validation="query string filter" %}
-  {% /listitem %}
-  {% listitem title="filter[from_created_at]" validation="query string filter" %}
-  {% /listitem %}
-  {% listitem title="filter[to_created_at]" validation="query string filter" %}
-  {% /listitem %}
   {% listitem title="sort" validation="query string" %}
   Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="filter[for_delivery]" validation="query string" %}
+  Filter by `for_delivery`.
+  {% /listitem %}
+  {% listitem title="filter[delivery_price_business_participation]" validation="query string" %}
+  Filter by `delivery_price_business_participation`.
+  {% /listitem %}
+  {% listitem title="filter[states]" validation="query string" %}
+  Filter by `states`.
+  {% /listitem %}
+  {% listitem title="filter[from_created_at]" validation="query string" %}
+  filter by `from_created_at`.
+  {% /listitem %}
+  {% listitem title="filter[to_created_at]" validation="query string" %}
+  Filter by `to_created_at`.
   {% /listitem %}
   {% listitem title="page" validation="query integer" %}
   Page offset to fetch.

@@ -163,7 +163,7 @@ title: Business Orders
 
 {% methodCopy %}
 {% methodInfo %}
-  # Business Prefered Partners
+  # Business Orders Partners
   Return all business partners used to make orders.
 {% /methodInfo %}
 {% list title="Parameters" %}

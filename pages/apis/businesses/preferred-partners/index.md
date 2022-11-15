@@ -1,5 +1,5 @@
 ---
-title: Business Partners
+title: Business Preferred Partners
 ---
 {% section %}
 {% layoutTwoCol %}

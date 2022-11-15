@@ -7,16 +7,22 @@ title: Cities
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %}.
+  Return all cities fetched from published businesses.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/cities"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/cities"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js

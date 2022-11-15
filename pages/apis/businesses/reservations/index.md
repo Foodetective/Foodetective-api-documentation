@@ -7,27 +7,50 @@ title: Businesses Reservations
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  Return all reservations for specific business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="filter[start_date]" type="Optional" /%}
-  {% listitem title="filter[end_date]" type="Optional" /%}
-  {% listitem title="filter[from]" type="Optional" /%}
-  {% listitem title="filter[to]" type="Optional" /%}
-  {% listitem title="filter[statuses]" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all reservations by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (delimited with comma). Available associations: bookings, tables, business, user.
+
+  **Example:** `bookings,tables`
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="filter[start_date]" validation="query string" %}
+  Filter by `start_date` date should be formated as a **ISO date**.
+  {% /listitem %}
+  {% listitem title="filter[end_date]" validation="query string" %}
+  Filter by `end_date` date should be formated as a **ISO date**.
+  {% /listitem %}
+  {% listitem title="filter[from]" validation="query string" %}
+  {% /listitem %}
+  Filter by `from`.
+  {% listitem title="filter[to]" validation="query string" %}
+  {% /listitem %}
+  Filter by `to`.
+  {% listitem title="filter[statuses]" validation="query string" %}
+  {% /listitem %}
+  Filter by `statuses`.
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/reservations"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/reservations"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/reservations`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/reservations`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
