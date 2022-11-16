@@ -1,30 +1,66 @@
 ---
 title: Cities
 ---
+{% section %}
+{% layoutTwoCol %}
 
-## {% $markdoc.frontmatter.title %}
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  Return all cities fetched from published businesses.
+{% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
+{% /list %}
+{% /methodCopy %}
 
-### GET ${BASE_URL}/api/v1/cities
-{% table %}
----
-* Parameters {% align="left" %}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/cities`', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% codeBlock request={method: "GET", path: "/api/v1/cities"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/cities`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  Response
-  ```bash
-      {
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    { 
       "data": [
         {
           "id": "4b166dbe-d99d-5091-abdd-95b83330ed3a",
@@ -46,4 +82,7 @@ title: Cities
       }
     }
   ```
-{% /table %}
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}

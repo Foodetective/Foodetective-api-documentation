@@ -1,32 +1,72 @@
 ---
 title: Business Guides
 ---
+{% section %}
+{% layoutTwoCol %}
 
-## {% $markdoc.frontmatter.title %}
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  Return all guides that mentions the business.
+{% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all guides that mentions the business by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: user.
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="page" validation="query integer" %}
+  Page offset to fetch.
+  {% /listitem %}
+  {% listitem title="per_page" validation="query integer" %}
+  Number of results to return per page.
+  {% /listitem %}
+{% /list %}
+{% /methodCopy %}
 
-### GET /api/v1/businesses/{id}/guides
-{% table %}
----
-* Parameters {% align="left" %}
-  {% listitem title="include" type="Optional" /%}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="page" type="Optional" /%}
-  {% listitem title="per_page" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/guides`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/guides"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/guides`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  Response
-  ```bash
-  {
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
     "data": [
       {
         "id": "a72ae1a8-747f-4705-a6a9-404e3194f024",
@@ -66,5 +106,8 @@ title: Business Guides
       "total-pages": 1
     }
   }
-```
-{% /table %}
+  ```
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}

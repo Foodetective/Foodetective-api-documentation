@@ -1,30 +1,66 @@
 ---
 title: Business Invoice
 ---
+{% section %}
+{% layoutTwoCol %}
 
-## {% $markdoc.frontmatter.title %}
+{% methodCopy %}
+{% methodInfo %}
+  # {% $markdoc.frontmatter.title %}
+  Return all invoices for specific business.
+{% /methodInfo %}
+{% list title="Parameters" %}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return all invoices by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="sort" validation="query string" %}
+  Sort ascending or descending order.
+  {% /listitem %}
+  {% listitem title="status" validation="query string" %}
+  Return invoices by a specific status, possible statuses are the following: **draft**, **open**, **paid**, **void** or **uncollectible**.
+  {% /listitem %}
+{% /list %}
+{% /methodCopy %}
 
-### GET /api/v1/businesses/{id}/invoices
-{% table %}
----
-* Parameters {% align="left" %}
-  {% listitem title="sort" type="Optional" /%}
-  {% listitem title="status" type="Optional" /%}
-  {% listitem title="id" type="Required" /%}
-* Example {% align="left" %}
-  ```bash
-      {
-          const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/invoices`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-                }});
-          const data = await res.json();
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/invoices"} %}
+{% tabs %}
+  {% tab label="js"%}
+  ```js
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/invoices`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
     }
   ```
-  Response
-  ```bash
-  {
+  {% /tab %}
+  {% tab label="py"%}
+  ```py
+    Python example
+  ```
+  {% /tab %}
+  {% tab label="java"%}
+  ```java
+    Java example
+  ```
+  {% /tab %}
+  {% tab label="ruby"%}
+  ```ruby
+    Ruby example
+  ```
+  {% /tab %}
+  {% tab label="go"%}
+  ```go
+    Go example
+  ```
+  {% /tab %}
+{% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" %}
+  ```json
+    {
     "data": [
       {
         "id": "49694fce-7c55-493c-a4c0-a44bd32dc9e6",
@@ -103,5 +139,8 @@ title: Business Invoice
       }
     ]
   }
-```
-{% /table %}
+  ```
+{% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}

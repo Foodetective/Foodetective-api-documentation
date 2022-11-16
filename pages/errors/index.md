@@ -1,20 +1,37 @@
 ---
 title: API Errors
 ---
+{% section %}
+# {% $markdoc.frontmatter.title %}
 
-## {% $markdoc.frontmatter.title %}
+API can return various errors. They are divided by `HTTP` error code:
+{% /section %}
 
-**API can return various errors. They are divided by `HTTP` error code:**
+* * *
 
- * * *
- 
+{% section %}
+### Access token expired
+
+**Recommended client action:** use `refresh_token` provided with `access_token` in order to keep user logged in.
+
+**Response:**
+```bash
+      {
+        "error": "The access token expired"
+      }
+```
+{% /section %}
+
+* * *
+
+{% section %}
 ### 400 Bad Request
 
 These errors signalizes that data structure of the request did not met server expectations.
 
 **Recommended action:** An error is probably in the client code itself, please check if your implementation follows JSONAPI standard and our API documentation.
 
-Examples:
+**Response:**
 
 -   We expect that only one attribute - either `business` or `review` will be sent, but both were present.
 
@@ -50,18 +67,20 @@ Examples:
 
 **It's important to note here that this error is not about user not filling some field, but rather that entire `parent_resource` attribute was not present in the request structure itself when it was required.**
 
+{% /section %}
 
  * * *
+
+{% section %}
 ### 401 Unauthorized
-\
+
 Can occur in three situations:
 
 -   Non authorized application tried to access a protected endpoint:
 
 **Recommended client action:** use your client id and secret to fetch access token.
 
-Response:
-
+**Response:**
 ```bash
       {
         "errors": [
@@ -80,8 +99,6 @@ Response:
 
 **Recommended client action:** redirect user to login page and instruct them to sign in.
 
-Response:
-
 ```bash
       {
         "errors": [
@@ -94,28 +111,18 @@ Response:
         ]
       }
 ```
+{% /section %}
 
- * * *
-### Access token expired
-\
-**Recommended client action:** use `refresh_token` provided with `access_token` in order to keep user logged in.
+* * *
 
-Response:
-
-```bash
-      {
-        "error": "The access token expired"
-      }
-```
- * * *
+{% section %}
 ### 403 Forbidden
-\
+
 A logged in user tried to access a resource which they do not own / have no access to.
 
 **Recommended action for clients:** Inform a user that they do not have access to the requested resource action.
 
-Examples:
-
+**Response:**
 -   User tried to edit a business which he/she does not own.
 
 ```bash
@@ -146,18 +153,20 @@ Examples:
         ]
       }
 ```
+{% /section %}
 
- * * *
+* * *
+
+{% section %}
 ### 404 Not Found
-\
+
 Can occur in two situations:
 
 -   Requested record was not found in the database:
 
 **Recommended action for clients:** Inform a user that the record they tried to access is no longer available.
 
-Response:
-
+**Response:**
 ```bash
       {
         "errors": [
@@ -176,8 +185,7 @@ Response:
 
 **Recommended action for clients:**Likely an error in client code itself since users will not type API URLs themselves.
 
-Response:
-
+**Response:**
 ```bash
       {
         "errors": [
@@ -191,16 +199,18 @@ Response:
       }
 
 ```
+{% /section %}
 
- * * *
+* * *
+
+{% section %}
 ### 405 Method Not Allowed
-\
+
 This error occurs when a existing API endpoint is requested with wrong HTTP verb (e.g. `POST` instead of `PATCH`) or not supported HTTP verb is used.
 
 **Recommended action for clients:**Likely an error in client code itself since users will not choose a HTTP verb themselves.
 
-Response:
-
+**Response:**
 ```bash
     {
       "errors": [
@@ -214,26 +224,31 @@ Response:
     }
 
 ```
+{% /section %}
 
- * * *
+* * *
+
+{% section %}
 ### 406 Not Acceptable
-\
+
 HTTP `Content-Type` header was not equal to `application/vnd.api+json`
 
 **Recommended action for clients:** probably an error in client code itself since users will not choose a HTTP `Content-Type` header themselves.
 
-Response:
-
+**Response:**
 ```bash
     {
       "error": "The requested content-type 'application/vnd.api' is not supported."
     }
 
 ```
+{% /section %}
 
- * * *
+* * *
+
+{% section %}
 ### 409 Conflict
-\
+
 The request could not be completed because of some kind of conflict. There are two types of conflicts that can trigger this error:
 
 -   Database conflict
@@ -242,8 +257,7 @@ Server tried to create a database record with ID already present in the database
 
 **Recommended action for clients:** Try to send a request again, there is high chance it will succeed this time.
 
-Response:
-
+**Response:**
 ```bash
       {
         "errors": [
@@ -264,8 +278,7 @@ If `data[id]` in the request body does not match the ID in the URL then this e
 
 **Recommended action for clients:** An error is probably in the client code itself, please check if your implementation follows JSONAPI standard and our API documentation.
 
-Response:
-
+**Response:**
 ```bash
       {
         "errors": [
@@ -278,16 +291,18 @@ Response:
         ]
       }
 ```
+{% /section %}
 
- * * *
+* * *
+
+{% section %}
 ### 415 Unsupported Media Type
-\
+
 This error occurs when `Accept` HTTP header is not `application/vnd.api+json`.
 
 **Recommended action for clients:**Likely an error in client code itself since users will not choose a HTTP `Accept` header themselves.
 
-Response:
-
+**Response:**
 ```bash
     {
       "errors": [
@@ -301,16 +316,18 @@ Response:
     }
 
 ```
+{% /section %}
 
- * * *
+* * *
+
+{% section %}
 ### 422 Unprocessable Entity
-\
+
 Validation error. The request body was correct but values of given attributes were not.
 
 **Recommended action for clients:** A user typed incorrect data, request them to fix it. Use provided `title` attribute in the response to guide them which field they need to correct. Additionally `code` and `meta` attributes can be used in order to tell them what kind of data server expects.
 
-Example response:
-
+**Response:**
 ```bash
     {
       "errors": [
@@ -325,17 +342,18 @@ Example response:
     }
 
 ```
+{% /section %}
 
- * * *
- 
+* * *
+
+{% section %}
 ### 500 Internal Server Error
-\
+
 In case something went horribly wrong on the server side.
 
 **Recommended action for clients:** Inform a user that something went wrong on the server side and they should try again in the near future. You can also inform them that we are working in order to fix that.
 
-Example response:
-
+**Response:**
 ```bash
     {
       "errors": [
@@ -356,3 +374,4 @@ Example response:
 It's important to note that this is *NOT* a comprehensive list of all the errors that can occur in the application.
 
 This is just the list of the most important ones.
+{% /section %}

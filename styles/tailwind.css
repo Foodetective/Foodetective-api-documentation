@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  :root {
+    --top-nav-height: 69px;
+    --border-color: #334155;
+  }
+  ::selection {
+    @apply bg-tertiary text-white;
+  }
+  body {
+    @apply font-sans;
+  }
+  .content {
+    @apply flex flex-col lg:flex-row;
+    padding-top: var(--top-nav-height);
+  }
+  .content main {
+    @apply flex overflow-auto border-x border-slate-300 w-full pt-30 lg:pt-0;
+    height: calc(100vh - var(--top-nav-height));
+  }
+  .content main >div {
+    @apply w-full dark:text-slate-400;
+    height: calc(100vh - var(--top-nav-height)) !important;
+  }
+  .content main h1, 
+  .content main h2 {
+    @apply dark:text-slate-400;
+  }
+  .border-rounded {
+    @apply border rounded-lg border-slate-300 dark:border-slate-700
+  }
+  .attribute-list-group-child li {
+    @apply p-14 border-b border-solid
+  }
+  hr {
+    @apply border-slate-300 dark:border-slate-700
+  }
+  pre[class*="language-"] {
+    @apply bg-prism m-0 rounded-lg;
+    /* border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px; */
+  }
+  article {
+    @apply flex flex-col gap-10 w-full;
+  }
+  h1, h2, h3, h4, h5, h6, p, a {
+    @apply text-slate-700;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl
+  }
+  h4 {
+    @apply text-lg;
+  }
+  h5 {
+    @apply text-lg;
+  }
+  p {
+    @apply text-sm mt-8 font-normal dark:text-slate-400;
+  }
+  p code,
+  li code {
+    @apply bg-prism-light/[0.2] px-3 rounded border border-prism-light/[0.5] font-bold text-slate-800 dark:text-slate-300
+  }
+  p a {
+    @apply font-semibold text-blue-400 hover:text-slate-700 dark:hover:text-slate-300
+  }
+  ul li {
+    @apply text-sm text-slate-700 dark:text-slate-400
+  }
+  .callout h1, .callout h2, .callout h3, 
+  .callout h4, .callout h5, .callout h6, 
+  .callout p, .callout a {
+    @apply text-slate-400 dark:text-slate-300
+  }
+  .callout p {
+    @apply mt-10;
+  }
+  .callout code {
+    @apply bg-blue-400/[0.2] px-3 rounded border border-blue-400/[0.5] font-bold text-slate-200 dark:text-slate-200
+  }
+  .callout a {
+    @apply font-semibold text-blue-400 dark:text-blue-400 hover:text-slate-200 dark:hover:text-slate-200
+  }
+  .callout a h1, 
+  .callout a h2, 
+  .callout a h3, 
+  .callout a h4 {
+    @apply text-sm font-semibold text-blue-400 dark:text-blue-400 hover:text-slate-200 dark:hover:text-slate-200
+  }
+  .code-block .tablist {
+    display: none;
+  }
+  .method-copy code {
+    @apply bg-prism-light/[0.2] px-3 rounded border border-prism-light/[0.5] font-bold text-slate-800 dark:text-slate-300
+  }
+  .method-copy a {
+    @apply font-semibold text-blue-400 hover:text-slate-700 dark:hover:text-slate-300
+  }
+  table {
+    @apply table-fixed w-full;
+  }
+  thead tr th {
+    vertical-align: top;
+  }
+  tbody tr td {
+    font-weight: 600;
+    vertical-align: top;
+  }
+  tbody tr td:first-child {
+    width: 40%;
+    padding-right: 15px;
+  }
+  tbody tr td:last-child {
+    width: 60%;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  ::-webkit-scrollbar-corner {
+    background: #fbfcfd;
+  }
+}

@@ -1,0 +1,6 @@
+.tocnav {
+  @apply hidden w-[280px] p-20 overflow-y-auto;
+  position: sticky;
+  top: var(--top-nav-height);
+  height: calc(100vh - var(--top-nav-height));
+}

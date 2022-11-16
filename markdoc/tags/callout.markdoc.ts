@@ -7,5 +7,5 @@ export const callout = {
     title: {
       type: String,
     },
-  },
+  }
 };
