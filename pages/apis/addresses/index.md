@@ -10,36 +10,61 @@ title: Addresses
   Create a Address.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="data[type]" validation="formData string" type="Required" %}
-  Provide Business `type`. Current selection is only **addresses**.
+  {% listitem title="data" validation="formData, object" type="Required" %}
+  Form Data needed when creating a new address.
+  {% list isChild=true %}
+  {% listitem title="type" validation="string" type="Required" %}
+  Provide Address `type`. Current selection is only **address**.
   {% /listitem %}
-  {% listitem title="data[attributes][name]" validation="formData string" type="Required" %}
+  {% listitem title="attributes" validation="formData, object" type="Required" %}
+  Attributes object with a few **required** fields.
+  {% list isChild=true %}
+  {% listitem title="name" validation="string" type="Required" %}
   {% /listitem %}
-  {% listitem title="data[attributes][city]" validation="formData string" type="Required" %}
+  {% listitem title="city" validation="string" type="Required" %}
   {% /listitem %}
-  {% listitem title="data[attributes][country_code]" validation="formData string" type="Required" %}
+  {% listitem title="country_code" validation="string" type="Required" %}
   {% /listitem %}
-  {% listitem title="data[attributes][post_code]" validation="formData string" type="Required" %}
+  {% listitem title="post_code" validation="string" type="Required" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street]" validation="formData string" type="Required" %}
+  {% listitem title="street" validation="string" type="Required" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street_number]" validation="formData string" type="Required" %}
+  {% listitem title="street_number" validation="string" type="Required" %}
   {% /listitem %}
-  {% listitem title="data[attributes][address_line]" validation="formData string" %}
+  {% listitem title="address_line" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][notes]" validation="formData string" %}
+  {% listitem title="notes" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][region_code]" validation="formData string" %}
+  {% listitem title="region_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[relationships][order][data][type]" validation="formData string" %}
+  {% /list %}
   {% /listitem %}
-  {% listitem title="data[relationships][order][data][id]" validation="formData string" %}
+  {% listitem title="relationships" validation="formData, object" %}
+  Relationships object with **optional `order`** and **`user`** objects.
+  {% list isChild=true %}
+  {% listitem title="order" validation="formData, object" %}
+  Add a relationships link between address and related Order.
+  {% list isChild=true %}
+  {% listitem title="type" validation="string" %}
+  {% /listitem %}
+  {% listitem title="id" validation="string" %}
   Related order `id`.
   {% /listitem %}
-  {% listitem title="data[relationships][user][data][type]" validation="formData string" %}
+  {% /list %}
   {% /listitem %}
-  {% listitem title="data[relationships][user][data][id]" validation="formData string" %}
-  Related user `id`.
+  {% listitem title="user" validation="formData, object" %}
+  Add a relationships link between address and related User.
+  {% list isChild=true %}
+  {% listitem title="type" validation="string" %}
+  {% /listitem %}
+  {% listitem title="id" validation="string" %}
+  Related User `id`.
+  {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+  {% /list %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -104,29 +129,39 @@ title: Addresses
   {% listitem title="id" validation="path integer" type="Required" %}
   Update a Address by specific Address `id`. You can retrieve this `id` from ...
   {% /listitem %}
-  {% listitem title="data[id]" validation="formData string" type="Required" %}
+  {% listitem title="data" validation="formData, object" type="Required" %}
+  Form Data needed when updating a new address.
+  {% list isChild=true %}
+  {% listitem title="id" validation="string" type="Required" %}
   Provide address `id`.
   {% /listitem %}
-  {% listitem title="data[type]" validation="formData string" %}
+  {% listitem title="type" validation="string" type="Required" %}
   Provide address `type`. Current selection is only **addresses**.
   {% /listitem %}
-  {% listitem title="data[attributes][address_line]" validation="formData string" %}
+  {% listitem title="attributes" validation="formData, object" type="Required" %}
+  Attributes object with a few **required** fields.
+  {% list isChild=true %}
+  {% listitem title="address_line" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][city]" validation="formData string" %}
+  {% listitem title="city" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][country_code]" validation="formData string" %}
+  {% listitem title="country_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][name]" validation="formData string" %}
+  {% listitem title="name" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][notes]" validation="formData string" %}
+  {% listitem title="notes" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][post_code]" validation="formData string" %}
+  {% listitem title="post_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][region_code]" validation="formData string" %}
+  {% listitem title="region_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street]" validation="formData string" %}
+  {% listitem title="street" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street_number]" validation="formData string" %}
+  {% listitem title="street_number" validation="string" %}
+  {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+  {% /list %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}

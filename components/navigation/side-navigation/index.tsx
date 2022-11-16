@@ -97,6 +97,12 @@ export const items = [
       {href: '/apis/cities', children: 'Cities'}
     ],
   },
+  {
+    title: 'City with countries',
+    links: [
+      {href: '/apis/city-with-countries', children: 'City With Countries'}
+    ],
+  },
 ];
 
 interface navItemProps {

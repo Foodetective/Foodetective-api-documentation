@@ -79,124 +79,134 @@ title: Business
   Create a business record for current user.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="data[type]" validation="formData string" %}
+  {% listitem title="data" validation="formData, object" type="Required" %}
+  Form Data needed when creating a business record for current user.
+  {% list isChild=true %}
+  {% listitem title="type" validation="string" type="Required" %}
   Provide Business `type`. Current selection is only **businesses**.
   {% /listitem %}
-  {% listitem title="data[attributes][average_delivery_time]" validation="formData integer" %}
+  {% listitem title="attributes" validation="formData, object" type="Required" %}
+  Attributes object with a few **required** fields.
+  {% list isChild=true %}
+  {% listitem title="average_delivery_time" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][bill_url]" validation="formData string" %}
+  {% listitem title="bill_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][bio]" validation="formData string" %}
+  {% listitem title="bio" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][breakfast_service]" validation="formData undefined" %}
+  {% listitem title="breakfast_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][brunch_service]" validation="formData undefined" %}
+  {% listitem title="brunch_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][cafe_service]" validation="formData undefined" %}
+  {% listitem title="cafe_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][can_pay_with_cards]" validation="formData undefined" %}
+  {% listitem title="can_pay_with_cards" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][can_pay_with_cash]" validation="formData undefined" %}
+  {% listitem title="can_pay_with_cash" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][can_pay_with_mobile]" validation="formData undefined" %}
+  {% listitem title="can_pay_with_mobile" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][city]" validation="formData string" %}
+  {% listitem title="city" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][country_code]" validation="formData string" %}
+  {% listitem title="country_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][currency]" validation="formData string" %}
+  {% listitem title="currency" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_charge_ref]" validation="formData string" %}
+  {% listitem title="delivery_charge_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_price_participation_ratio]" validation="formData double" %}
+  {% listitem title="delivery_price_participation_ratio" validation="double" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_service_type_ref]" validation="formData string" %}
+  {% listitem title="delivery_service_type_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_url]" validation="formData string" %}
+  {% listitem title="delivery_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][dinner_service]" validation="formData undefined" %}
+  {% listitem title="dinner_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][email]" validation="formData string" %}
+  {% listitem title="email" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][facebook]" validation="formData string" %}
+  {% listitem title="facebook" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][youtube]" validation="formData string" %}
+  {% listitem title="youtube" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][groups_list]" validation="formData string" %}
+  {% listitem title="groups_list" validation="string" %}
   Slugs of groups delimeted by comma.
   {% /listitem %}
-  {% listitem title="data[attributes][has_catering]" validation="formData undefined" %}
+  {% listitem title="has_catering" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][has_join_the_queue]" validation="formData undefined" %}
+  {% listitem title="has_join_the_queue" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][has_private_events]" validation="formData undefined" %}
+  {% listitem title="has_private_events" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][has_reservations]" validation="formData undefined" %}
+  {% listitem title="has_reservations" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][instagram]" validation="formData string" %}
+  {% listitem title="instagram" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][live_info]" validation="formData string" %}
+  {% listitem title="live_info" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][logo]" validation="formData file" %}
+  {% listitem title="logo" validation="file" %}
   {% /listitem %}
-  {% listitem title="data[attributes][lunch_service]" validation="formData undefined" %}
+  {% listitem title="lunch_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][max_reservation_size]" validation="formData integer" %}
+  {% listitem title="max_reservation_size" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][min_amount_for_delivery_cents]" validation="formData integer" %}
+  {% listitem title="min_amount_for_delivery_cents" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][min_time_before_reservation]" validation="formData integer" %}
+  {% listitem title="min_time_before_reservation" validation="integer" %}
   Minimum time before creating a reservation expressed in seconds
   {% /listitem %}
-  {% listitem title="data[attributes][name]" validation="formData string" %}
+  {% listitem title="name" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][online_booking_url]" validation="formData string" %}
+  {% listitem title="online_booking_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][owner_role]" validation="formData string" %}
+  {% listitem title="owner_role" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][phone]" validation="formData string" %}
+  {% listitem title="phone" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][phone_country_code]" validation="formData string" %}
+  {% listitem title="phone_country_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][phone_country_prefix]" validation="formData string" %}
+  {% listitem title="phone_country_prefix" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][post_code]" validation="formData string" %}
+  {% listitem title="post_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][price_per_person]" validation="formData string" %}
+  {% listitem title="price_per_person" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][region_code]" validation="formData string" %}
+  {% listitem title="region_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][secret_code]" validation="formData string" %}
+  {% listitem title="secret_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][snack_service]" validation="formData undefined" %}
+  {% listitem title="snack_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][state]" validation="formData string" %}
+  {% listitem title="state" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street]" validation="formData string" %}
+  {% listitem title="street" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street_number]" validation="formData string" %}
+  {% listitem title="street_number" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][stripe_currency]" validation="formData string" %}
+  {% listitem title="stripe_currency" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][stripe_payment_ref]" validation="formData string" %}
+  {% listitem title="stripe_payment_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][eat_in_ref]" validation="formData string" %}
+  {% listitem title="eat_in_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][tagline]" validation="formData string" %}
+  {% listitem title="tagline" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][takeaway_service_type_ref]" validation="formData string" %}
+  {% listitem title="takeaway_service_type_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][takeaway_url]" validation="formData string" %}
+  {% listitem title="takeaway_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][time_of_stay]" validation="formData integer" %}
+  {% listitem title="time_of_stay" validation="integer" %}
   Default time of staying in restaurant expressed in seconds
   {% /listitem %}
-  {% listitem title="data[attributes][time_slots]" validation="formData integer" %}
+  {% listitem title="time_slots" validation="integer" %}
   Time specifying available hours for booking expressed in seconds
   {% /listitem %}
-  {% listitem title="data[attributes][visible_in_lefood]" validation="formData undefined" %}
+  {% listitem title="visible_in_lefood" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][website]" validation="formData string" %}
+  {% listitem title="website" validation="string" %}
+  {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+  {% /list %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -261,143 +271,153 @@ title: Business
   {% listitem title="id" validation="path integer" type="Required" %}
   Update a Business by specific business `id`. You can retrieve this `id` from ...
   {% /listitem %}
-  {% listitem title="data[id]" validation="formData string" type="Required" %}
+  {% listitem title="data" validation="formData, object" type="Required" %}
+  Form Data needed when creating a business record for current user.
+  {% list isChild=true %}
+  {% listitem title="id" validation="string" type="Required" %}
   Provide Business `id`.
   {% /listitem %}
-  {% listitem title="data[type]" validation="formData string" %}
+  {% listitem title="type" validation="string" type="Required" %}
   Provide Business `type`. Current selection is only **businesses**.
   {% /listitem %}
-  {% listitem title="data[attributes][allow_pickup]" validation="formData undefined" %}
+  {% listitem title="attributes" validation="formData, object" %}
+  Attributes object with a few **required** fields.
+  {% list isChild=true %}
+  {% listitem title="allow_pickup" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][auto_accept_orders]" validation="formData undefined" %}
+  {% listitem title="auto_accept_orders" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][auto_accept_booking]" validation="formData undefined" %}
+  {% listitem title="auto_accept_booking" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][order_business_web_notifications_enabled]" validation="formData undefined" %}
+  {% listitem title="order_business_web_notifications_enabled" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][reservation_business_web_notifications_enabled]" validation="formData undefined" %}
+  {% listitem title="reservation_business_web_notifications_enabled" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][orkestro_delivery_confirmation_enabled]" validation="formData undefined" %}
+  {% listitem title="orkestro_delivery_confirmation_enabled" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][available_in_lefood]" validation="formData undefined" %}
+  {% listitem title="available_in_lefood" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][average_delivery_time]" validation="formData integer" %}
+  {% listitem title="average_delivery_time" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][average_waiting_time]" validation="formData integer" %}
+  {% listitem title="average_waiting_time" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][bill_url]" validation="formData string" %}
+  {% listitem title="bill_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][bio]" validation="formData string" %}
+  {% listitem title="bio" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][breakfast_service]" validation="formData undefined" %}
+  {% listitem title="breakfast_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][brunch_service]" validation="formData undefined" %}
+  {% listitem title="brunch_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][cafe_service]" validation="formData undefined" %}
+  {% listitem title="cafe_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][can_pay_with_cards]" validation="formData undefined" %}
+  {% listitem title="can_pay_with_cards" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][can_pay_with_cash]" validation="formData undefined" %}
+  {% listitem title="can_pay_with_cash" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][can_pay_with_mobile]" validation="formData undefined" %}
+  {% listitem title="can_pay_with_mobile" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][city]" validation="formData string" %}
+  {% listitem title="city" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][country_code]" validation="formData string" %}
+  {% listitem title="country_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][currency]" validation="formData string" %}
+  {% listitem title="currency" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_charge_ref]" validation="formData string" %}
+  {% listitem title="delivery_charge_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_price_participation_ratio]" validation="formData double" %}
+  {% listitem title="delivery_price_participation_ratio" validation="double" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_service_type_ref]" validation="formData string" %}
+  {% listitem title="delivery_service_type_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][delivery_url]" validation="formData string" %}
+  {% listitem title="delivery_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][dinner_service]" validation="formData undefined" %}
+  {% listitem title="dinner_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][email]" validation="formData string" %}
+  {% listitem title="email" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][facebook]" validation="formData string" %}
+  {% listitem title="facebook" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][youtube]" validation="formData string" %}
+  {% listitem title="youtube" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][groups_list]" validation="formData string" %}
+  {% listitem title="groups_list" validation="string" %}
   Slugs of groups delimeted by comma.
   {% /listitem %}
-  {% listitem title="data[attributes][has_catering]" validation="formData undefined" %}
+  {% listitem title="has_catering" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][has_join_the_queue]" validation="formData undefined" %}
+  {% listitem title="has_join_the_queue" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][has_private_events]" validation="formData undefined" %}
+  {% listitem title="has_private_events" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][has_reservations]" validation="formData undefined" %}
+  {% listitem title="has_reservations" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][instagram]" validation="formData string" %}
+  {% listitem title="instagram" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][live_info]" validation="formData string" %}
+  {% listitem title="live_info" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][logo]" validation="formData file" %}
+  {% listitem title="logo" validation="file" %}
   {% /listitem %}
-  {% listitem title="data[attributes][lunch_service]" validation="formData undefined" %}
+  {% listitem title="lunch_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][max_reservation_size]" validation="formData integer" %}
+  {% listitem title="max_reservation_size" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][min_amount_for_delivery_cents]" validation="formData integer" %}
+  {% listitem title="min_amount_for_delivery_cents" validation="integer" %}
   {% /listitem %}
-  {% listitem title="data[attributes][min_time_before_reservation]" validation="formData integer" %}
+  {% listitem title="min_time_before_reservation" validation="integer" %}
   Minimum time before creating a reservation expressed in seconds
   {% /listitem %}
-  {% listitem title="data[attributes][name]" validation="formData string" %}
+  {% listitem title="name" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][online_booking_url]" validation="formData string" %}
+  {% listitem title="online_booking_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][owner_role]" validation="formData string" %}
+  {% listitem title="owner_role" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][phone]" validation="formData string" %}
+  {% listitem title="phone" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][phone_country_code]" validation="formData string" %}
+  {% listitem title="phone_country_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][phone_country_prefix]" validation="formData string" %}
+  {% listitem title="phone_country_prefix" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][post_code]" validation="formData string" %}
+  {% listitem title="post_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][price_per_person]" validation="formData string" %}
+  {% listitem title="price_per_person" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][region_code]" validation="formData string" %}
+  {% listitem title="region_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][secret_code]" validation="formData string" %}
+  {% listitem title="secret_code" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][snack_service]" validation="formData undefined" %}
+  {% listitem title="snack_service" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][state]" validation="formData string" %}
+  {% listitem title="state" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street]" validation="formData string" %}
+  {% listitem title="street" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][street_number]" validation="formData string" %}
+  {% listitem title="street_number" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][stripe_currency]" validation="formData string" %}
+  {% listitem title="stripe_currency" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][stripe_payment_ref]" validation="formData string" %}
+  {% listitem title="stripe_payment_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][eat_in_ref]" validation="formData string" %}
+  {% listitem title="eat_in_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][tagline]" validation="formData string" %}
+  {% listitem title="tagline" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][takeaway_service_type_ref]" validation="formData string" %}
+  {% listitem title="takeaway_service_type_ref" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][takeaway_url]" validation="formData string" %}
+  {% listitem title="takeaway_url" validation="string" %}
   {% /listitem %}
-  {% listitem title="data[attributes][time_of_stay]" validation="formData integer" %}
+  {% listitem title="time_of_stay" validation="integer" %}
   Default time of staying in restaurant expressed in seconds
   {% /listitem %}
-  {% listitem title="data[attributes][time_slots]" validation="formData integer" %}
+  {% listitem title="time_slots" validation="integer" %}
   Time specifying available hours for booking expressed in seconds
   {% /listitem %}
-  {% listitem title="data[attributes][visible_in_lefood]" validation="formData undefined" %}
+  {% listitem title="visible_in_lefood" validation="undefined" %}
   {% /listitem %}
-  {% listitem title="data[attributes][website]" validation="formData string" %}
+  {% listitem title="website" validation="string" %}
+  {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+  {% /list %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}

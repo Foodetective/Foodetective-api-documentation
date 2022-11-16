@@ -1,32 +1,30 @@
 ---
-title: Caterings
+title: Deliveries
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # Catering
-  Return a Catering.
+  # {% $markdoc.frontmatter.title %}
+  Return a Delivery.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Return a Catering by specific catering `id`.
+  Return a Delivery by specific delivery `id`.
   {% /listitem %}
   {% listitem title="include" validation="query string" %}
-  Include associations (delimited with comma). Available associations: business, user, address
-
-  **Example:** `business,address`
+  Include associations (delimited with comma). Available associations: business
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/api/v1/caterings/{id}"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/deliveries/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/caterings/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -77,103 +75,80 @@ title: Caterings
   Create a catering of a business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when creating a catering of a business.
-  {% list isChild=true %}
-  {% listitem title="type" validation="string" type="Required" %}
+  {% listitem title="data[type]" validation="formData string" type="Required" %}
   Provide Catering `type`. Current selection is only **caterings**.
   {% /listitem %}
-  {% listitem title="attributes" validation="formData, object" type="Required" %}
-  Attributes object with a few **required** fields.
-  {% list isChild=true %}
-  {% listitem title="name" validation="string" type="Required" %}
+  {% listitem title="data[attributes][code]" validation="formData string" type="Required" %}
+  Delivery region code.
   {% /listitem %}
-  {% listitem title="email" validation="string" type="Required" %}
+  {% listitem title="data[attributes][price_cents]" validation="formData string" type="Required" %}
+  Price in cents (currency taken from the business).
   {% /listitem %}
-  {% listitem title="date" validation="date" type="Required" %}
+  {% listitem title="data[attributes][date]" validation="formData date" type="Required" %}
   {% /listitem %}
-  {% listitem title="from" validation="integer" type="Required" %}
+  {% listitem title="data[attributes][from]" validation="formData integer" type="Required" %}
   {% /listitem %}
-  {% listitem title="to" validation="integer" type="Required" %}
+  {% listitem title="data[attributes][to]" validation="formData integer" type="Required" %}
   {% /listitem %}
-  {% listitem title="number_of_servings" validation="integer" type="Required" %}
+  {% listitem title="data[attributes][number_of_servings]" validation="formData integer" type="Required" %}
   {% /listitem %}
-  {% listitem title="address_post_code" validation="string" type="Required" %}
+  {% listitem title="data[attributes][address_post_code]" validation="formData string" type="Required" %}
   {% /listitem %}
-  {% listitem title="address_street" validation="string" type="Required" %}
+  {% listitem title="data[attributes][address_street]" validation="formData string" type="Required" %}
   {% /listitem %}
-  {% listitem title="address_street_number" validation="string" type="Required" %}
+  {% listitem title="data[attributes][address_street_number]" validation="formData string" type="Required" %}
   {% /listitem %}
-  {% listitem title="address_city" validation="string" type="Required" %}
+  {% listitem title="data[attributes][address_city]" validation="formData string" type="Required" %}
   {% /listitem %}
-  {% listitem title="address_country_code" validation="string" type="Required" %}
+  {% listitem title="data[attributes][address_country_code]" validation="formData string" type="Required" %}
   {% /listitem %}
-  {% listitem title="phone" validation="string" %}
+  {% listitem title="data[attributes][phone]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="phone_country_code" validation="string" %}
+  {% listitem title="data[attributes][phone_country_code]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="phone_country_prefix" validation="string" %}
+  {% listitem title="data[attributes][phone_country_prefix]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="specifications" validation="string" %}
+  {% listitem title="data[attributes][specifications]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="type_of_event" validation="string" %}
+  {% listitem title="data[attributes][type_of_event]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="user_name" validation="string" %}
+  {% listitem title="data[attributes][user_name]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="chef_attendance" validation="undefined" %}
+  {% listitem title="data[attributes][chef_attendance]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="cutlery" validation="undefined" %}
+  {% listitem title="data[attributes][cutlery]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="company_name" validation="string" %}
+  {% listitem title="data[attributes][company_name]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="outdoors" validation="undefined" %}
+  {% listitem title="data[attributes][outdoors]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="corporate_event" validation="undefined" %}
+  {% listitem title="data[attributes][corporate_event]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="number_of_waiters" validation="integer" %}
+  {% listitem title="data[attributes][number_of_waiters]" validation="formData integer" %}
   {% /listitem %}
-  {% listitem title="address_notes" validation="string" %}
+  {% listitem title="data[attributes][address_notes]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="address_region_code" validation="string" %}
+  {% listitem title="data[attributes][address_region_code]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="marketing_feedback" validation="string" %}
+  {% listitem title="data[attributes][marketing_feedback]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="currency" validation="string" %}
+  {% listitem title="data[attributes][currency]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="auth_token" validation="string" %}
+  {% listitem title="data[attributes][auth_token]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="consent_gdpr" validation="string" %}
+  {% listitem title="data[attributes][consent_gdpr]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="menu" validation="file" %}
+  {% listitem title="data[attributes][menu]" validation="formData file" %}
   {% /listitem %}
-  {% /list %}
+  {% listitem title="data[relationships][business][data][type]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="relationships" validation="formData, object" %}
-  Relationships object with **optional `business`** and **`user`** objects.
-  {% list isChild=true %}
-  {% listitem title="business" validation="formData, object" %}
-  Add a relationships link between catering and related Business.
-  {% list isChild=true %}
-  {% listitem title="type" validation="string" %}
-  {% /listitem %}
-  {% listitem title="id" validation="string" %}
+  {% listitem title="data[relationships][business][data][id]" validation="formData string" %}
   Related Business `id`.
   {% /listitem %}
-  {% /list %}
+  {% listitem title="data[relationships][user][data][type]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="user" validation="formData, object" %}
-  Add a relationships link between catering and related User.
-  {% list isChild=true %}
-  {% listitem title="type" validation="string" %}
-  {% /listitem %}
-  {% listitem title="id" validation="string" %}
+  {% listitem title="data[relationships][user][data][id]" validation="formData string" %}
   Related User `id`.
-  {% /listitem %}
-  {% /list %}
-  {% /listitem %}
-  {% /list %}
-  {% /listitem %}
-  {% /list %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -238,53 +213,43 @@ title: Caterings
   {% listitem title="id" validation="path integer" type="Required" %}
   Update a Catering by specific catering `id`.
   {% /listitem %}
-  {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when creating a catering of a business.
-  {% list isChild=true %}
-  {% listitem title="id." validation="string" type="Required" %}
+  {% listitem title="data[id]" validation="formData string" type="Required" %}
   Provide Catering `id`.
   {% /listitem %}
-  {% listitem title="type" validation="string" %}
+  {% listitem title="data[type]" validation="formData string" %}
   Provide Catering `type`. Current selection is only **caterings**.
   {% /listitem %}
-  {% listitem title="attributes" validation="formData, object" type="Required" %}
-  Attributes object with a few **required** fields.
-  {% list isChild=true %}
-  {% listitem title="name" validation="string" type="Required" %}
+  {% listitem title="data[attributes][name]" validation="formData string" type="Required" %}
   {% /listitem %}
-  {% listitem title="date" validation="date" type="Required" %}
+  {% listitem title="data[attributes][date]" validation="formData date" type="Required" %}
   {% /listitem %}
-  {% listitem title="from" validation="integer" type="Required" %}
+  {% listitem title="data[attributes][from]" validation="formData integer" type="Required" %}
   {% /listitem %}
-  {% listitem title="to" validation="integer" type="Required" %}
+  {% listitem title="data[attributes][to]" validation="formData integer" type="Required" %}
   {% /listitem %}
-  {% listitem title="type_of_event" validation="string" %}
+  {% listitem title="data[attributes][type_of_event]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="outdoors" validation="undefined" %}
+  {% listitem title="data[attributes][outdoors]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="corporate_event" validation="undefined" %}
+  {% listitem title="data[attributes][corporate_event]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="company_name" validation="string" %}
+  {% listitem title="data[attributes][company_name]" validation="formData string" %}
   {% /listitem %}
-  {% listitem title="number_of_servings" validation="integer" %}
+  {% listitem title="data[attributes][number_of_servings]" validation="formData integer" %}
   {% /listitem %}
-  {% listitem title="specifications" validation="integer" %}
+  {% listitem title="data[attributes][specifications]" validation="formData integer" %}
   {% /listitem %}
-  {% listitem title="menu" validation="file" %}
+  {% listitem title="data[attributes][menu]" validation="formData file" %}
   {% /listitem %}
-  {% listitem title="chef_attendance" validation="undefined" %}
+  {% listitem title="data[attributes][chef_attendance]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="number_of_waiters" validation="integer" %}
+  {% listitem title="data[attributes][number_of_waiters]" validation="formData integer" %}
   {% /listitem %}
-  {% listitem title="cutlery" validation="undefined" %}
+  {% listitem title="data[attributes][cutlery]" validation="formData undefined" %}
   {% /listitem %}
-  {% listitem title="price_cents" validation="integer" %}
+  {% listitem title="data[attributes][price_cents]" validation="formData integer" %}
   {% /listitem %}
-  {% listitem title="currency" validation="string" %}
-  {% /listitem %}
-  {% /list %}
-  {% /listitem %}
-  {% /list %}
+  {% listitem title="data[attributes][currency]" validation="formData string" %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}

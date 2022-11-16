@@ -6,11 +6,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboard, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 let langOptions = [
-  {lang: 'js', name: 'Node.js', selected: true},
-  {lang: 'py', name: 'Python', selected: false},
-  {lang: 'java', name: 'Java', selected: false},
-  {lang: 'ruby', name: 'Ruby', selected: false},
-  {lang: 'go', name: 'Go', selected: false},
+  {lang: 'js', name: 'js', selected: true},
+  // {lang: 'js', name: 'Node.js', selected: true},
+  // {lang: 'py', name: 'Python', selected: false},
+  // {lang: 'java', name: 'Java', selected: false},
+  // {lang: 'ruby', name: 'Ruby', selected: false},
+  // {lang: 'go', name: 'Go', selected: false},
 ]
 
 function Request({request}) {
