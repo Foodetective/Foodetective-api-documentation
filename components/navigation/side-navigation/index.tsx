@@ -159,7 +159,7 @@ export const NavItem: React.FC<navItemProps> = ({item, onClick}) => {
 
 export function SideNav({className}) {
   return (
-    <nav className={`${styles['sidenav']} ${className ? className : ''}`}>
+    <nav className={`${styles['sidenav']} hidden w-[280px] p-20 overflow-y-auto sticky ${className ? className : ''}`}>
       {items.map((item, index) => (
         <NavItem key={index} item={item}/>
       ))}
