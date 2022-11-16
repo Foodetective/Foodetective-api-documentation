@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 import { SideNav, TableOfContents, TopNav, MobileNav } from '../components';
+import '../styles/tailwind.css'
 import 'prismjs';
 import 'prismjs/components/prism-bash.min';
 import 'prismjs/components/prism-python.min';
@@ -14,7 +15,6 @@ import 'prismjs/components/prism-ruby.min';
 // import 'prismjs/components/prism-aspnet.min';
 import '../styles/prism-themes/prism-coldark-dark.css';
 // import 'prismjs/themes/prism-solarizedlight.css';
-import '../styles/tailwind.css'
 import 'react-loading-skeleton/dist/skeleton.css'
 import type { AppProps } from 'next/app'
 import type { MarkdocNextJsPageProps } from '@markdoc/next.js'
