@@ -24,7 +24,7 @@ export function List({ title, isChild, children }) {
             )}
             <h5 className='text-sm dark:text-slate-200 pl-10'>Child attributes</h5>
           </div>
-          <ul className={`attribute-list-group-child border-rounded rounded-none ${show ? 'block' : 'hidden'}`}>
+          <ul className={`attribute-list-group-child border-rounded rounded-none overflow-hidden ${show ? 'block' : 'hidden'}`}>
             {children}
           </ul>
         </>
