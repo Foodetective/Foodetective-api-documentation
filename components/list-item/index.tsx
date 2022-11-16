@@ -8,7 +8,7 @@ export function ListItem({title, validation, type, children}) {
 
   return (
     <li className='border-b border-dotted border-slate-300 dark:border-slate-700 py-14' aria-live="polite">
-      <h3 className='text-xs font-medium dark:text-slate-400'>
+      <h3 className='text-xs font-medium break-all dark:text-slate-400'>
         <span className='font-bold dark:text-slate-300'>{title}</span>
         {validation && (<span className='pl-6'>{validation}</span>)}
         {type && (<span className={getType(type)}>{type}</span>)}

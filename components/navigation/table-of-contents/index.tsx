@@ -12,7 +12,7 @@ export function TableOfContents({className, toc}) {
   }
 
   return (
-    <nav className={`${styles['tocnav']} ${className ? className : ''}`}>
+    <nav className={`${styles['tocnav']} hidden w-[280px] p-20 overflow-y-auto sticky ${className ? className : ''}`}>
       <p className={`font-semibold uppercase dark:text-slate-400`}>Table of contents</p>
       <ul>
         {items.map((item) => {
