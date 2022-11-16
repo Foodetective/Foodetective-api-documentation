@@ -1,5 +1,5 @@
 ---
-title: Cities
+title: City With Countries
 ---
 {% section %}
 {% layoutTwoCol %}
@@ -7,7 +7,7 @@ title: Cities
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  Return all cities fetched from published businesses.
+  Return all cities with country fetched from published businesses.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="sort" validation="query string" %}
@@ -22,12 +22,12 @@ title: Cities
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/api/v1/cities"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/city_with_countries"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/cities`, {
+      const res = await fetch(`${BASE_URL}/api/v1/city_with_countries`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
@@ -60,27 +60,6 @@ title: Cities
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" %}
   ```json
-    { 
-      "data": [
-        {
-          "id": "4b166dbe-d99d-5091-abdd-95b83330ed3a",
-          "type": "cities",
-          "links": {
-            "self": "/cities/4b166dbe-d99d-5091-abdd-95b83330ed3a"
-          },
-          "attributes": {
-            "businesses-count": 1,
-            "geolocation-lat": null,
-            "geolocation-lng": null,
-            "name": "2"
-          }
-        },
-      ],
-      "meta": {
-        "total-count": 18,
-        "total-pages": 2
-      }
-    }
   ```
 {% /codeBlock %}  
 

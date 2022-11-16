@@ -16,6 +16,12 @@ export const items = [
     ],
   },
   {
+    title: 'Addresses',
+    links: [
+      {href: '/apis/addresses', children: 'Addresses'}
+    ],
+  },
+  {
     title: 'Banners',
     links: [
       {href: '/apis/banners', children: 'Banners'}
@@ -36,27 +42,40 @@ export const items = [
   {
     title: 'Businesses',
     links: [
+      {href: '/apis/businesses/businesses', children: 'Business'},
       {href: '/apis/businesses/cards', children: 'Cards'},
-      {href: '/apis/businesses/catering', children: 'Catering'},
+      {href: '/apis/businesses/caterings', children: 'Caterings'},
+      {href: '/apis/businesses/claim-as-owner', children: 'Claim as Owner'},
       {href: '/apis/businesses/clients', children: 'Clients'},
+      {href: '/apis/businesses/connect-stripe', children: 'Connect Stripe'},
       {href: '/apis/businesses/dashboard', children: 'Dashboard'},
       {href: '/apis/businesses/deliveries', children: 'Deliveries'},
+      {href: '/apis/businesses/direct-service-click', children: 'Direct Service Click'},
+      {href: '/apis/businesses/disconnect-stripe', children: 'Disconnect Stripe'},
       {href: '/apis/businesses/dishes', children: 'Dishes'},
-      {href: '/apis/businesses/external', children: 'External'},
+      {href: '/apis/businesses/external-service-links', children: 'External Service Links'},
       {href: '/apis/businesses/favourite-suppliers', children: 'Favourite Suppliers'},
       {href: '/apis/businesses/guides', children: 'Guides'},
       {href: '/apis/businesses/invoice', children: 'Invoice'},
       {href: '/apis/businesses/members', children: 'Members'},
       {href: '/apis/businesses/orders', children: 'Orders'},
-      {href: '/apis/businesses/partners', children: 'Partners'},
+      {href: '/apis/businesses/preferred-partners', children: 'Preferred Partners'},
       {href: '/apis/businesses/payments', children: 'Payments'},
-      {href: '/apis/businesses/privatization', children: 'Privatization'},
+      {href: '/apis/businesses/permitted-list', children: 'Permitted List'},
+      {href: '/apis/businesses/privatisations', children: 'Privatisations'},
       {href: '/apis/businesses/reservations', children: 'Reservations'},
       {href: '/apis/businesses/reviews', children: 'Reviews'},
       {href: '/apis/businesses/setup', children: 'Setup'},
       {href: '/apis/businesses/similar', children: 'Similar'},
       {href: '/apis/businesses/subscriptions', children: 'Subscriptions'},
-      {href: '/apis/businesses/tables', children: 'Tables'}
+      {href: '/apis/businesses/tables', children: 'Tables'},
+      {href: '/apis/businesses/widgets', children: 'Widgets'}
+    ],
+  },
+  {
+    title: 'Cards',
+    links: [
+      {href: '/apis/cards', children: 'Cards'}
     ],
   },
   {
@@ -66,9 +85,22 @@ export const items = [
     ],
   },
   {
+    title: 'Caterings',
+    links: [
+      {href: '/apis/caterings/catering', children: 'Catering'},
+      {href: '/apis/caterings/catering-offer', children: 'Catering Offer'}
+    ],
+  },
+  {
     title: 'Cities',
     links: [
       {href: '/apis/cities', children: 'Cities'}
+    ],
+  },
+  {
+    title: 'City with countries',
+    links: [
+      {href: '/apis/city-with-countries', children: 'City With Countries'}
     ],
   },
 ];

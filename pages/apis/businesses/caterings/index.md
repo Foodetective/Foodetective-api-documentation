@@ -1,5 +1,5 @@
 ---
-title: Business Catering
+title: Business Caterings
 ---
 {% section %}
 {% layoutTwoCol %}

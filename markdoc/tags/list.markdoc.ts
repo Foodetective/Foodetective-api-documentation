@@ -6,6 +6,9 @@ export const list = {
     title: {
       type: String,
       require: true
+    },
+    isChild: {
+      type: Boolean
     }
   }
 }

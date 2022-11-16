@@ -30,6 +30,12 @@
   .content main h2 {
     @apply dark:text-slate-400;
   }
+  .border-rounded {
+    @apply border rounded-lg border-slate-300 dark:border-slate-700
+  }
+  .attribute-list-group-child li {
+    @apply p-14 border-b border-solid
+  }
   hr {
     @apply border-slate-300 dark:border-slate-700
   }

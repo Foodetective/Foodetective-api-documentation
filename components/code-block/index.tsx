@@ -6,23 +6,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboard, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 let langOptions = [
-  {lang: 'js', name: 'Node.js', selected: true},
-  {lang: 'py', name: 'Python', selected: false},
-  {lang: 'java', name: 'Java', selected: false},
-  {lang: 'ruby', name: 'Ruby', selected: false},
-  {lang: 'go', name: 'Go', selected: false},
+  {lang: 'js', name: 'js', selected: true},
+  // {lang: 'js', name: 'Node.js', selected: true},
+  // {lang: 'py', name: 'Python', selected: false},
+  // {lang: 'java', name: 'Java', selected: false},
+  // {lang: 'ruby', name: 'Ruby', selected: false},
+  // {lang: 'go', name: 'Go', selected: false},
 ]
 
 function Request({request}) {
   const methodType = (method) => {
-    let type = method != undefined ? method.toLowerCase() : 'default'
     const methods = {
-      'get': () => 'method text-white text-blue-400 font-semibold pr-3',
-      'post': () => 'method text-white text-success font-semibold pr-3',
-      'put': () => 'method text-white text-blue-400 font-semibold pr-3',
-      'delete': () => 'method text-white text-danger font-semibold pr-3',
-      'default': () => 'method text-white font-semibold pr-3'
+      'GET': () => 'method text-white text-blue-400 font-semibold pr-3',
+      'POST': () => 'method text-white text-success font-semibold pr-3',
+      'PUT': () => 'method text-white text-warning font-semibold pr-3',
+      'PATCH': () => 'method text-white text-warning font-semibold pr-3',
+      'DELETE': () => 'method text-white text-danger font-semibold pr-3',
+      'DEFAULT': () => 'method text-white font-semibold pr-3'
     }
+    let type = method != undefined && method in methods ? method : 'DEFAULT'
     return methods[type]()
   }
 

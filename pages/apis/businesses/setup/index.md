@@ -7,20 +7,24 @@ title: Businesses Setup Intent
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return {% $markdoc.frontmatter.title %} by business `id`.
+  Return Setup Intent for Stripe Account connected to Business.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="purpose" type="Required" /%}
-  {% listitem title="id" type="Required" /%}
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Return Setup Intent for Stripe Account connected to Business by the specific business `id`. You can retrieve this `id` from ...
+  {% /listitem %}
+  {% listitem title="purpose" validation="query string" %}
+  Return Setup Intent for Stripe Account connected to Business by purpose; **order** or **subscription**.
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/v1/businesses/{id}/setup_intent"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/businesses/{id}/setup_intent"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/{id}/setup_intent`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/setup_intent`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json'
