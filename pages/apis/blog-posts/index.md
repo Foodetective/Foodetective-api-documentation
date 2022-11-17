@@ -23,10 +23,10 @@ title: Blog Posts
   {% listitem title="lang" validation="query string" %}
   Get blog post by a certain language.
   {% /listitem %}
-  {% listitem title="page" validation="query number" %}
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
-  {% listitem title="per_page" validation="query number" %}
+  {% listitem title="per_page" validation="query integer" %}
   Number of results to return per page.
   {% /listitem %}
 {% /list %}

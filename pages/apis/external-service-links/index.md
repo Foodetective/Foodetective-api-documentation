@@ -1,83 +1,71 @@
 ---
-title: Addresses
+title: External Service Links
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # Create Address
-  Create a Address.
+  # Create External Service Link
+  Create an external service link.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when creating a new address.
+  Form Data needed when creating an external service link.
   {% list isChild=true %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide Address `type`. Current selection is only **address**.
+  Provide external service link `type`. Current selection is only **external_service_links**.
   {% /listitem %}
 
   {% listitem title="attributes" validation="formData, object" type="Required" %}
   Attributes object with a few **required** fields.
   {% list isChild=true %}
-  {% listitem title="name" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="city" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="country_code" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="post_code" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="street" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="street_number" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="address_line" validation="string" %}
-  {% /listitem %}
-  {% listitem title="notes" validation="string" %}
-  {% /listitem %}
-  {% listitem title="region_code" validation="string" %}
+  {% listitem title="service_url" validation="string" type="Required" %}
+  URL for external service
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
-  {% listitem title="relationships" validation="formData, object" %}
-  Relationships object with **`order`** and **`user`** objects.
+
+  {% listitem title="relationships" validation="formData, object" type="Required" %}
+  Relationships object with **`business`** oor **`external_service`** objects.
   {% list isChild=true %}
-  {% listitem title="order" validation="formData, object" %}
-  Add a relationships link between address and related Order.
+  {% listitem title="business" validation="formData, object" type="Required" %}
+  Add a relationships link between deliveries and related Business.
   {% list isChild=true %}
+  {% listitem title="id" validation="string" type="Required" %}
+  Related Business `id`.
+  {% /listitem %}
   {% listitem title="type" validation="string" %}
-  {% /listitem %}
-  {% listitem title="id" validation="string" %}
-  Related order `id`.
+  Business `type`; **Business**.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  {% listitem title="user" validation="formData, object" %}
-  Add a relationships link between address and related User.
+
+  {% listitem title="external_service" validation="formData, object" type="Required" %}
+  Add a relationships link.
   {% list isChild=true %}
+  {% listitem title="id" validation="string" type="Required" %}
+  Related External Service `id`.
+  {% /listitem %}
   {% listitem title="type" validation="string" %}
-  {% /listitem %}
-  {% listitem title="id" validation="string" %}
-  Related User `id`.
+  External Service `type`; **external_service**.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "POST", path: "/api/v1/addresses"} %}
+{% codeBlock request={method: "POST", path: "/api/v1/external_service_links"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses`, {
+      const res = await fetch(`${BASE_URL}/api/v1/external_service_links`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -125,44 +113,29 @@ title: Addresses
 
 {% methodCopy %}
 {% methodInfo %}
-  # Update Address
-  Update a Address
+  # Update External Service Link
+  Update an external service link.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Update a Address by specific Address `id`. You can retrieve this `id` from ...
+  Update a External Service Link by specific link `id`.
   {% /listitem %}
 
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when updating a new address.
+  Form Data needed when updating a External Service Link.
   {% list isChild=true %}
   {% listitem title="id" validation="string" type="Required" %}
-  Provide address `id`.
+  Provide External Service Link `id`.
   {% /listitem %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide address `type`. Current selection is only **addresses**.
+  Provide External Service Link `type`. Current selection is only **external_service_links**.
   {% /listitem %}
 
-  {% listitem title="attributes" validation="formData, object" type="Required" %}
-  Attributes object with a few **required** fields.
+  {% listitem title="attributes" validation="formData, object" %}
+  Attributes object.
   {% list isChild=true %}
-  {% listitem title="address_line" validation="string" %}
-  {% /listitem %}
-  {% listitem title="city" validation="string" %}
-  {% /listitem %}
-  {% listitem title="country_code" validation="string" %}
-  {% /listitem %}
-  {% listitem title="name" validation="string" %}
-  {% /listitem %}
-  {% listitem title="notes" validation="string" %}
-  {% /listitem %}
-  {% listitem title="post_code" validation="string" %}
-  {% /listitem %}
-  {% listitem title="region_code" validation="string" %}
-  {% /listitem %}
-  {% listitem title="street" validation="string" %}
-  {% /listitem %}
-  {% listitem title="street_number" validation="string" %}
+  {% listitem title="service_url" validation="string" %}
+  URL for external service
   {% /listitem %}
   {% /list %}
   {% /listitem %}
@@ -172,12 +145,12 @@ title: Addresses
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "PATCH", path: "/api/v1/addresses/{id}"} %}
+{% codeBlock request={method: "PATCH", path: "/api/v1/external_service_links/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/external_service_links/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -225,22 +198,22 @@ title: Addresses
 
 {% methodCopy %}
 {% methodInfo %}
-  # Delete Address
-  Delete a Address.
+  # Delete External Service Link
+  Delete an external service link.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Delete a Address by specific Address `id`. You can retrieve this `id` from ...
+  Delete a External Service Link by specific link `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "DELETE", path: "/api/v1/addresses/{id}"} %}
+{% codeBlock request={method: "DELETE", path: "/api/v1/external_service_links/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/external_service_links/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

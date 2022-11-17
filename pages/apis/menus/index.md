@@ -1,66 +1,45 @@
 ---
-title: Addresses
+title: Menus
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # Create Address
-  Create a Address.
+  # Create Menu
+  Create a menu for an exisitng business.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when creating a new address.
+  Form Data needed when creating a new Menu for an exisitng business.
   {% list isChild=true %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide Address `type`. Current selection is only **address**.
+  Provide Menu `type`. Current selection is only **menus**.
   {% /listitem %}
 
-  {% listitem title="attributes" validation="formData, object" type="Required" %}
-  Attributes object with a few **required** fields.
+  {% listitem title="attributes" validation="formData, object" %}
+  Attributes object.
   {% list isChild=true %}
-  {% listitem title="name" validation="string" type="Required" %}
+  {% listitem title="display_name" validation="string" %}
+  Menu display name.
   {% /listitem %}
-  {% listitem title="city" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="country_code" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="post_code" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="street" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="street_number" validation="string" type="Required" %}
-  {% /listitem %}
-  {% listitem title="address_line" validation="string" %}
-  {% /listitem %}
-  {% listitem title="notes" validation="string" %}
-  {% /listitem %}
-  {% listitem title="region_code" validation="string" %}
+  {% listitem title="file" validation="file"%}
+  Menu list of items.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
   
   {% listitem title="relationships" validation="formData, object" %}
-  Relationships object with **`order`** and **`user`** objects.
+  Relationships object with **`business`** object.
   {% list isChild=true %}
-  {% listitem title="order" validation="formData, object" %}
-  Add a relationships link between address and related Order.
+  {% listitem title="business" validation="formData, object" %}
+  Add a relationships link between Menu and related Business.
   {% list isChild=true %}
-  {% listitem title="type" validation="string" %}
-  {% /listitem %}
   {% listitem title="id" validation="string" %}
-  Related order `id`.
+  Related Business `id`.
   {% /listitem %}
-  {% /list %}
-  {% /listitem %}
-  {% listitem title="user" validation="formData, object" %}
-  Add a relationships link between address and related User.
-  {% list isChild=true %}
   {% listitem title="type" validation="string" %}
-  {% /listitem %}
-  {% listitem title="id" validation="string" %}
-  Related User `id`.
+  Business `type`; **business**.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
@@ -72,12 +51,12 @@ title: Addresses
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "POST", path: "/api/v1/addresses"} %}
+{% codeBlock request={method: "POST", path: "/api/v1/menus"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses`, {
+      const res = await fetch(`${BASE_URL}/api/v1/menus`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -125,44 +104,32 @@ title: Addresses
 
 {% methodCopy %}
 {% methodInfo %}
-  # Update Address
-  Update a Address
+  # Update Menu
+  Update a Menu.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Update a Address by specific Address `id`. You can retrieve this `id` from ...
+  Update a Menu by specific `id`.
   {% /listitem %}
 
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when updating a new address.
+  Form Data needed when updating a Menu.
   {% list isChild=true %}
   {% listitem title="id" validation="string" type="Required" %}
-  Provide address `id`.
+  Provide Menu `id`.
   {% /listitem %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide address `type`. Current selection is only **addresses**.
+  Provide Menu `type`. Current selection is only **menus**.
   {% /listitem %}
 
-  {% listitem title="attributes" validation="formData, object" type="Required" %}
-  Attributes object with a few **required** fields.
+  {% listitem title="attributes" validation="formData, object" %}
+  Attributes object.
   {% list isChild=true %}
-  {% listitem title="address_line" validation="string" %}
+  {% listitem title="display_name" validation="string" %}
+  Menu display name.
   {% /listitem %}
-  {% listitem title="city" validation="string" %}
-  {% /listitem %}
-  {% listitem title="country_code" validation="string" %}
-  {% /listitem %}
-  {% listitem title="name" validation="string" %}
-  {% /listitem %}
-  {% listitem title="notes" validation="string" %}
-  {% /listitem %}
-  {% listitem title="post_code" validation="string" %}
-  {% /listitem %}
-  {% listitem title="region_code" validation="string" %}
-  {% /listitem %}
-  {% listitem title="street" validation="string" %}
-  {% /listitem %}
-  {% listitem title="street_number" validation="string" %}
+  {% listitem title="file" validation="file"%}
+  Menu list of items.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
@@ -172,12 +139,12 @@ title: Addresses
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "PATCH", path: "/api/v1/addresses/{id}"} %}
+{% codeBlock request={method: "PATCH", path: "/api/v1/menus/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/menus/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -225,22 +192,22 @@ title: Addresses
 
 {% methodCopy %}
 {% methodInfo %}
-  # Delete Address
-  Delete a Address.
+  # Delete Menu
+  Delete a Menu.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Delete a Address by specific Address `id`. You can retrieve this `id` from ...
+  Delete a Menu by specific `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "DELETE", path: "/api/v1/addresses/{id}"} %}
+{% codeBlock request={method: "DELETE", path: "/api/v1/menus/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/menus/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'

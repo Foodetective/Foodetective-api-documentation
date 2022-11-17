@@ -103,6 +103,134 @@ export const items = [
       {href: '/apis/city-with-countries', children: 'City With Countries'}
     ],
   },
+  {
+    title: 'Deliveries',
+    links: [
+      {href: '/apis/deliveries', children: 'Deliveries'}
+    ],
+  },
+  {
+    title: 'Devices',
+    links: [
+      {href: '/apis/devices', children: 'Devices'}
+    ],
+  },
+  {
+    title: 'Dishes',
+    links: [
+      {href: '/apis/dishes', children: 'Dishes'}
+    ],
+  },
+  {
+    title: 'Elements',
+    links: [
+      {href: '/apis/elements', children: 'Elements'}
+    ],
+  },
+  {
+    title: 'External Service Links',
+    links: [
+      {href: '/apis/external-service-links', children: 'External Service Links'}
+    ],
+  },
+  {
+    title: 'External Services',
+    links: [
+      {href: '/apis/external-services', children: 'External Services'}
+    ],
+  },
+  {
+    title: 'Favorite Suppliers',
+    links: [
+      {href: '/apis/favorite-suppliers', children: 'Favorite Suppliers'}
+    ],
+  },
+  {
+    title: 'Favorites',
+    links: [
+      {href: '/apis/favorites', children: 'Favorites'}
+    ],
+  },
+  {
+    title: 'Feedbacks',
+    links: [
+      {href: '/apis/feedbacks', children: 'Feedbacks'}
+    ],
+  },
+  {
+    title: 'Groups',
+    links: [
+      {href: '/apis/groups', children: 'Groups'}
+    ],
+  },
+  {
+    title: 'Guides',
+    links: [
+      {href: '/apis/guides', children: 'Guides'}
+    ],
+  },
+  {
+    title: 'Intelligence Notifications',
+    links: [
+      {href: '/apis/intelligence-notifications', children: 'Intelligence Notifications'}
+    ],
+  },
+  {
+    title: 'Members',
+    links: [
+      {href: '/apis/members', children: 'Members'}
+    ],
+  },
+  {
+    title: 'Menus',
+    links: [
+      {href: '/apis/menus', children: 'Menus'}
+    ],
+  },
+  {
+    title: 'News Posts',
+    links: [
+      {href: '/apis/news-posts', children: 'News Posts'}
+    ],
+  },
+  {
+    title: 'Notifications',
+    links: [
+      {href: '/apis/notifications', children: 'Notifications'}
+    ],
+  },
+  {
+    title: 'Open Periods',
+    links: [
+      {href: '/apis/open-periods', children: 'Open Periods'}
+    ],
+  },
+  {
+    title: 'Order Periods',
+    links: [
+      {href: '/apis/order-periods', children: 'Order Periods'}
+    ],
+  },
+  {
+    title: 'Orders',
+    links: [
+      {href: '/apis/orders', children: 'Orders'}
+    ],
+  },
+  {
+    title: 'Partner Integrations',
+    links: [
+      {href: '/apis/partner-integrations/partner', children: 'Partner'},
+      {href: '/apis/partner-integrations/orkestro', children: 'Orkestro'},
+      {href: '/apis/partner-integrations/uber-eats', children: 'Uber Eats'}
+    ],
+  },
+  {
+    title: 'Partners',
+    links: [
+      {href: '/apis/partners', children: 'Partners'}
+    ],
+  },
 ];
 
 interface navItemProps {
