@@ -217,6 +217,20 @@ export const items = [
       {href: '/apis/orders', children: 'Orders'}
     ],
   },
+  {
+    title: 'Partner Integrations',
+    links: [
+      {href: '/apis/partner-integrations/partner', children: 'Partner'},
+      {href: '/apis/partner-integrations/orkestro', children: 'Orkestro'},
+      {href: '/apis/partner-integrations/uber-eats', children: 'Uber Eats'}
+    ],
+  },
+  {
+    title: 'Partners',
+    links: [
+      {href: '/apis/partners', children: 'Partners'}
+    ],
+  },
 ];
 
 interface navItemProps {
