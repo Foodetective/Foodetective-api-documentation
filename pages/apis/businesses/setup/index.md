@@ -55,7 +55,7 @@ title: Businesses Setup Intent
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "url": "/api/v1/businesses/{id}/setup_intent",

@@ -11,6 +11,9 @@ export const codeBlock = {
     },
     request: {
       type: Object
+    },
+    collapsable: {
+      type: Boolean
     }
   }
 }

@@ -36,8 +36,9 @@ function Request({request}) {
   )
 }
 
-export function CodeBlock({ title, subTitle, request, children }) {
+export function CodeBlock({ title, subTitle, request, collapsable, children }) {
   const [copied, setCopied] = useState<boolean>(false)
+  const [collapsed, setCollapsed] = useState<boolean>(false)
   const ref = useRef(null);
   const router = useRouter()
 
@@ -48,6 +49,17 @@ export function CodeBlock({ title, subTitle, request, children }) {
       return () => clearInterval(copyTimeout)
     }
   }, [copied])
+
+  useEffect(() => {
+    if (collapsable) {
+      setCollapsed(true)
+    }
+  }, [collapsable])
+
+  const allowCopy = useMemo(() => {
+    if (!request && title != undefined && title.toLowerCase() != 'response' && collapsable) return true
+    return false
+  }, [title, request, collapsable])
 
   const lang = useMemo(() => {
     return router.query.lang ?? 'js'
@@ -78,7 +90,7 @@ export function CodeBlock({ title, subTitle, request, children }) {
   }
 
   return(
-    <div className='code-block bg-prism rounded-lg'>
+    <div className={`code-block bg-prism rounded-lg overflow-hidden relative ${collapsable ? 'pb-40' : ''} ${collapsed ? 'h-[350px]' : 'h-auto' }`}>
       <div className={`topbar flex ${request ? 'px-10 py-5' : 'p-10'} bg-prism-light rounded-lg rounded-b-none justify-between items-center`}>
         <div className="topbar-title">
           {title && (<p className='text-white font-semibold m-0 dark:text-white'>{title}</p>)}
@@ -110,10 +122,28 @@ export function CodeBlock({ title, subTitle, request, children }) {
             )}
           </div>
         )}
+        {(!request && allowCopy) && (
+          <div className="topbar-options flex gap-5">
+            {copied ? (
+              <button className='px-8 py-0 rounded-md text-blue-200 cursor-default'>
+              <FontAwesomeIcon icon={faCheck} size='1x' />
+            </button>
+            ) : (
+              <button className='px-10 py-0 rounded-md text-blue-400 hover:text-blue-200 hover:bg-prism-dark/[0.5] transition-colors duration-200 delay-75' onClick={() => setCopied(true)}>
+                <FontAwesomeIcon icon={faClipboard} size='1x' />
+              </button>
+            )}
+          </div>
+        )}
       </div>
       <div ref={ref}>
         {children}
       </div>
+      {collapsable && (
+        <div className={`show-more absolute bottom-0 w-full bg-prism ${collapsed ? 'pt-20' : '' }`}>
+          <button className="text-sm text-white p-8 w-full bg-prism-light rounded-lg rounded-t-none" onClick={() => setCollapsed(!collapsed)}>Show {collapsed ? 'More' : 'Less'} </button>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,27 +1,27 @@
 ---
-title: Favorite Suppliers
+title: Favourite Suppliers
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # Create Favorite Suppliers
-  Add given supplier to current busineses favorites
+  # Create Favourite Suppliers
+  Add given supplier to current busineses favourites
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when adding given supplier to current businesses favorites.
+  Form Data needed when adding given supplier to current businesses favourites.
   {% list isChild=true %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide Favorite Suppliers `type`. Current selection is only **favorite_suppliers**.
+  Provide Favourite Suppliers `type`. Current selection is only **favorite_suppliers**.
   {% /listitem %}
   
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** or **`supplier`** objects.
   {% list isChild=true %}
   {% listitem title="business" validation="formData, object" type="Required" %}
-  Add a relationships link between Favorite Suppliers and related Business.
+  Add a relationships link between Favourite Suppliers and related Business.
   {% list isChild=true %}
   {% listitem title="id" validation="string" type="Required" %}
   Related Business `id`.
@@ -89,7 +89,7 @@ title: Favorite Suppliers
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -104,12 +104,12 @@ title: Favorite Suppliers
 
 {% methodCopy %}
 {% methodInfo %}
-  # Delete Favorite Supplier
-  Delete a Favorite Supplier.
+  # Delete Favourite Supplier
+  Delete a Favourite Supplier.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Delete a Favorite Supplier by specific `id`.
+  Delete a Favourite Supplier by specific `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -150,7 +150,7 @@ title: Favorite Suppliers
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

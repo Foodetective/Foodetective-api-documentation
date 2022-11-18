@@ -57,10 +57,46 @@ title: Deliveries
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
+
+{% /layoutTwoCol %}
+{% /section %}
+
+- - -
+
+{% section %}
+{% layoutTwoCol %}
+
+{% methodCopy %}
+{% methodInfo %}
+  # Request Object
+  The required Request Object used for **CRUD**. The only difference is with [Update Delivery](#create-delivery) you need to provide a Delivery `id`.
+{% /methodInfo %}
+{% /methodCopy %}
+
+{% codeBlock title="REQUEST OBJECT" collapsable=true %}
+  ```json
+  {
+    "data": {
+      "type": "deliveries",
+      "attributes": {
+        "code": "",
+        "price_cents": "",
+        "free_from_cents": "",
+      },
+      "relationships": {
+        "business": {
+          "id": "62a05bd2-2f0e-4bac-8f8b-63947f4df16f",
+          "type": "business"
+        }
+      }
+    }
+  }
+  ```
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -102,7 +138,7 @@ title: Deliveries
   Relationships object with **`business`** object.
   {% list isChild=true %}
   {% listitem title="business" validation="formData, object" %}
-  Add a relationships link between deliveries and related Business.
+  Add a Business relationships link.
   {% list isChild=true %}
   {% listitem title="id" validation="string" %}
   Related Business `id`.
@@ -158,7 +194,7 @@ title: Deliveries
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -249,7 +285,7 @@ title: Deliveries
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -310,7 +346,7 @@ title: Deliveries
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

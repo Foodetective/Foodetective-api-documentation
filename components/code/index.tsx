@@ -9,7 +9,7 @@ export function Code({children, 'data-language': language}) {
   }, [children]);
 
   return (
-    <div className="code" aria-live="polite">
+    <div className="code overflow-hidden" aria-live="polite">
       <pre data-language={language} className={`code-pre language-${language}`}>
         <code ref={ref} className={`language-${language}`}>
           {children}

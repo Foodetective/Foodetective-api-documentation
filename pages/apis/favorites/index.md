@@ -1,27 +1,27 @@
 ---
-title: Favorites
+title: Favourites
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # Create Favorites
-  Add given business to current user favorites.
+  # Create Favourites
+  Add given business to current user favourites.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when adding given supplier to current businesses favorites.
+  Form Data needed when adding given supplier to current businesses favourites.
   {% list isChild=true %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide Favorite Suppliers `type`. Current selection is only **favorites**.
+  Provide Favourite Suppliers `type`. Current selection is only **favorites**.
   {% /listitem %}
   
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
   {% listitem title="business" validation="formData, object" type="Required" %}
-  Add a relationships link between Favorites and related Business.
+  Add a relationships link between Favourites and related Business.
   {% list isChild=true %}
   {% listitem title="id" validation="string" type="Required" %}
   Related Business `id`.
@@ -31,6 +31,9 @@ title: Favorites
   {% /listitem %}
   {% /list %}
   {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+  
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -74,7 +77,7 @@ title: Favorites
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -89,12 +92,12 @@ title: Favorites
 
 {% methodCopy %}
 {% methodInfo %}
-  # Delete Favorite
-  Delete a Favorite.
+  # Delete Favourite
+  Delete a Favourite.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Delete a Favorite by specific `id`.
+  Delete a Favourite by specific `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -135,7 +138,7 @@ title: Favorites
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

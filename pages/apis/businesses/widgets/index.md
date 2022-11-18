@@ -62,7 +62,7 @@ title: Business Widgets
 {% /tabs %}
 {% /codeBlock %}
 
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

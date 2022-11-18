@@ -61,7 +61,7 @@ title: Business Deliveries
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "url": "/api/v1/businesses/{id}/deliveries",
@@ -159,7 +159,7 @@ title: Business Deliveries
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "data": {

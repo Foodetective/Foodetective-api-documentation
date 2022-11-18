@@ -55,7 +55,7 @@ title: Banners
 {% /tabs %}
 {% /codeBlock %}
 
-{% codeBlock title="Response" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "data": {
