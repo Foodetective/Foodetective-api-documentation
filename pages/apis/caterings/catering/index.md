@@ -149,7 +149,7 @@ title: Caterings
   {% /list %}
   {% /listitem %}
   {% listitem title="relationships" validation="formData, object" %}
-  Relationships object with **`business`** and **`user`** objects.
+  Relationships object with **optional `business`** and **`user`** objects.
   {% list isChild=true %}
   {% listitem title="business" validation="formData, object" %}
   Add a relationships link between catering and related Business.

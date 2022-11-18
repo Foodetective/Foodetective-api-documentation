@@ -16,7 +16,6 @@ title: Addresses
   {% listitem title="type" validation="string" type="Required" %}
   Provide Address `type`. Current selection is only **address**.
   {% /listitem %}
-
   {% listitem title="attributes" validation="formData, object" type="Required" %}
   Attributes object with a few **required** fields.
   {% list isChild=true %}
@@ -40,9 +39,8 @@ title: Addresses
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
   {% listitem title="relationships" validation="formData, object" %}
-  Relationships object with **`order`** and **`user`** objects.
+  Relationships object with **optional `order`** and **`user`** objects.
   {% list isChild=true %}
   {% listitem title="order" validation="formData, object" %}
   Add a relationships link between address and related Order.
@@ -66,7 +64,6 @@ title: Addresses
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -132,7 +129,6 @@ title: Addresses
   {% listitem title="id" validation="path integer" type="Required" %}
   Update a Address by specific Address `id`. You can retrieve this `id` from ...
   {% /listitem %}
-
   {% listitem title="data" validation="formData, object" type="Required" %}
   Form Data needed when updating a new address.
   {% list isChild=true %}
@@ -142,7 +138,6 @@ title: Addresses
   {% listitem title="type" validation="string" type="Required" %}
   Provide address `type`. Current selection is only **addresses**.
   {% /listitem %}
-
   {% listitem title="attributes" validation="formData, object" type="Required" %}
   Attributes object with a few **required** fields.
   {% list isChild=true %}
@@ -166,7 +161,6 @@ title: Addresses
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -225,7 +219,7 @@ title: Addresses
 
 {% methodCopy %}
 {% methodInfo %}
-  # Delete Address
+  # Delete Business
   Delete a Address.
 {% /methodInfo %}
 {% list title="Parameters" %}
@@ -235,12 +229,12 @@ title: Addresses
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "DELETE", path: "/api/v1/addresses/{id}"} %}
+{% codeBlock request={method: "DELETE", path: "/api/v1/businesses/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
