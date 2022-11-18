@@ -57,7 +57,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -155,7 +155,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -251,7 +251,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -393,7 +393,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -512,7 +512,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -573,7 +573,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}
@@ -648,7 +648,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -736,7 +736,7 @@ title: Reservations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  

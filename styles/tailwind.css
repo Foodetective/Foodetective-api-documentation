@@ -40,7 +40,7 @@
     @apply border-slate-300 dark:border-slate-700
   }
   .code-pre {
-    background-color: transparent !important;
+    background-color: #2d2d30 !important;
   } 
   pre[class*="language-"] {
     @apply m-0 rounded-lg;

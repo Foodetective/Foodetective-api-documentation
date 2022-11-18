@@ -61,7 +61,7 @@ title: Categories
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "data": [
@@ -154,7 +154,7 @@ title: Categories
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "url": "/api/v1/categories/{id}",

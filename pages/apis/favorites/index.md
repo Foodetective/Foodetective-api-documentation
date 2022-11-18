@@ -77,7 +77,7 @@ title: Favourites
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -138,7 +138,7 @@ title: Favourites
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

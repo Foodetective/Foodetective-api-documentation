@@ -87,7 +87,7 @@ title: Uber Eats Partner Integrations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -170,7 +170,7 @@ title: Uber Eats Partner Integrations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -253,7 +253,7 @@ title: Uber Eats Partner Integrations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -335,7 +335,7 @@ title: Uber Eats Partner Integrations
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

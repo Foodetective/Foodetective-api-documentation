@@ -74,7 +74,7 @@ title: Blog Posts
 {% /tabs %}
 {% /codeBlock %}
 
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "data":[
@@ -157,7 +157,7 @@ title: Blog Posts
   Include associations (*delimited with comma*). Available associations: user, chapters.
   {% /listitem %}
   {% listitem title="language" validation="query string" %}
-  Get blog post by a certain language.
+  Return results of Business by language **ISO 639‑1** code.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -204,7 +204,7 @@ title: Blog Posts
 {% /tabs %}
 {% /codeBlock %}
 
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   {
     "data": {

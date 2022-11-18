@@ -87,7 +87,7 @@ title: Preferred Partners
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -181,7 +181,7 @@ title: Preferred Partners
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}

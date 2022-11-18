@@ -65,7 +65,7 @@ title: Business Disconnect Stripe
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  

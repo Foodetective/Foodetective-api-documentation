@@ -58,7 +58,7 @@ title: Caterings
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -91,6 +91,7 @@ title: Caterings
   {% listitem title="email" validation="string" type="Required" %}
   {% /listitem %}
   {% listitem title="date" validation="date" type="Required" %}
+  Date should be formated as a **ISO date**.
   {% /listitem %}
   {% listitem title="from" validation="integer" type="Required" %}
   {% /listitem %}
@@ -216,7 +217,7 @@ title: Caterings
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -253,6 +254,7 @@ title: Caterings
   {% listitem title="name" validation="string" type="Required" %}
   {% /listitem %}
   {% listitem title="date" validation="date" type="Required" %}
+  Date should be formated as a **ISO date**.
   {% /listitem %}
   {% listitem title="from" validation="integer" type="Required" %}
   {% /listitem %}
@@ -327,7 +329,7 @@ title: Caterings
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  
@@ -390,7 +392,7 @@ title: Caterings
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
 {% /codeBlock %}  

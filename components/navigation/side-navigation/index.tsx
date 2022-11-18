@@ -279,6 +279,71 @@ export const items = [
       {href: '/apis/reviews', children: 'Reviews'}
     ],
   },
+  {
+    title: 'Specializations',
+    links: [
+      {href: '/apis/specializations', children: 'Specializations'}
+    ],
+  },
+  {
+    title: 'Static Pages',
+    links: [
+      {href: '/apis/static-pages', children: 'Static Pages'}
+    ],
+  },
+  {
+    title: 'Stripe Plans',
+    links: [
+      {href: '/apis/stripe-plans', children: 'Stripe Plans'}
+    ],
+  },
+  {
+    title: 'Stripe Products',
+    links: [
+      {href: '/apis/stripe-products', children: 'Stripe Products'}
+    ],
+  },
+  {
+    title: 'Subscriptions',
+    links: [
+      {href: '/apis/subscriptions', children: 'Subscriptions'}
+    ],
+  },
+  {
+    title: 'Supplier',
+    links: [
+      {href: '/apis/supplier/categories', children: 'Categories'},
+      {href: '/apis/supplier/elements', children: 'Elements'},
+      {href: '/apis/supplier/orders', children: 'Orders'},
+      {href: '/apis/supplier/product-categories', children: 'Product Categories'}
+    ],
+  },
+  {
+    title: 'Tables',
+    links: [
+      {href: '/apis/tables', children: 'Tables'}
+    ],
+  },
+  {
+    title: 'Team Members',
+    links: [
+      {href: '/apis/team-members', children: 'Team Members'}
+    ],
+  },
+  {
+    title: 'Users',
+    links: [
+      {href: '/apis/users/user', children: 'Users'},
+      {href: '/apis/users/current-user', children: 'Current User'},
+      {href: '/apis/users/detectives', children: 'Detectives'}
+    ],
+  },
+  {
+    title: 'Widgets',
+    links: [
+      {href: '/apis/widgets', children: 'Widgets'}
+    ],
+  },
 ];
 
 interface navItemProps {

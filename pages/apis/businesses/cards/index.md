@@ -66,7 +66,7 @@ title: Business Cards
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
+{% codeBlock title="RESPONSE" collapsable=true %}
   ```json
     {
       "url": "/api/v1/businesses/{id}/cards",

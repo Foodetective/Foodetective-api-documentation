@@ -56,6 +56,11 @@ export function CodeBlock({ title, subTitle, request, collapsable, children }) {
     }
   }, [collapsable])
 
+  const allowCopy = useMemo(() => {
+    if (!request && title != undefined && title.toLowerCase() != 'response' && collapsable) return true
+    return false
+  }, [title, request, collapsable])
+
   const lang = useMemo(() => {
     return router.query.lang ?? 'js'
   }, [router])
@@ -85,7 +90,7 @@ export function CodeBlock({ title, subTitle, request, collapsable, children }) {
   }
 
   return(
-    <div className={`code-block bg-prism rounded-lg overflow-hidden relative ${collapsed ? 'h-[350px]' : 'h-auto pb-20' }`}>
+    <div className={`code-block bg-prism rounded-lg overflow-hidden relative ${collapsable ? 'pb-40' : ''} ${collapsed ? 'h-[350px]' : 'h-auto' }`}>
       <div className={`topbar flex ${request ? 'px-10 py-5' : 'p-10'} bg-prism-light rounded-lg rounded-b-none justify-between items-center`}>
         <div className="topbar-title">
           {title && (<p className='text-white font-semibold m-0 dark:text-white'>{title}</p>)}
@@ -117,7 +122,7 @@ export function CodeBlock({ title, subTitle, request, collapsable, children }) {
             )}
           </div>
         )}
-        {(!request && collapsable) && (
+        {(!request && allowCopy) && (
           <div className="topbar-options flex gap-5">
             {copied ? (
               <button className='px-8 py-0 rounded-md text-blue-200 cursor-default'>
