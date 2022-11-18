@@ -105,6 +105,9 @@
   .code-block .tablist {
     display: none;
   }
+  .code-block.collapsable .code {
+    @apply h-[350px];
+  }
   .method-copy code {
     @apply bg-prism-light/[0.2] px-3 rounded border border-prism-light/[0.5] font-bold text-slate-800 dark:text-slate-300
   }

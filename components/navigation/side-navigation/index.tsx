@@ -231,6 +231,54 @@ export const items = [
       {href: '/apis/partners', children: 'Partners'}
     ],
   },
+  {
+    title: 'Payments',
+    links: [
+      {href: '/apis/payments', children: 'Payments'}
+    ],
+  },
+  {
+    title: 'Pictures',
+    links: [
+      {href: '/apis/pictures', children: 'Pictures'}
+    ],
+  },
+  {
+    title: 'Preferred Partners',
+    links: [
+      {href: '/apis/preferred-partners', children: 'Preferred Partners'}
+    ],
+  },
+  {
+    title: 'Privatisations',
+    links: [
+      {href: '/apis/privatisations', children: 'Privatisations'}
+    ],
+  },
+  {
+    title: 'Products',
+    links: [
+      {href: '/apis/products', children: 'Products'}
+    ],
+  },
+  {
+    title: 'Referrals',
+    links: [
+      {href: '/apis/referrals', children: 'Referrals'}
+    ],
+  },
+  {
+    title: 'Reservations',
+    links: [
+      {href: '/apis/reservations', children: 'Reservations'}
+    ],
+  },
+  {
+    title: 'Reviews',
+    links: [
+      {href: '/apis/reviews', children: 'Reviews'}
+    ],
+  },
 ];
 
 interface navItemProps {

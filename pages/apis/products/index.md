@@ -1,105 +1,36 @@
 ---
-title: Deliveries
+title: Products
 ---
 {% section %}
 {% layoutTwoCol %}
 
 {% methodCopy %}
 {% methodInfo %}
-  # {% $markdoc.frontmatter.title %}
-  Return a Delivery.
-{% /methodInfo %}
-{% list title="Parameters" %}
-  {% listitem title="id" validation="path integer" type="Required" %}
-  Return a Delivery by specific `id`.
-  {% /listitem %}
-  {% listitem title="include" validation="query string" %}
-  Include associations (delimited with comma). Available associations: business
-  {% /listitem %}
-{% /list %}
-{% /methodCopy %}
-
-{% codeBlock request={method: "GET", path: "/api/v1/deliveries/{id}"} %}
-{% tabs %}
-  {% tab label="js"%}
-  ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
-        
-      const data = await res.json();
-    }
-  ```
-  {% /tab %}
-  {% tab label="py"%}
-  ```py
-    Python example
-  ```
-  {% /tab %}
-  {% tab label="java"%}
-  ```java
-    Java example
-  ```
-  {% /tab %}
-  {% tab label="ruby"%}
-  ```ruby
-    Ruby example
-  ```
-  {% /tab %}
-  {% tab label="go"%}
-  ```go
-    Go example
-  ```
-  {% /tab %}
-{% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" %}
-  ```json
-  ```
-{% /codeBlock %}  
-
-{% /layoutTwoCol %}
-{% /section %}
-
-- - -
-
-{% section %}
-{% layoutTwoCol %}
-
-{% methodCopy %}
-{% methodInfo %}
-  # Create Delivery
-  Create a Delivery.
+  # Create Product
+  Create a must-eat (product) for business or review.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when creating a new Delivery.
+  Form Data needed when creating a new Product.
   {% list isChild=true %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide Delivery `type`. Current selection is only **deliveries**.
+  Provide Product `type`. Current selection is only **products**.
   {% /listitem %}
 
   {% listitem title="attributes" validation="formData, object" type="Required" %}
   Attributes object.
   {% list isChild=true %}
-  {% listitem title="code" validation="string" type="Required" %}
-  Delivery region code
+  {% listitem title="name" validation="string" type="Required" %}
+  Product name.
   {% /listitem %}
-  {% listitem title="price_cents" validation="integer" type="Required" %}
-  Price in cents (currency taken from the business)
-  {% /listitem %}
-  {% listitem title="free_from_cents" validation="integer" %}
-  Delivery is free if order reached this amount
+  {% listitem title="photo" validation="file" %}
+  Photo of the product.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
   
   {% listitem title="relationships" validation="formData, object" %}
-  Relationships object with **`business`** object.
+  Relationships object with **`business`** or **`review`** objects.
   {% list isChild=true %}
   {% listitem title="business" validation="formData, object" %}
   Add a Business relationships link.
@@ -112,6 +43,19 @@ title: Deliveries
   {% /listitem %}
   {% /list %}
   {% /listitem %}
+
+  {% listitem title="review" validation="formData, object" %}
+  Add a Review relationships link.
+  {% list isChild=true %}
+  {% listitem title="id" validation="string" %}
+  Related Review `id`.
+  {% /listitem %}
+  {% listitem title="type" validation="string" %}
+  Review `type`; **review**.
+  {% /listitem %}
+  {% /list %}
+  {% /listitem %}
+
   {% /list %}
   {% /listitem %}
   
@@ -120,12 +64,12 @@ title: Deliveries
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "POST", path: "/api/v1/deliveries"} %}
+{% codeBlock request={method: "POST", path: "/api/v1/products"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries`, {
+      const res = await fetch(`${BASE_URL}/api/v1/products`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -173,35 +117,32 @@ title: Deliveries
 
 {% methodCopy %}
 {% methodInfo %}
-  # Update Delivery
-  Update a Delivery
+  # Update Product
+  Update product
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Update a Delivery by specific `id`.
+  Update a Product by specific `id`.
   {% /listitem %}
 
   {% listitem title="data" validation="formData, object" type="Required" %}
-  Form Data needed when updating a Delivery.
+  Form Data needed when updating a Product.
   {% list isChild=true %}
   {% listitem title="id" validation="string" type="Required" %}
-  Provide Delivery `id`.
+  Provide Product `id`.
   {% /listitem %}
   {% listitem title="type" validation="string" type="Required" %}
-  Provide Delivery `type`. Current selection is only **deliveries**.
+  Provide Product `type`. Current selection is only **products**.
   {% /listitem %}
 
   {% listitem title="attributes" validation="formData, object" %}
   Attributes object.
   {% list isChild=true %}
-  {% listitem title="code" validation="string" %}
-  Delivery region code
+  {% listitem title="name" validation="string" type="Required" %}
+  Product name.
   {% /listitem %}
-  {% listitem title="free_from_cents" validation="integer" %}
-  Delivery is free if order reached this amount
-  {% /listitem %}
-  {% listitem title="price_cents" validation="integer" %}
-  Price in cents (currency taken from the business)
+  {% listitem title="photo" validation="file" %}
+  Photo of the product.
   {% /listitem %}
   {% /list %}
   {% /listitem %}
@@ -211,12 +152,12 @@ title: Deliveries
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "PATCH", path: "/api/v1/deliveries/{id}"} %}
+{% codeBlock request={method: "PATCH", path: "/api/v1/products/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/products/${id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json'
@@ -264,22 +205,22 @@ title: Deliveries
 
 {% methodCopy %}
 {% methodInfo %}
-  # Delete Delivery
-  Delete a Delivery.
+  # Delete Product
+  Delete a Product.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Delete a Delivery by specific `id`.
+  Delete a Product by specific `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "DELETE", path: "/api/v1/deliveries/{id}"} %}
+{% codeBlock request={method: "DELETE", path: "/api/v1/products/{id}"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
     {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
+      const res = await fetch(`${BASE_URL}/api/v1/products/${id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
