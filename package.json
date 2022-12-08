@@ -43,5 +43,9 @@
     "tags": "link:@markdoc/next.js/tags",
     "tailwindcss": "^3.2.1",
     "typescript": "latest"
+  },
+  "packageManager": "pnpm@7.18.1",
+  "engines": {
+    "node": ">=16.x"
   }
 }
