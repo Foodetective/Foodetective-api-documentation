@@ -1,5 +1,5 @@
 import { Tag } from "@markdoc/markdoc";
-import { Tab } from "../../components";
+import { Tab } from "@/components";
 
 export const tab = {
   render: Tab,

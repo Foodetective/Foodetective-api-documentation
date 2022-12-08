@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { NavItem, items } from "../../navigation/side-navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft,
   faChevronDown,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import { NavItem, items } from "@/components";
 
 export function MobileNav({ toc }) {
   const [showMenu, setShowMenu] = useState<Boolean>(false);

@@ -1,4 +1,4 @@
-import { MethodInfo } from "../../components";
+import { MethodInfo } from "@/components";
 
 export const methodInfo = {
   render: MethodInfo,

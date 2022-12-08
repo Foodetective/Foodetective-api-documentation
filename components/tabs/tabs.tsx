@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
-export const TabContext = React.createContext("js");
+export const TabContext = createContext("js");
 
 export function Tabs({ labels, children }) {
   const router = useRouter();
-  const [currentTab, setCurrentTab] = React.useState(labels[0]);
+  const [currentTab, setCurrentTab] = useState(labels[0]);
   const lang = router.query.lang ?? "js";
 
   useEffect(() => {

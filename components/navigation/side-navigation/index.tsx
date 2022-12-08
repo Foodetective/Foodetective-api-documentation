@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import styles from "./index.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronLeft,
   faChevronDown,
+  faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import styles from "./index.module.scss";
 
 export const items = [
   {

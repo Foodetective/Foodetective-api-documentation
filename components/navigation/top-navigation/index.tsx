@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import ThemeToggle from "@/components/buttons/themeToggleButton";
 import styles from "./index.module.scss";
-import ThemeToggle from "../../../components/buttons/themeToggleButton";
 
 export function Logo() {
   return (

@@ -1,4 +1,4 @@
-import { List } from "../../components";
+import { List } from "@/components";
 
 export const list = {
   render: List,

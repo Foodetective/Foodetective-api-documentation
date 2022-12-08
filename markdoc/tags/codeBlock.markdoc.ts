@@ -1,4 +1,4 @@
-import { CodeBlock } from "../../components";
+import { CodeBlock } from "@/components";
 
 export const codeBlock = {
   render: CodeBlock,

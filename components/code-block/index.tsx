@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
-import React, { useEffect, useMemo, useState, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import copy from "copy-to-clipboard";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClipboard, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faClipboard } from "@fortawesome/free-solid-svg-icons";
 
-let langOptions = [
+const langOptions = [
   { lang: "js", name: "js", selected: true },
   // {lang: 'js', name: 'Node.js', selected: true},
   // {lang: 'py', name: 'Python', selected: false},
@@ -24,7 +23,7 @@ function Request({ request }) {
       DELETE: () => "method text-white text-danger font-semibold pr-3",
       DEFAULT: () => "method text-white font-semibold pr-3",
     };
-    let type = method != undefined && method in methods ? method : "DEFAULT";
+    const type = method != undefined && method in methods ? method : "DEFAULT";
     return methods[type]();
   };
 

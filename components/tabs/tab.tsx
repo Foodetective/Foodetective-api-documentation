@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TabContext } from "./tabs";
 
 export function Tab({ label, children }) {
-  const currentTab = React.useContext(TabContext);
+  const currentTab = useContext(TabContext);
 
   if (label !== currentTab) {
     return null;
