@@ -1,4 +1,6 @@
 extends:
   - "next"
   - "plugin:import/recommended"
-rules: {}
+  - "plugin:prettier/recommended"
+rules:
+  prettier/prettier: "warn"
