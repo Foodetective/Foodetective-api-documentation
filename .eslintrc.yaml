@@ -6,6 +6,8 @@ settings:
   import/resolver:
     typescript: {}
 rules:
+  no-var: "warn"
+  prefer-const: "warn"
   prettier/prettier: "warn"
   import/newline-after-import: "warn"
   sort-imports:
