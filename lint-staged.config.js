@@ -7,4 +7,5 @@ module.exports = {
         .map((f) => path.relative(process.cwd(), f))
         .join(" --file ")}`,
   ],
+  "*.!(js|jsx|ts|tsx)": "prettier --ignore-unknown --cache --write",
 };

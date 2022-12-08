@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint --max-warnings=0"
+    "lint": "next lint --max-warnings=0",
+    "format": "prettier --cache --write .",
+    "format:check": "prettier --cache --check ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
