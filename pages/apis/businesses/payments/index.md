@@ -103,7 +103,7 @@ title: Business Payments
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

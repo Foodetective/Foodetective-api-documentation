@@ -28,7 +28,7 @@ title: Pictures
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" %}
   Relationships object with **`business`**, **`Reviews`** or **`dish`** objects.
   {% list isChild=true %}
@@ -70,7 +70,7 @@ title: Pictures
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -87,7 +87,7 @@ title: Pictures
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -117,7 +117,7 @@ title: Pictures
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

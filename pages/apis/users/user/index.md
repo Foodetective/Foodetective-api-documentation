@@ -13,7 +13,7 @@ title: Users
   {% listitem title="id" validation="path integer" type="Required" %}
   Return a User by specific `id`.
   {% /listitem %}
-  {% listitem title="include" validation="query string" %}	
+  {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: specializations
   {% /listitem %}
   {% listitem title="language" validation="query string" %}
@@ -33,7 +33,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -63,7 +63,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -82,7 +82,7 @@ title: Users
   {% listitem title="id" validation="path integer" type="Required" %}
   Return a User by specific `id`.
   {% /listitem %}
-  {% listitem title="include" validation="query string" %}	
+  {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: specializations
   {% /listitem %}
   {% listitem title="sort" validation="query string" %}
@@ -108,7 +108,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -138,7 +138,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -216,7 +216,7 @@ title: Users
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -233,7 +233,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -263,7 +263,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -294,7 +294,7 @@ title: Users
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -311,7 +311,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -341,7 +341,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -372,7 +372,7 @@ title: Users
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -389,7 +389,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -419,7 +419,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -450,7 +450,7 @@ title: Users
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -467,7 +467,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -497,7 +497,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -534,7 +534,7 @@ title: Users
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -551,7 +551,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -581,7 +581,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -612,7 +612,7 @@ title: Users
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}

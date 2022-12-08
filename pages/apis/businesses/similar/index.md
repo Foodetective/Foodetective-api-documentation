@@ -18,7 +18,7 @@ title: Businesses Similar
 
   **Example:** `products,reviews`
   {% /listitem %}
-  {% listitem title="page" validation="query integer" %}	
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
@@ -232,7 +232,7 @@ title: Businesses Similar
       ]
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

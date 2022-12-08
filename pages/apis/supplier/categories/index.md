@@ -36,7 +36,7 @@ title: Supplier Categories
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -66,7 +66,7 @@ title: Supplier Categories
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

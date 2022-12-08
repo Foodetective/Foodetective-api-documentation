@@ -140,7 +140,7 @@ title: Business Invoice
     ]
   }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

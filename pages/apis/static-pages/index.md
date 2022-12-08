@@ -33,7 +33,7 @@ title: Static Pages
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -63,7 +63,7 @@ title: Static Pages
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -99,7 +99,7 @@ title: Static Pages
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -129,7 +129,7 @@ title: Static Pages
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

@@ -19,7 +19,7 @@ title: Businesses Subscriptions
   {% listitem title="filter[scope]" validation="query string" %}
   Subscriptions scoped to the group of statuses. Current scope available; `not_terminated`.
   {% /listitem %}
-  {% listitem title="page" validation="query integer" %}	
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
@@ -117,7 +117,7 @@ title: Businesses Subscriptions
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

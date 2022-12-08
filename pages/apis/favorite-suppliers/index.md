@@ -16,7 +16,7 @@ title: Favourite Suppliers
   {% listitem title="type" validation="string" type="Required" %}
   Provide Favourite Suppliers `type`. Current selection is only **favorite_suppliers**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** or **`supplier`** objects.
   {% list isChild=true %}
@@ -45,7 +45,7 @@ title: Favourite Suppliers
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -62,7 +62,7 @@ title: Favourite Suppliers
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -92,7 +92,7 @@ title: Favourite Suppliers
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

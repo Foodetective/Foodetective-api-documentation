@@ -40,7 +40,7 @@ title: Addresses
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" %}
   Relationships object with **`order`** and **`user`** objects.
   {% list isChild=true %}
@@ -66,7 +66,7 @@ title: Addresses
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -83,7 +83,7 @@ title: Addresses
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -113,7 +113,7 @@ title: Addresses
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -166,7 +166,7 @@ title: Addresses
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -183,7 +183,7 @@ title: Addresses
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -213,7 +213,7 @@ title: Addresses
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

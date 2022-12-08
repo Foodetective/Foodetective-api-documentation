@@ -16,7 +16,7 @@ title: Feedback
   {% listitem title="type" validation="string" type="Required" %}
   Provide Feedback `type`. Current selection is only **feedbacks**.
   {% /listitem %}
-  
+
   {% listitem title="attributes" validation="formData, object" type="Required" %}
   Attributes object with a few **required** fields.
   {% list isChild=true %}
@@ -46,7 +46,7 @@ title: Feedback
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -76,7 +76,7 @@ title: Feedback
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

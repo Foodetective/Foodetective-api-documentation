@@ -90,7 +90,7 @@ title: Categories
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -179,7 +179,7 @@ title: Categories
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

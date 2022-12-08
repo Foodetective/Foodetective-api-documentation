@@ -64,7 +64,7 @@ title: Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -94,7 +94,7 @@ title: Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -149,7 +149,7 @@ title: Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -179,7 +179,7 @@ title: Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -218,7 +218,7 @@ title: Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -248,7 +248,7 @@ title: Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -284,7 +284,7 @@ title: Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -314,7 +314,7 @@ title: Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -345,7 +345,7 @@ title: Partners
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" %}
   Relationships object with **`partner`** object.
   {% list isChild=true %}
@@ -362,7 +362,7 @@ title: Partners
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -379,7 +379,7 @@ title: Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -409,7 +409,7 @@ title: Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -427,7 +427,7 @@ title: Partners
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
   Update user link to the partner by `id`.
-  {% /listitem %}  
+  {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
@@ -442,7 +442,7 @@ title: Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -472,7 +472,7 @@ title: Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

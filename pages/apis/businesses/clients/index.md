@@ -21,7 +21,7 @@ title: Business Clients
   {% listitem title="search" validation="query string" %}
   Search for clients by the following search queries **Name** or **email**.
   {% /listitem %}
-  {% listitem title="page" validation="query string" %}  	
+  {% listitem title="page" validation="query string" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query string" %}
@@ -103,7 +103,7 @@ title: Business Clients
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

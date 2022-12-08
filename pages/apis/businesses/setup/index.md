@@ -96,7 +96,7 @@ title: Businesses Setup Intent
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

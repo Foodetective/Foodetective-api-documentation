@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import Prism from 'prismjs';
+import React, { useEffect, useRef } from "react";
+import Prism from "prismjs";
 
-export function Code({children, 'data-language': language}) {
+export function Code({ children, "data-language": language }) {
   const ref = useRef(null);
 
   useEffect(() => {

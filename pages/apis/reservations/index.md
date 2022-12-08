@@ -30,7 +30,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -60,7 +60,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -93,7 +93,7 @@ title: Reservations
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -111,7 +111,7 @@ title: Reservations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -128,7 +128,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -158,7 +158,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -189,7 +189,7 @@ title: Reservations
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -207,7 +207,7 @@ title: Reservations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -224,7 +224,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -254,7 +254,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -319,7 +319,7 @@ title: Reservations
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** or **`user`** objects.
   {% list isChild=true %}
@@ -349,7 +349,7 @@ title: Reservations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -366,7 +366,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -396,7 +396,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -468,7 +468,7 @@ title: Reservations
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -485,7 +485,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -515,7 +515,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -604,7 +604,7 @@ title: Reservations
   {% /listitem %}
   {% listitem title="type" validation="string" type="Required" %}
   Provide Reservation `type`. Current selection is only **reservations**.
-  {% /listitem %}  
+  {% /listitem %}
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -621,7 +621,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -651,7 +651,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -709,7 +709,7 @@ title: Reservations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -739,7 +739,7 @@ title: Reservations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

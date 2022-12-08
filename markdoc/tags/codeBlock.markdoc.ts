@@ -1,19 +1,19 @@
-import { CodeBlock } from '../../components'
+import { CodeBlock } from "../../components";
 
 export const codeBlock = {
   render: CodeBlock,
   attributes: {
     title: {
-      type: String
+      type: String,
     },
     subTitle: {
-      type: String
+      type: String,
     },
     request: {
-      type: Object
+      type: Object,
     },
     collapsable: {
-      type: Boolean
-    }
-  }
-}
+      type: Boolean,
+    },
+  },
+};

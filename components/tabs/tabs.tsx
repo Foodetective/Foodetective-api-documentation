@@ -1,22 +1,22 @@
-import React, { useEffect } from 'react'
-import { useRouter } from 'next/router';
+import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
-export const TabContext = React.createContext('js')
+export const TabContext = React.createContext("js");
 
 export function Tabs({ labels, children }) {
-  const router = useRouter()
-  const [ currentTab, setCurrentTab ] = React.useState(labels[0]);
-  const lang = router.query.lang ?? 'js' 
+  const router = useRouter();
+  const [currentTab, setCurrentTab] = React.useState(labels[0]);
+  const lang = router.query.lang ?? "js";
 
   useEffect(() => {
     if (lang) {
-      setCurrentTab(lang)
+      setCurrentTab(lang);
     }
-  }, [lang])
+  }, [lang]);
 
   return (
     <TabContext.Provider value={currentTab}>
-      <ul className='tablist' role="tablist">
+      <ul className="tablist" role="tablist">
         {labels.map((label) => (
           <li key={label}>
             <button
@@ -32,4 +32,4 @@ export function Tabs({ labels, children }) {
       {children}
     </TabContext.Provider>
   );
-};
+}

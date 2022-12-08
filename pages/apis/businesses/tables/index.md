@@ -16,7 +16,7 @@ title: Businesses Tables
   {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: business
   {% /listitem %}
-  {% listitem title="page" validation="query integer" %}	
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
@@ -91,7 +91,7 @@ title: Businesses Tables
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

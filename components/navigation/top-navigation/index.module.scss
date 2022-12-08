@@ -1,19 +1,23 @@
 .logo {
   @apply mr-40;
   .logo-link {
-    @apply flex flex-row align-middle text-primary text-lg font-semibold;
+    @apply flex flex-row align-middle text-lg font-semibold text-primary;
     .logo-image {
       @apply mr-4 text-4xl;
-      .svg-fork-cls-1, .svg-fork-cls-2, .svg-fork-cls-3 {
+      .svg-fork-cls-1,
+      .svg-fork-cls-2,
+      .svg-fork-cls-3 {
         @apply fill-none stroke-currentColor stroke-[3px];
       }
       .svg-fork-cls-1 {
         @apply stroke-linejoin-round;
       }
-      .svg-fork-cls-1, .svg-fork-cls-3 {
+      .svg-fork-cls-1,
+      .svg-fork-cls-3 {
         @apply stroke-linecap-round;
       }
-      .svg-fork-cls-2, .svg-fork-cls-3 {
+      .svg-fork-cls-2,
+      .svg-fork-cls-3 {
         @apply stroke-miterlimit-10;
       }
     }
@@ -21,7 +25,7 @@
 }
 
 .navbar {
-  @apply fixed top-0 w-full z-[100] flex items-center py-16 px-25 border-b border-slate-300;
+  @apply fixed top-0 z-[100] flex w-full items-center border-b border-slate-300 py-16 px-25;
 }
 .navbar-inner {
   display: flex;

@@ -1,8 +1,8 @@
-import { ListItem } from '../../components';
+import { ListItem } from "../../components";
 
 export const listitem = {
   render: ListItem,
-  children: ['paragraph', 'tag', 'list'],
+  children: ["paragraph", "tag", "list"],
   attributes: {
     title: {
       type: String,
@@ -12,6 +12,6 @@ export const listitem = {
     },
     type: {
       type: String,
-    }
+    },
   },
 };

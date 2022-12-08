@@ -13,7 +13,7 @@ title: Businesses Privatisations
   {% listitem title="id" validation="path integer" type="Required" %}
   Return all privatisations by the specific business `id`. You can retrieve this `id` from ...
   {% /listitem %}
-  {% listitem title="include" validation="query string" %}	
+  {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: business, user
 
   **Example:** `business,user`
@@ -133,7 +133,7 @@ title: Businesses Privatisations
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

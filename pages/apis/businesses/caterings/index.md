@@ -16,16 +16,16 @@ title: Business Caterings
   Returns all caterings for specific business by the specific business `id`. You can retrieve this `id` from ...
   {% /listitem %}
   {% listitem title="include" validation="query string" %}
-  Include associations (*delimited with comma*). Available associations: business, user, address. 
-  
+  Include associations (*delimited with comma*). Available associations: business, user, address.
+
   **Example:** `business,user,address`
   {% /listitem %}
   {% listitem title="sort" validation="query string" %}
   Sort ascending or descending order.
   {% /listitem %}
   {% listitem title="start_date" validation="query date filter" %}
-  Date should be formated as a **ISO date**. 
-  
+  Date should be formated as a **ISO date**.
+
   **Example:** `?filter=${start_date}`
   {% /listitem %}
   {% listitem title="end_date" validation="query date filter" %}
@@ -144,7 +144,7 @@ title: Business Caterings
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

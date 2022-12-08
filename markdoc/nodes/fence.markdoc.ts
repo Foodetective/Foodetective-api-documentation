@@ -1,5 +1,5 @@
-import { nodes } from '@markdoc/markdoc';
-import { Code } from '../../components';
+import { nodes } from "@markdoc/markdoc";
+import { Code } from "../../components";
 
 export const fence = {
   render: Code,

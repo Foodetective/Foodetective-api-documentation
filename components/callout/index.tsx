@@ -1,11 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 
 export function Callout({ title, children }) {
   return (
-    <div className='callout flex flex-col p-16 my-16 bg-prism rounded-lg'>
-      {title != undefined && (
-        <h3 className='font-semibold'>{title}</h3>
-      )}
+    <div className="callout my-16 flex flex-col rounded-lg bg-prism p-16">
+      {title != undefined && <h3 className="font-semibold">{title}</h3>}
       {children}
     </div>
   );

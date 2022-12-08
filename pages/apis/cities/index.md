@@ -60,7 +60,7 @@ title: Cities
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    { 
+    {
       "data": [
         {
           "id": "4b166dbe-d99d-5091-abdd-95b83330ed3a",
@@ -82,7 +82,7 @@ title: Cities
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

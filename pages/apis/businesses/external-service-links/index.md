@@ -129,7 +129,7 @@ title: Business External
     }
   }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

@@ -1,9 +1,10 @@
 .callout {
-    @apply flex flex-col p-16 gap-5 bg-prism rounded-lg;
-    h3, p {
-        @apply text-white dark:text-slate-500;
-    }
-    h3 {
-        @apply font-semibold;
-    }
+  @apply flex flex-col gap-5 rounded-lg bg-prism p-16;
+  h3,
+  p {
+    @apply text-white dark:text-slate-500;
+  }
+  h3 {
+    @apply font-semibold;
+  }
 }
