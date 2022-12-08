@@ -69,7 +69,7 @@ export default function MyApp({ Component, pageProps }: AppProps<MyAppProps>) {
     if (getCookie('lang') !== null) {
       router.push(`${router.route}?lang=${getCookie('lang')}`)
     }
-  }, [router.route])
+  }, [router, router.route])
 
   let title = TITLE
   let description = DESCRIPTION

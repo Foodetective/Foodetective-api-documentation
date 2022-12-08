@@ -366,7 +366,7 @@ export const NavItem: React.FC<navItemProps> = ({item, onClick}) => {
     if (hasActive) {
       setShow(true)
     }
-  }, [router.pathname])
+  }, [hasActive, router.pathname])
 
   const hide = (): void => {
     setShow(!show)

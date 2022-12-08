@@ -75,7 +75,7 @@ export function CodeBlock({ title, subTitle, request, collapsable, children }) {
       itm.selected = false
       return itm
     })
-  }, [lang])
+  }, [router.asPath])
 
   const setCookie = (name, value, days) => {
     router.push(`${router.route}?lang=${value}`)
