@@ -25,7 +25,7 @@ title: Business Orders
   Filter by channel.
   {% /listitem %}
   {% listitem title="day" validation="query date filter" %}
-  Filter by Date, the format should be **ISO date**. 
+  Filter by Date, the format should be **ISO date**.
   {% /listitem %}
   {% listitem title="states" validation="query string filter" %}
   Filter by states.
@@ -151,7 +151,7 @@ title: Business Orders
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -217,7 +217,7 @@ title: Business Orders
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

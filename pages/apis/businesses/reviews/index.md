@@ -13,7 +13,7 @@ title: Businesses Reviews
   {% listitem title="id" validation="path integer" type="Required" %}
   Return published reviews by the specific business `id`. You can retrieve this `id` from ...
   {% /listitem %}
-  {% listitem title="include" validation="query string" %}	
+  {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: user, business, pictures, products.
 
   **Example:** `user,pictures`
@@ -21,7 +21,7 @@ title: Businesses Reviews
   {% listitem title="sort" validation="query string" %}
   Sort ascending or descending order.
   {% /listitem %}
-  {% listitem title="page" validation="query integer" %}	
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
@@ -174,7 +174,7 @@ title: Businesses Reviews
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

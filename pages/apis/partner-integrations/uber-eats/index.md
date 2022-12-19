@@ -25,7 +25,7 @@ title: Uber Eats Partner Integrations
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -43,7 +43,7 @@ title: Uber Eats Partner Integrations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -60,7 +60,7 @@ title: Uber Eats Partner Integrations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -90,7 +90,7 @@ title: Uber Eats Partner Integrations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -112,7 +112,7 @@ title: Uber Eats Partner Integrations
   {% listitem title="type" validation="string" type="Required" %}
   Provide Partner Integrations `type`. Current selection is only **partner_integrations**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -143,7 +143,7 @@ title: Uber Eats Partner Integrations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -173,7 +173,7 @@ title: Uber Eats Partner Integrations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -195,7 +195,7 @@ title: Uber Eats Partner Integrations
   {% listitem title="type" validation="string" type="Required" %}
   Provide Partner Integrations `type`. Current selection is only **partner_integrations**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -209,7 +209,7 @@ title: Uber Eats Partner Integrations
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -226,7 +226,7 @@ title: Uber Eats Partner Integrations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -256,7 +256,7 @@ title: Uber Eats Partner Integrations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -278,7 +278,7 @@ title: Uber Eats Partner Integrations
   {% listitem title="type" validation="string" type="Required" %}
   Provide Partner Integrations `type`. Current selection is only **partner_integrations**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -293,7 +293,7 @@ title: Uber Eats Partner Integrations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}

@@ -16,7 +16,7 @@ title: Orkestro Partner Integrations
   {% listitem title="type" validation="string" type="Required" %}
   Provide Partner Integrations `type`. Current selection is only **partner_integrations**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -34,7 +34,7 @@ title: Orkestro Partner Integrations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -51,7 +51,7 @@ title: Orkestro Partner Integrations
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -81,7 +81,7 @@ title: Orkestro Partner Integrations
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -103,7 +103,7 @@ title: Orkestro Partner Integrations
   {% listitem title="type" validation="string" type="Required" %}
   Provide Partner Integrations `type`. Current selection is only **partner_integrations**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -121,7 +121,7 @@ title: Orkestro Partner Integrations
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}

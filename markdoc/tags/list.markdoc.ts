@@ -1,14 +1,14 @@
-import { List } from '../../components'
+import { List } from "@/components";
 
 export const list = {
   render: List,
   attributes: {
     title: {
       type: String,
-      require: true
+      require: true,
     },
     isChild: {
-      type: Boolean
-    }
-  }
-}
+      type: Boolean,
+    },
+  },
+};

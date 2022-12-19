@@ -1,149 +1,194 @@
-import { useRouter } from 'next/router'
-import React, {useEffect, useMemo, useState, useRef} from 'react'
-import copy from 'copy-to-clipboard'
-
+import { useRouter } from "next/router";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import copy from "copy-to-clipboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClipboard, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faClipboard } from "@fortawesome/free-solid-svg-icons";
 
-let langOptions = [
-  {lang: 'js', name: 'js', selected: true},
+const langOptions = [
+  { lang: "js", name: "js", selected: true },
   // {lang: 'js', name: 'Node.js', selected: true},
   // {lang: 'py', name: 'Python', selected: false},
   // {lang: 'java', name: 'Java', selected: false},
   // {lang: 'ruby', name: 'Ruby', selected: false},
   // {lang: 'go', name: 'Go', selected: false},
-]
+];
 
-function Request({request}) {
+function Request({ request }) {
   const methodType = (method) => {
     const methods = {
-      'GET': () => 'method text-white text-blue-400 font-semibold pr-3',
-      'POST': () => 'method text-white text-success font-semibold pr-3',
-      'PUT': () => 'method text-white text-warning font-semibold pr-3',
-      'PATCH': () => 'method text-white text-warning font-semibold pr-3',
-      'DELETE': () => 'method text-white text-danger font-semibold pr-3',
-      'DEFAULT': () => 'method text-white font-semibold pr-3'
-    }
-    let type = method != undefined && method in methods ? method : 'DEFAULT'
-    return methods[type]()
-  }
+      GET: () => "method text-white text-blue-400 font-semibold pr-3",
+      POST: () => "method text-white text-success font-semibold pr-3",
+      PUT: () => "method text-white text-warning font-semibold pr-3",
+      PATCH: () => "method text-white text-warning font-semibold pr-3",
+      DELETE: () => "method text-white text-danger font-semibold pr-3",
+      DEFAULT: () => "method text-white font-semibold pr-3",
+    };
+    const type = method != undefined && method in methods ? method : "DEFAULT";
+    return methods[type]();
+  };
 
   return (
-    <p className="request-definition break-all m-0">
+    <p className="request-definition m-0 break-all">
       <span className={methodType(request.method)}>{request.method}</span>
       <span className="path text-white">{request.path}</span>
     </p>
-  )
+  );
 }
 
 export function CodeBlock({ title, subTitle, request, collapsable, children }) {
-  const [copied, setCopied] = useState<boolean>(false)
-  const [collapsed, setCollapsed] = useState<boolean>(false)
+  const [copied, setCopied] = useState<boolean>(false);
+  const [collapsed, setCollapsed] = useState<boolean>(false);
   const ref = useRef(null);
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     if (copied) {
-      copy(ref.current.innerText)
-      const copyTimeout = setTimeout(setCopied, 1000, false)
-      return () => clearInterval(copyTimeout)
+      copy(ref.current.innerText);
+      const copyTimeout = setTimeout(setCopied, 1000, false);
+      return () => clearInterval(copyTimeout);
     }
-  }, [copied])
+  }, [copied]);
 
   useEffect(() => {
     if (collapsable) {
-      setCollapsed(true)
+      setCollapsed(true);
     }
-  }, [collapsable])
+  }, [collapsable]);
 
   const allowCopy = useMemo(() => {
-    if (!request && title != undefined && title.toLowerCase() != 'response' && collapsable) return true
-    return false
-  }, [title, request, collapsable])
+    if (
+      !request &&
+      title != undefined &&
+      title.toLowerCase() != "response" &&
+      collapsable
+    )
+      return true;
+    return false;
+  }, [title, request, collapsable]);
 
   const lang = useMemo(() => {
-    return router.query.lang ?? 'js'
-  }, [router])
+    return router.query.lang ?? "js";
+  }, [router]);
 
   const options = useMemo(() => {
-    const lang = router.asPath.split('?lang=')[1]
-    return langOptions.map(itm => {
+    const lang = router.asPath.split("?lang=")[1];
+    return langOptions.map((itm) => {
       if (itm.lang === lang) {
-        itm.selected = true
-        return itm
+        itm.selected = true;
+        return itm;
       }
-      itm.selected = false
-      return itm
-    })
-  }, [lang])
+      itm.selected = false;
+      return itm;
+    });
+  }, [router.asPath]);
 
   const setCookie = (name, value, days) => {
-    router.push(`${router.route}?lang=${value}`)
+    router.push(`${router.route}?lang=${value}`);
 
-    let expires = ""
+    let expires = "";
     if (days) {
-      const date = new Date()
-      date.setTime(date.getTime() + (days*24*60*60*1000))
-      expires = "; expires=" + date.toUTCString()
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "") + expires + "; path:/"
-  }
+    document.cookie = name + "=" + (value || "") + expires + "; path:/";
+  };
 
-  return(
-    <div className={`code-block bg-prism rounded-lg overflow-hidden relative ${collapsable ? 'pb-40' : ''} ${collapsed ? 'h-[350px]' : 'h-auto' }`}>
-      <div className={`topbar flex ${request ? 'px-10 py-5' : 'p-10'} bg-prism-light rounded-lg rounded-b-none justify-between items-center`}>
+  return (
+    <div
+      className={`code-block relative overflow-hidden rounded-lg bg-prism ${
+        collapsable ? "pb-40" : ""
+      } ${collapsed ? "h-[350px]" : "h-auto"}`}
+    >
+      <div
+        className={`topbar flex ${
+          request ? "px-10 py-5" : "p-10"
+        } items-center justify-between rounded-lg rounded-b-none bg-prism-light`}
+      >
         <div className="topbar-title">
-          {title && (<p className='text-white font-semibold m-0 dark:text-white'>{title}</p>)}
-          {subTitle && (<p className='text-white  m-0'>{subTitle}</p>)}
-          {(request && request.method) && (<Request key='request' request={request} />)}
+          {title && (
+            <p className="m-0 font-semibold text-white dark:text-white">
+              {title}
+            </p>
+          )}
+          {subTitle && <p className="m-0  text-white">{subTitle}</p>}
+          {request && request.method && (
+            <Request key="request" request={request} />
+          )}
         </div>
-        {(request && request.method) && (
+        {request && request.method && (
           <div className="topbar-options flex gap-5">
-            <select 
-              name="langauge-switcher" 
-              id="langauge-switcher" 
-              className='bg-prism-light text-white text-sm text-right cursor-pointer rounded-none focus-visible:outline-none' 
-              value={lang} 
-              onChange={(e) => setCookie('lang', e.target.value, '')}
+            <select
+              name="langauge-switcher"
+              id="langauge-switcher"
+              className="cursor-pointer rounded-none bg-prism-light text-right text-sm text-white focus-visible:outline-none"
+              value={lang}
+              onChange={(e) => setCookie("lang", e.target.value, "")}
             >
-              {options.sort((a, b) => Number(b.selected) - Number(a.selected)).map(({lang, name, selected}) => (
-                <option key={lang} value={lang} className={selected ? 'bg-gray-400 text-white' : 'bg-white text-slate-700'} disabled={selected}>{name}</option>
-              ))}
+              {options
+                .sort((a, b) => Number(b.selected) - Number(a.selected))
+                .map(({ lang, name, selected }) => (
+                  <option
+                    key={lang}
+                    value={lang}
+                    className={
+                      selected
+                        ? "bg-gray-400 text-white"
+                        : "bg-white text-slate-700"
+                    }
+                    disabled={selected}
+                  >
+                    {name}
+                  </option>
+                ))}
             </select>
 
             {copied ? (
-              <button className='px-8 py-5 rounded-md text-blue-200 cursor-default'>
-              <FontAwesomeIcon icon={faCheck} size='1x' />
-            </button>
+              <button className="cursor-default rounded-md px-8 py-5 text-blue-200">
+                <FontAwesomeIcon icon={faCheck} size="1x" />
+              </button>
             ) : (
-              <button className='px-10 py-5 rounded-md text-blue-400 hover:text-blue-200 hover:bg-prism-dark/[0.5] transition-colors duration-200 delay-75' onClick={() => setCopied(true)}>
-                <FontAwesomeIcon icon={faClipboard} size='1x' />
+              <button
+                className="rounded-md px-10 py-5 text-blue-400 transition-colors delay-75 duration-200 hover:bg-prism-dark/[0.5] hover:text-blue-200"
+                onClick={() => setCopied(true)}
+              >
+                <FontAwesomeIcon icon={faClipboard} size="1x" />
               </button>
             )}
           </div>
         )}
-        {(!request && allowCopy) && (
+        {!request && allowCopy && (
           <div className="topbar-options flex gap-5">
             {copied ? (
-              <button className='px-8 py-0 rounded-md text-blue-200 cursor-default'>
-              <FontAwesomeIcon icon={faCheck} size='1x' />
-            </button>
+              <button className="cursor-default rounded-md px-8 py-0 text-blue-200">
+                <FontAwesomeIcon icon={faCheck} size="1x" />
+              </button>
             ) : (
-              <button className='px-10 py-0 rounded-md text-blue-400 hover:text-blue-200 hover:bg-prism-dark/[0.5] transition-colors duration-200 delay-75' onClick={() => setCopied(true)}>
-                <FontAwesomeIcon icon={faClipboard} size='1x' />
+              <button
+                className="rounded-md px-10 py-0 text-blue-400 transition-colors delay-75 duration-200 hover:bg-prism-dark/[0.5] hover:text-blue-200"
+                onClick={() => setCopied(true)}
+              >
+                <FontAwesomeIcon icon={faClipboard} size="1x" />
               </button>
             )}
           </div>
         )}
       </div>
-      <div ref={ref}>
-        {children}
-      </div>
+      <div ref={ref}>{children}</div>
       {collapsable && (
-        <div className={`show-more absolute bottom-0 w-full bg-prism ${collapsed ? 'pt-20' : '' }`}>
-          <button className="text-sm text-white p-8 w-full bg-prism-light rounded-lg rounded-t-none" onClick={() => setCollapsed(!collapsed)}>Show {collapsed ? 'More' : 'Less'} </button>
+        <div
+          className={`show-more absolute bottom-0 w-full bg-prism ${
+            collapsed ? "pt-20" : ""
+          }`}
+        >
+          <button
+            className="w-full rounded-lg rounded-t-none bg-prism-light p-8 text-sm text-white"
+            onClick={() => setCollapsed(!collapsed)}
+          >
+            Show {collapsed ? "More" : "Less"}{" "}
+          </button>
         </div>
       )}
     </div>
-  )
+  );
 }

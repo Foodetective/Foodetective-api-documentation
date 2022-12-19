@@ -20,7 +20,7 @@ title: Banners
 
 {% codeBlock request={method: "GET", path: "/api/v1/banners/${target}"} %}
  {% tabs %}
-  {% tab label="js"%} 
+  {% tab label="js"%}
   ```js
     {
       const res = await fetch(`${BASE_URL}/api/v1/banners/${target}`, {

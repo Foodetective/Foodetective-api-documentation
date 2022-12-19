@@ -16,7 +16,7 @@ title: Preferred Partners
   {% listitem title="type" validation="string" type="Required" %}
   Provide Preferred Partner `type`. Current selection is only **partners**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -43,7 +43,7 @@ title: Preferred Partners
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -60,7 +60,7 @@ title: Preferred Partners
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -90,7 +90,7 @@ title: Preferred Partners
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -112,7 +112,7 @@ title: Preferred Partners
   {% listitem title="type" validation="string" type="Required" %}
   Provide Preferred Partner `type`. Current selection is only **partners**.
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`business`** object.
   {% list isChild=true %}
@@ -139,7 +139,7 @@ title: Preferred Partners
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}

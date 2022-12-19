@@ -13,7 +13,7 @@ title: Business Favourite Suppliers
   {% listitem title="id" validation="path integer" type="Required" %}
   Return favorite suppliers by the specific business `id`. You can retrieve this `id` from ...
   {% /listitem %}
-  {% listitem title="page" validation="query integer" %}	
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
@@ -113,7 +113,7 @@ title: Business Favourite Suppliers
     }
   }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

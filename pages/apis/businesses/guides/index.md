@@ -107,7 +107,7 @@ title: Business Guides
     }
   }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

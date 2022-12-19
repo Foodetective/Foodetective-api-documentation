@@ -1,6 +1,6 @@
-import { LayoutTwoCol } from '../../components'
+import { LayoutTwoCol } from "@/components";
 
 export const layoutTwoCol = {
-    render: LayoutTwoCol,
-    attributes: {}
-}
+  render: LayoutTwoCol,
+  attributes: {},
+};

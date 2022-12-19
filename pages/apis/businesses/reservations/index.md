@@ -142,7 +142,7 @@ title: Businesses Reservations
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,29 +19,29 @@
     padding-top: var(--top-nav-height);
   }
   .content main {
-    @apply flex overflow-auto border-x border-slate-300 w-full pt-30 lg:pt-0;
+    @apply flex w-full overflow-auto border-x border-slate-300 pt-30 lg:pt-0;
     height: calc(100vh - var(--top-nav-height));
   }
-  .content main >div {
+  .content main > div {
     @apply w-full dark:text-slate-400;
     height: calc(100vh - var(--top-nav-height)) !important;
   }
-  .content main h1, 
+  .content main h1,
   .content main h2 {
     @apply dark:text-slate-400;
   }
   .border-rounded {
-    @apply border rounded-lg border-slate-300 dark:border-slate-700
+    @apply rounded-lg border border-slate-300 dark:border-slate-700;
   }
   .attribute-list-group-child li {
-    @apply p-14 border-b border-solid
+    @apply border-b border-solid p-14;
   }
   hr {
-    @apply border-slate-300 dark:border-slate-700
+    @apply border-slate-300 dark:border-slate-700;
   }
   .code-pre {
     background-color: #2d2d30 !important;
-  } 
+  }
   pre[class*="language-"] {
     @apply m-0 rounded-lg;
     background-color: transparent;
@@ -49,9 +49,16 @@
     border-bottom-right-radius: 8px; */
   }
   article {
-    @apply flex flex-col gap-10 w-full;
+    @apply flex w-full flex-col gap-10;
   }
-  h1, h2, h3, h4, h5, h6, p, a {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a {
     @apply text-slate-700;
   }
   h1 {
@@ -61,7 +68,7 @@
     @apply text-2xl;
   }
   h3 {
-    @apply text-xl
+    @apply text-xl;
   }
   h4 {
     @apply text-lg;
@@ -70,37 +77,42 @@
     @apply text-lg;
   }
   p {
-    @apply text-sm mt-8 font-normal dark:text-slate-400;
+    @apply mt-8 text-sm font-normal dark:text-slate-400;
   }
   p code,
   li code {
-    @apply bg-prism-light/[0.2] px-3 rounded border border-prism-light/[0.5] font-bold text-slate-800 dark:text-slate-300
+    @apply rounded border border-prism-light/[0.5] bg-prism-light/[0.2] px-3 font-bold text-slate-800 dark:text-slate-300;
   }
   p a {
-    @apply font-semibold text-blue-400 hover:text-slate-700 dark:hover:text-slate-300
+    @apply font-semibold text-blue-400 hover:text-slate-700 dark:hover:text-slate-300;
   }
   ul li {
-    @apply text-sm text-slate-700 dark:text-slate-400
+    @apply text-sm text-slate-700 dark:text-slate-400;
   }
-  .callout h1, .callout h2, .callout h3, 
-  .callout h4, .callout h5, .callout h6, 
-  .callout p, .callout a {
-    @apply text-slate-400 dark:text-slate-300
+  .callout h1,
+  .callout h2,
+  .callout h3,
+  .callout h4,
+  .callout h5,
+  .callout h6,
+  .callout p,
+  .callout a {
+    @apply text-slate-400 dark:text-slate-300;
   }
   .callout p {
     @apply mt-10;
   }
   .callout code {
-    @apply bg-blue-400/[0.2] px-3 rounded border border-blue-400/[0.5] font-bold text-slate-200 dark:text-slate-200
+    @apply rounded border border-blue-400/[0.5] bg-blue-400/[0.2] px-3 font-bold text-slate-200 dark:text-slate-200;
   }
   .callout a {
-    @apply font-semibold text-blue-400 dark:text-blue-400 hover:text-slate-200 dark:hover:text-slate-200
+    @apply font-semibold text-blue-400 hover:text-slate-200 dark:text-blue-400 dark:hover:text-slate-200;
   }
-  .callout a h1, 
-  .callout a h2, 
-  .callout a h3, 
+  .callout a h1,
+  .callout a h2,
+  .callout a h3,
   .callout a h4 {
-    @apply text-sm font-semibold text-blue-400 dark:text-blue-400 hover:text-slate-200 dark:hover:text-slate-200
+    @apply text-sm font-semibold text-blue-400 hover:text-slate-200 dark:text-blue-400 dark:hover:text-slate-200;
   }
   .code-block .tablist {
     display: none;
@@ -109,13 +121,13 @@
     @apply h-[350px];
   }
   .method-copy code {
-    @apply bg-prism-light/[0.2] px-3 rounded border border-prism-light/[0.5] font-bold text-slate-800 dark:text-slate-300
+    @apply rounded border border-prism-light/[0.5] bg-prism-light/[0.2] px-3 font-bold text-slate-800 dark:text-slate-300;
   }
   .method-copy a {
-    @apply font-semibold text-blue-400 hover:text-slate-700 dark:hover:text-slate-300
+    @apply font-semibold text-blue-400 hover:text-slate-700 dark:hover:text-slate-300;
   }
   table {
-    @apply table-fixed w-full;
+    @apply w-full table-fixed;
   }
   thead tr th {
     vertical-align: top;

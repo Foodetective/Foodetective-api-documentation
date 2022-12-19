@@ -22,7 +22,7 @@ title: Business Preferred Partners
   {% listitem title="sort" validation="query string" %}
   Sort ascending or descending order.
   {% /listitem %}
-  {% listitem title="page" validation="query integer" %}	
+  {% listitem title="page" validation="query integer" %}
   Page offset to fetch.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
@@ -122,7 +122,7 @@ title: Business Preferred Partners
       }
     }
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

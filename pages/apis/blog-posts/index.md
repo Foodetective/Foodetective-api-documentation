@@ -7,14 +7,14 @@ title: Blog Posts
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  This will return all Blog Posts. You can do a custom search by providing a `id`. Example is provided at [Blog post by id](#blog-post-by-id). 
-  
+  This will return all Blog Posts. You can do a custom search by providing a `id`. Example is provided at [Blog post by id](#blog-post-by-id).
+
   If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="include" validation="query string" %}
-  Include associations (*delimited with comma*). Available associations: user, chapters. 
-  
+  Include associations (*delimited with comma*). Available associations: user, chapters.
+
   **Example:** `user,chapters`
   {% /listitem %}
   {% listitem title="sort" validation="query string" %}

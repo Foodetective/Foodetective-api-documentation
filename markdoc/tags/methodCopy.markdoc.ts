@@ -1,6 +1,6 @@
-import { MethodCopy } from '../../components'
+import { MethodCopy } from "@/components";
 
 export const methodCopy = {
   render: MethodCopy,
-  attributes: {}
-}
+  attributes: {},
+};

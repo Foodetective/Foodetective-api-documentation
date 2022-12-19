@@ -1,6 +1,6 @@
-import { Box } from '../../components'
+import { Box } from "@/components";
 
 export const box = {
   render: Box,
-  attributes: {}
-}
+  attributes: {},
+};

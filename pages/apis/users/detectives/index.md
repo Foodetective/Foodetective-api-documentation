@@ -10,7 +10,7 @@ title: Users
   Return random users that are accepted food detectives with at least 1 review, but when there are not enough records - add to them also these without any reviews.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" validation="query string" %}	
+  {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: specializations
   {% /listitem %}
 
@@ -46,7 +46,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -76,7 +76,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -92,7 +92,7 @@ title: Users
   Return all accepted food detectives sorted by published_reviews_count in descending order.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="include" validation="query string" %}	
+  {% listitem title="include" validation="query string" %}
   Include associations (delimited with comma). Available associations: specializations
   {% /listitem %}
 
@@ -128,7 +128,7 @@ title: Users
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -158,7 +158,7 @@ title: Users
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

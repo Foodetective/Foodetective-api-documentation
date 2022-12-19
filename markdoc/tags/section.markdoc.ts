@@ -1,6 +1,6 @@
-import { Section } from "../../components";
+import { Section } from "@/components";
 
 export const section = {
   render: Section,
-  attributes: {}
-}
+  attributes: {},
+};

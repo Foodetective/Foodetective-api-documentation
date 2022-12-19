@@ -63,7 +63,7 @@ title: Supplier Elements
   {% /listitem %}
   {% /list %}
   {% /listitem %}
-  
+
   {% listitem title="relationships" validation="formData, object" type="Required" %}
   Relationships object with **`Supplier Order`** and **`Supplier Product`** objects.
   {% list isChild=true %}
@@ -92,7 +92,7 @@ title: Supplier Elements
 
   {% /list %}
   {% /listitem %}
-  
+
   {% /list %}
   {% /listitem %}
 {% /list %}
@@ -109,7 +109,7 @@ title: Supplier Elements
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)});
-        
+
       const data = await res.json();
     }
   ```
@@ -139,7 +139,7 @@ title: Supplier Elements
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
   ```
-{% /codeBlock %}  
+{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}

@@ -1,0 +1,21 @@
+extends:
+  - "next"
+  - "plugin:import/recommended"
+  - "plugin:prettier/recommended"
+settings:
+  import/resolver:
+    typescript: {}
+rules:
+  no-var: "warn"
+  prefer-const: "warn"
+  prettier/prettier: "warn"
+  import/newline-after-import: "warn"
+  sort-imports:
+    - "warn"
+    - ignoreDeclarationSort: true
+  import/order:
+    - "warn"
+    - groups: [builtin, external, internal, parent, sibling, index]
+      pathGroups:
+        - pattern: "@/**"
+          group: "internal"
