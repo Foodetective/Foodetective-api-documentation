@@ -29,14 +29,14 @@ title: Business Deliveries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/deliveries`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/deliveries`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -63,37 +63,37 @@ title: Business Deliveries
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
-      "url": "/api/v1/businesses/{id}/deliveries",
-      "method": "GET",
-      "data": [
-        {
-          "id": "2b96692f-4e1e-49d7-80b5-658611b908d2",
-          "type": "deliveries",
-          "links": {
-            "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2"
-          },
-          "attributes": {
-            "code": "CH-1005",
-            "currency": "EUR",
-            "free-from-cents": 3500,
-            "price-cents": 600
-          },
-          "relationships": {
-            "business": {
-              "links": {
-                "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/relationships/business",
-                "related": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/business"
-              }
+  {
+    "url": "/api/v1/businesses/{id}/deliveries",
+    "method": "GET",
+    "data": [
+      {
+        "id": "2b96692f-4e1e-49d7-80b5-658611b908d2",
+        "type": "deliveries",
+        "links": {
+          "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2"
+        },
+        "attributes": {
+          "code": "CH-1005",
+          "currency": "EUR",
+          "free-from-cents": 3500,
+          "price-cents": 600
+        },
+        "relationships": {
+          "business": {
+            "links": {
+              "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/relationships/business",
+              "related": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/business"
             }
           }
-        },
-      ],
-      "meta": {
-        "total-count": 4,
-        "total-pages": 1
-      }
+        }
+      },
+    ],
+    "meta": {
+      "total-count": 4,
+      "total-pages": 1
     }
+  }
   ```
 {% /codeBlock %}
 
@@ -127,14 +127,14 @@ title: Business Deliveries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/deliveries/{code}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/deliveries/{code}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -161,29 +161,29 @@ title: Business Deliveries
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
-      "data": {
-        "id": "2b96692f-4e1e-49d7-80b5-658611b908d2",
-        "type": "deliveries",
-        "links": {
-          "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2"
-        },
-        "attributes": {
-          "code": "CH-1005",
-          "currency": "EUR",
-          "free-from-cents": 3500,
-          "price-cents": 600
-        },
-        "relationships": {
-          "business": {
-            "links": {
-              "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/relationships/business",
-              "related": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/business"
-            }
+  {
+    "data": {
+      "id": "2b96692f-4e1e-49d7-80b5-658611b908d2",
+      "type": "deliveries",
+      "links": {
+        "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2"
+      },
+      "attributes": {
+        "code": "CH-1005",
+        "currency": "EUR",
+        "free-from-cents": 3500,
+        "price-cents": 600
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/relationships/business",
+            "related": "/deliveries/2b96692f-4e1e-49d7-80b5-658611b908d2/business"
           }
         }
       }
     }
+  }
   ```
 {% /codeBlock %}
 

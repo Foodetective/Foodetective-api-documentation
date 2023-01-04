@@ -43,16 +43,16 @@ title: Favourites
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/favorites`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/favorites`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -79,6 +79,15 @@ title: Favourites
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "7fa8d859-0624-4a48-85f5-3afab88a11a7",
+      "type": "favorites",
+      "links": {
+        "self": "/favorites/7fa8d859-0624-4a48-85f5-3afab88a11a7"
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -106,14 +115,14 @@ title: Favourites
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/favorites/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/favorites/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -137,10 +146,6 @@ title: Favourites
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

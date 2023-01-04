@@ -55,16 +55,16 @@ title: Favourite Suppliers
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/favorite_suppliers`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/favorite_suppliers`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -91,6 +91,15 @@ title: Favourite Suppliers
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "f888c694-55a6-4323-8226-a3c51cc3c7bd",
+      "type": "favorite-suppliers",
+      "links": {
+        "self": "/favorite-suppliers/f888c694-55a6-4323-8226-a3c51cc3c7bd"
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -118,14 +127,14 @@ title: Favourite Suppliers
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/favorite_suppliers/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/favorite_suppliers/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -149,10 +158,6 @@ title: Favourite Suppliers
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

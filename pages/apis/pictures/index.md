@@ -80,16 +80,16 @@ title: Pictures
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/pictures`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/pictures`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -143,14 +143,14 @@ title: Pictures
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/pictures/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/pictures/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -174,10 +174,6 @@ title: Pictures
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

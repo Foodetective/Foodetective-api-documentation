@@ -15,14 +15,14 @@ title: Business Permitted List
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/permitted_list`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/permitted_list`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}

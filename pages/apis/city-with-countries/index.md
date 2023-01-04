@@ -26,14 +26,14 @@ title: City With Countries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/city_with_countries`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/city_with_countries`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -60,6 +60,28 @@ title: City With Countries
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": [
+      {
+        "id": "4b166dbe-d99d-5091-abdd-95b83330ed3a",
+        "type": "city-with-countries",
+        "links": {
+          "self": "/city-with-countries/4b166dbe-d99d-5091-abdd-95b83330ed3a"
+        },
+        "attributes": {
+          "businesses-count": 1,
+          "geolocation-lat": null,
+          "geolocation-lng": null,
+          "name": "2",
+          "country": "United Kingdom"
+        }
+      }
+    ],
+    "meta": {
+      "total-count": 20,
+      "total-pages": 2
+    }
+  }
   ```
 {% /codeBlock %}
 

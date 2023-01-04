@@ -29,14 +29,14 @@ title: Businesses Tables
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/tables`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/tables`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -63,33 +63,33 @@ title: Businesses Tables
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": [
       {
-      "data": [
-        {
-          "id": "d13fc44c-7757-42f7-b872-f187fad12d10",
-          "type": "tables",
-          "links": {
-            "self": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10"
-          },
-          "attributes": {
-            "number": "1",
-            "number-of-seats": 2
-          },
-          "relationships": {
-            "business": {
-              "links": {
-                "self": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10/relationships/business",
-                "related": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10/business"
-              }
+        "id": "d13fc44c-7757-42f7-b872-f187fad12d10",
+        "type": "tables",
+        "links": {
+          "self": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10"
+        },
+        "attributes": {
+          "number": "1",
+          "number-of-seats": 2
+        },
+        "relationships": {
+          "business": {
+            "links": {
+              "self": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10/relationships/business",
+              "related": "/tables/d13fc44c-7757-42f7-b872-f187fad12d10/business"
             }
           }
         }
-      ],
-      "meta": {
-        "total-count": 1,
-        "total-pages": 1
       }
+    ],
+    "meta": {
+      "total-count": 1,
+      "total-pages": 1
     }
+  }
   ```
 {% /codeBlock %}
 

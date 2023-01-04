@@ -55,16 +55,16 @@ title: Menus
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/menus`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/menus`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -91,6 +91,21 @@ title: Menus
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "1fc3d278-db04-4268-a1d1-6ab4a4b10032",
+      "type": "menus",
+      "links": {
+        "self": "/menus/1fc3d278-db04-4268-a1d1-6ab4a4b10032"
+      },
+      "attributes": {
+        "display-name": "Menu",
+        "file": {
+          "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/menu/file/1fc3d278-db04-4268-a1d1-6ab4a4b10032/7ba661e5-f32e-4b93-ae4d-ac4da09b21af.jpeg"
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -143,16 +158,16 @@ title: Menus
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/menus/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/menus/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -179,6 +194,21 @@ title: Menus
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "1fc3d278-db04-4268-a1d1-6ab4a4b10032",
+      "type": "menus",
+      "links": {
+        "self": "/menus/1fc3d278-db04-4268-a1d1-6ab4a4b10032"
+      },
+      "attributes": {
+        "display-name": "Menu name was edited here!",
+        "file": {
+          "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/menu/file/1fc3d278-db04-4268-a1d1-6ab4a4b10032/7ba661e5-f32e-4b93-ae4d-ac4da09b21af.jpeg"
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -206,14 +236,14 @@ title: Menus
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/menus/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/menus/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -237,10 +267,6 @@ title: Menus
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

@@ -70,6 +70,7 @@ export const items = [
         href: "/apis/businesses/preferred-partners",
         children: "Preferred Partners",
       },
+      { href: "/apis/businesses/partoo", children: "Partoo" },
       { href: "/apis/businesses/payments", children: "Payments" },
       { href: "/apis/businesses/permitted-list", children: "Permitted List" },
       { href: "/apis/businesses/privatisations", children: "Privatisations" },
@@ -287,6 +288,7 @@ export const items = [
       { href: "/apis/users/user", children: "Users" },
       { href: "/apis/users/current-user", children: "Current User" },
       { href: "/apis/users/detectives", children: "Detectives" },
+      { href: "/apis/users/partoo", children: "Partoo" },
     ],
   },
   {

@@ -23,14 +23,14 @@ title: Business Claim as Owner
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/claim_as_owner`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/claim_as_owner`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -57,6 +57,13 @@ title: Business Claim as Owner
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "2022-10-31 10:58:17 UTC",
+      "type": "claim_as_owner",
+      "attributes": true
+    }
+  }
   ```
 {% /codeBlock %}
 

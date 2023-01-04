@@ -26,14 +26,14 @@ title: Business External
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/external_service_links`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/external_service_links`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -60,7 +60,7 @@ title: Business External
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
+  {
     "data": [
       {
         "id": "08a80fc8-a6b6-4cf5-842c-c79173b66c54",

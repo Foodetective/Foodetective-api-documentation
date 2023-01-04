@@ -38,16 +38,16 @@ title: Devices
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/devices`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/devices`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -74,6 +74,18 @@ title: Devices
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "60a1890b-2506-4bf3-89d2-f6738dfe0dbc",
+      "type": "devices",
+      "links": {
+        "self": "/devices/60a1890b-2506-4bf3-89d2-f6738dfe0dbc"
+      },
+      "attributes": {
+        "registration-id": "4c24148e-6a48-11ed-a1eb-0242ac120002"
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -101,14 +113,14 @@ title: Devices
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/devices/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/devices/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -132,10 +144,6 @@ title: Devices
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}
