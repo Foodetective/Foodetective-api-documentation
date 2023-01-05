@@ -64,16 +64,16 @@ title: External Service Links
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/external_service_links`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/external_service_links`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -100,6 +100,31 @@ title: External Service Links
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": [
+      {
+        "id": "5f315bfb-642c-4bd6-bb9f-6c9053df02d9",
+        "type": "external-services",
+        "links": {
+          "self": "/external-services/5f315bfb-642c-4bd6-bb9f-6c9053df02d9"
+        },
+        "attributes": {
+          "category": "delivery",
+          "logo": {
+            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/external_service/logo/5f315bfb-642c-4bd6-bb9f-6c9053df02d9/f356f310-bfa9-4583-9a97-5f75ee40f71d.png",
+            "thumb": {
+              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/external_service/logo/5f315bfb-642c-4bd6-bb9f-6c9053df02d9/thumb_f356f310-bfa9-4583-9a97-5f75ee40f71d.png"
+            }
+          },
+          "name": "Deliveroo"
+        }
+      }
+    ],
+    "meta": {
+      "total-count": 25,
+      "total-pages": 13
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -149,16 +174,16 @@ title: External Service Links
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/external_service_links/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/external_service_links/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -185,6 +210,25 @@ title: External Service Links
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "5f315bfb-642c-4bd6-bb9f-6c9053df02d9",
+      "type": "external-services",
+      "links": {
+        "self": "/external-services/5f315bfb-642c-4bd6-bb9f-6c9053df02d9"
+      },
+      "attributes": {
+        "category": "delivery",
+        "logo": {
+          "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/external_service/logo/5f315bfb-642c-4bd6-bb9f-6c9053df02d9/f356f310-bfa9-4583-9a97-5f75ee40f71d.png",
+          "thumb": {
+            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/external_service/logo/5f315bfb-642c-4bd6-bb9f-6c9053df02d9/thumb_f356f310-bfa9-4583-9a97-5f75ee40f71d.png"
+          }
+        },
+        "name": "Deliveroo"
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -212,14 +256,14 @@ title: External Service Links
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/external_service_links/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/external_service_links/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -243,10 +287,6 @@ title: External Service Links
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

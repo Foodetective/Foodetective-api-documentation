@@ -36,14 +36,14 @@ title: Blog Posts
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/blog_posts`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -76,64 +76,65 @@ title: Blog Posts
 
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
-      "data":[
+  {
+    "data": [
       {
         "id": "62a05bd2-2f0e-4bac-8f8b-63947f4df16f",
         "type": "blog-posts",
-        "links":{
-           "self": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f"
-         },
-        "attributes":{
-            "alt-text": null,
-            "name": "asdf",
-            "headline": "asdf",
-            "summary": "summary",
-            "read-duration": 3,
-            "date": "2022-03-01",
-            "cover-picture": {
-               "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/blog_post/cover_picture/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/8077896a-c988-4ed3-bf85-ff7ed48ff77d.png",
-               "desktop":{
-                  "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/blog_post/cover_picture/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/desktop_8077896a-c988-4ed3-bf85-ff7ed48ff77d.png"
-               },
-               "tablet": {
-                  "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/blog_post/cover_picture/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/tablet_8077896a-c988-4ed3-bf85-ff7ed48ff77d.png"
-               }
+        "links": {
+          "self": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f"
+        },
+        "attributes": {
+          "alt-text": null,
+          "name": "asdf",
+          "headline": "asdf",
+          "summary": "summary",
+          "read-duration": 3,
+          "date": "2022-03-01",
+          "cover-picture": {
+            "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/blog_post/cover_picture/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/8077896a-c988-4ed3-bf85-ff7ed48ff77d.png",
+            "desktop": {
+              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/blog_post/cover_picture/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/desktop_8077896a-c988-4ed3-bf85-ff7ed48ff77d.png"
             },
-            "category": "blogpost",
-            "author-name": "Temple Howell",
-            "created-at": "2022-03-03T14:05:41.073Z",
-            "detected-language": "en",
-            "slug": "asdf",
-            "language-settings":{
-               "en": true
-               "es": false
-               "fr": false
-               "ge": false
-               "it": false
-               "de": false
+            "tablet": {
+              "url": "https://foodetective-staging-backend-data.s3.amazonaws.com/uploads/blog_post/cover_picture/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/tablet_8077896a-c988-4ed3-bf85-ff7ed48ff77d.png"
             }
-         },
-         "relationships":{
-            "user":{
-               "links":{
-                  "self": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/relationships/user",
-                  "related": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/user"
-               }
-            },
-            "chapters":{
-               "links":{
-                  "self": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/relationships/chapters",
-                  "related": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/chapters"
-               }
+          },
+          "category": "blogpost",
+          "author-name": "Temple Howell",
+          "created-at": "2022-03-03T14:05:41.073Z",
+          "detected-language": "en",
+          "slug": "asdf",
+          "language-settings": {
+            "en": true,
+            "es": false,
+            "fr": false,
+            "ge": false,
+            "it": false,
+            "de": false
+          }
+        },
+        "relationships": {
+          "user": {
+            "links": {
+              "self": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/relationships/user",
+              "related": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/user"
             }
-         }
-      },
-   ],
-   "meta":{
-      "total-count":1,
-      "total-pages":1
-   }
+          },
+          "chapters": {
+            "links": {
+              "self": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/relationships/chapters",
+              "related": "/blog-posts/62a05bd2-2f0e-4bac-8f8b-63947f4df16f/chapters"
+            }
+          }
+        }
+      }
+    ],
+    "meta": {
+      "total-count": 1,
+      "total-pages": 1
+    }
+  }
   ```
 {% /codeBlock %}
 {% /layoutTwoCol %}

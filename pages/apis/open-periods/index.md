@@ -61,16 +61,16 @@ title: Open Periods
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/open_periods`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/open_periods`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -97,6 +97,29 @@ title: Open Periods
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "c7c5fe95-445e-49cb-8a2a-09c069ca2d59",
+      "type": "open-periods",
+      "links": {
+        "self": "/open-periods/c7c5fe95-445e-49cb-8a2a-09c069ca2d59"
+      },
+      "attributes": {
+        "location": null,
+        "opened-from": 1200,
+        "opened-to": 5600,
+        "weekday": 0
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/open-periods/c7c5fe95-445e-49cb-8a2a-09c069ca2d59/relationships/business",
+            "related": "/open-periods/c7c5fe95-445e-49cb-8a2a-09c069ca2d59/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -155,16 +178,16 @@ title: Open Periods
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/open_periods/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/open_periods/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -191,6 +214,29 @@ title: Open Periods
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "c7c5fe95-445e-49cb-8a2a-09c069ca2d59",
+      "type": "open-periods",
+      "links": {
+        "self": "/open-periods/c7c5fe95-445e-49cb-8a2a-09c069ca2d59"
+      },
+      "attributes": {
+        "location": null,
+        "opened-from": 3600,
+        "opened-to": 5600,
+        "weekday": 0
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/open-periods/c7c5fe95-445e-49cb-8a2a-09c069ca2d59/relationships/business",
+            "related": "/open-periods/c7c5fe95-445e-49cb-8a2a-09c069ca2d59/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -218,14 +264,14 @@ title: Open Periods
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/open_periods/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/open_periods/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -249,10 +295,6 @@ title: Open Periods
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

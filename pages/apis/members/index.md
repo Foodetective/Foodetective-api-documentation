@@ -25,16 +25,16 @@ title: Members
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/members/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/members/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -126,16 +126,16 @@ title: Members
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/members`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/members`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -162,6 +162,35 @@ title: Members
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "16547034-d0a8-4108-9046-129a60d309e7",
+      "type": "members",
+      "links": {
+        "self": "/members/16547034-d0a8-4108-9046-129a60d309e7"
+      },
+      "attributes": {
+        "business-manager": true,
+        "email": "member@test.com",
+        "role": "manager",
+        "status": "pending"
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/members/16547034-d0a8-4108-9046-129a60d309e7/relationships/business",
+            "related": "/members/16547034-d0a8-4108-9046-129a60d309e7/business"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "/members/16547034-d0a8-4108-9046-129a60d309e7/relationships/user",
+            "related": "/members/16547034-d0a8-4108-9046-129a60d309e7/user"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -214,16 +243,16 @@ title: Members
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/members/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/members/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -250,6 +279,35 @@ title: Members
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "16547034-d0a8-4108-9046-129a60d309e7",
+      "type": "members",
+      "links": {
+        "self": "/members/16547034-d0a8-4108-9046-129a60d309e7"
+      },
+      "attributes": {
+        "business-manager": true,
+        "email": "member@test.com",
+        "role": "the boss",
+        "status": "pending"
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/members/16547034-d0a8-4108-9046-129a60d309e7/relationships/business",
+            "related": "/members/16547034-d0a8-4108-9046-129a60d309e7/business"
+          }
+        },
+        "user": {
+          "links": {
+            "self": "/members/16547034-d0a8-4108-9046-129a60d309e7/relationships/user",
+            "related": "/members/16547034-d0a8-4108-9046-129a60d309e7/user"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -277,14 +335,14 @@ title: Members
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/Member/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/Member/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -308,10 +366,6 @@ title: Members
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

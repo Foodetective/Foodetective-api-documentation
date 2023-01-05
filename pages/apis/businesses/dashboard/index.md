@@ -22,14 +22,14 @@ title: Business Dashboard
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/dashboard/average_ticket_size`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/dashboard/average_ticket_size`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -56,22 +56,22 @@ title: Business Dashboard
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
-      "data": {
-        "id": "2022-10-31 14:49:54 UTC",
-        "type": "average_ticket_size",
-        "attributes": {
-          "average_today": 0,
-          "average_yesterday": 0,
-          "average_this_month": 0,
-          "average_previous_month": 0,
-          "average_this_quarter": 0,
-          "average_previous_quarter": 6111,
-          "average_this_year": 3742,
-          "average_previous_year": 26044
-        }
+  {
+    "data": {
+      "id": "2022-10-31 14:49:54 UTC",
+      "type": "average_ticket_size",
+      "attributes": {
+        "average_today": 0,
+        "average_yesterday": 0,
+        "average_this_month": 0,
+        "average_previous_month": 0,
+        "average_this_quarter": 0,
+        "average_previous_quarter": 6111,
+        "average_this_year": 3742,
+        "average_previous_year": 26044
       }
     }
+  }
   ```
 {% /codeBlock %}
 
@@ -113,14 +113,14 @@ title: Business Dashboard
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/dashboard/best_sales`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/dashboard/best_sales`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -147,58 +147,58 @@ title: Business Dashboard
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
-      "data": [
-        {
-          "id": "cd75805c-4952-4414-800e-988dea9988da",
-          "type": "dishes",
-          "links": {
-            "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da"
+  {
+    "data": [
+      {
+        "id": "cd75805c-4952-4414-800e-988dea9988da",
+        "type": "dishes",
+        "links": {
+          "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da"
+        },
+        "attributes": {
+          "currency": "EUR",
+          "description": null,
+          "name": "Make your own pasta",
+          "on-uber-eats": true,
+          "ordered-units-count-current": 18,
+          "ordered-units-count-previous": 0,
+          "price-per-item-cents": 1500,
+          "sku-ref": "127",
+          "unavailable": false
+        },
+        "relationships": {
+          "pictures": {
+            "links": {
+              "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/pictures",
+              "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/pictures"
+            }
           },
-          "attributes": {
-            "currency": "EUR",
-            "description": null,
-            "name": "Make your own pasta",
-            "on-uber-eats": true,
-            "ordered-units-count-current": 18,
-            "ordered-units-count-previous": 0,
-            "price-per-item-cents": 1500,
-            "sku-ref": "127",
-            "unavailable": false
+          "dish-option-categories": {
+            "links": {
+              "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/dish-option-categories",
+              "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/dish-option-categories"
+            }
           },
-          "relationships": {
-            "pictures": {
-              "links": {
-                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/pictures",
-                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/pictures"
-              }
-            },
-            "dish-option-categories": {
-              "links": {
-                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/dish-option-categories",
-                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/dish-option-categories"
-              }
-            },
-            "business": {
-              "links": {
-                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/business",
-                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/business"
-              }
-            },
-            "category": {
-              "links": {
-                "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/category",
-                "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/category"
-              }
+          "business": {
+            "links": {
+              "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/business",
+              "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/business"
+            }
+          },
+          "category": {
+            "links": {
+              "self": "/dishes/cd75805c-4952-4414-800e-988dea9988da/relationships/category",
+              "related": "/dishes/cd75805c-4952-4414-800e-988dea9988da/category"
             }
           }
-        },
-      ],
-      "meta": {
-        "total-count": 2,
-        "total-pages": 1
-      }
+        }
+      },
+    ],
+    "meta": {
+      "total-count": 2,
+      "total-pages": 1
     }
+  }
   ```
 {% /codeBlock %}
 
