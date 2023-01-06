@@ -1,5 +1,5 @@
 ---
-title: Partoo User intergrations
+title: User intergrations
 ---
 {% section %}
 {% layoutTwoCol %}
@@ -7,13 +7,13 @@ title: Partoo User intergrations
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  Connect User to Partoo.
+  Connect User to Review Management Tool.
 
   If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Connect specific User to Partoo with provided User `id`.
+  Connect specific User to Review Management Tool with provided User `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -69,12 +69,12 @@ title: Partoo User intergrations
 
 {% methodCopy %}
 {% methodInfo %}
-  # Disconnect User on Partoo
-  Disconnect the User from Partoo.
+  # Disconnect User
+  Disconnect the User from Review Management Tool.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Disconnect specific User from Partoo with provided User `id`.
+  Disconnect specific User from Review Management Tool with provided User `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -127,8 +127,8 @@ title: Partoo User intergrations
 
 {% methodCopy %}
 {% methodInfo %}
-  # Partoo Business reviews
-  Search for the reviews of your businesses on Partoo.
+  # Business reviews
+  Search for the reviews of your businesses on Review Management Tool.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="partoo_business_ids" validation="String[]" type="Required" %}
