@@ -26,14 +26,14 @@ title: Business Favourite Suppliers
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/favorite_suppliers`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/favorite_suppliers`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -60,7 +60,7 @@ title: Business Favourite Suppliers
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
+  {
     "data": [
       {
         "id": "67df0724-eef7-4252-a468-e145a5324f0d",

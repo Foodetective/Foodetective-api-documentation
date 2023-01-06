@@ -25,16 +25,16 @@ title: Orders
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/orders/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/orders/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -61,6 +61,70 @@ title: Orders
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "833a6878-118c-4baa-a6f1-0526e3f06d40",
+      "type": "orders",
+      "links": {
+        "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40"
+      },
+      "attributes": {
+        "accepted-at": null,
+        "collection-at": null,
+        "collection-code": null,
+        "currency": "GBP",
+        "customer-name": null,
+        "dishes-cost-cents": 0,
+        "driver-location-lat": null,
+        "driver-location-long": null,
+        "estimated-delivery-in": 0,
+        "estimated-time-of-dropoff": null,
+        "estimated-time-of-pickup": null,
+        "notes": "{}",
+        "other-rejection-reason": null,
+        "origin": null,
+        "hubrise-source": null,
+        "hubrise-service-type": null,
+        "pickup-at-business": false,
+        "placed-at": null,
+        "reject-reason": null,
+        "shipping-cost-cents": 0,
+        "shipping-cost-for-business-cents": 0,
+        "shipping-cost-for-customer-cents": 0,
+        "short-id": 0,
+        "state": "draft",
+        "time-wish": null,
+        "total-cost-cents": 0,
+        "unavailable-elements": null,
+        "updated-at": "2022-11-22T14:49:17.744Z",
+        "user-email": "aleksandra.bochenska+bo@netguru.com",
+        "user-phone": null,
+        "user-phone-country-code": null,
+        "user-phone-country-prefix": null,
+        "with-orkestro-delivery": false
+      },
+      "relationships": {
+        "addresses": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/addresses",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/addresses"
+          }
+        },
+        "elements": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/elements",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/elements"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/business",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -111,16 +175,16 @@ title: Orders
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/orders`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/orders`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -147,6 +211,70 @@ title: Orders
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "833a6878-118c-4baa-a6f1-0526e3f06d40",
+      "type": "orders",
+      "links": {
+        "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40"
+      },
+      "attributes": {
+        "accepted-at": null,
+        "collection-at": null,
+        "collection-code": null,
+        "currency": "GBP",
+        "customer-name": null,
+        "dishes-cost-cents": 0,
+        "driver-location-lat": null,
+        "driver-location-long": null,
+        "estimated-delivery-in": 0,
+        "estimated-time-of-dropoff": null,
+        "estimated-time-of-pickup": null,
+        "notes": "{}",
+        "other-rejection-reason": null,
+        "origin": null,
+        "hubrise-source": null,
+        "hubrise-service-type": null,
+        "pickup-at-business": false,
+        "placed-at": null,
+        "reject-reason": null,
+        "shipping-cost-cents": 0,
+        "shipping-cost-for-business-cents": 0,
+        "shipping-cost-for-customer-cents": 0,
+        "short-id": 0,
+        "state": "draft",
+        "time-wish": null,
+        "total-cost-cents": 0,
+        "unavailable-elements": null,
+        "updated-at": "2022-11-22T14:49:17.744Z",
+        "user-email": "aleksandra.bochenska+bo@netguru.com",
+        "user-phone": null,
+        "user-phone-country-code": null,
+        "user-phone-country-prefix": null,
+        "with-orkestro-delivery": false
+      },
+      "relationships": {
+        "addresses": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/addresses",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/addresses"
+          }
+        },
+        "elements": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/elements",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/elements"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/business",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -223,16 +351,16 @@ title: Orders
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/orders/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/orders/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -259,6 +387,70 @@ title: Orders
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "833a6878-118c-4baa-a6f1-0526e3f06d40",
+      "type": "orders",
+      "links": {
+        "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40"
+      },
+      "attributes": {
+        "accepted-at": null,
+        "collection-at": null,
+        "collection-code": null,
+        "currency": "GBP",
+        "customer-name": null,
+        "dishes-cost-cents": 0,
+        "driver-location-lat": null,
+        "driver-location-long": null,
+        "estimated-delivery-in": 0,
+        "estimated-time-of-dropoff": null,
+        "estimated-time-of-pickup": null,
+        "notes": "{}",
+        "other-rejection-reason": null,
+        "origin": null,
+        "hubrise-source": null,
+        "hubrise-service-type": null,
+        "pickup-at-business": false,
+        "placed-at": null,
+        "reject-reason": null,
+        "shipping-cost-cents": 0,
+        "shipping-cost-for-business-cents": 0,
+        "shipping-cost-for-customer-cents": 0,
+        "short-id": 0,
+        "state": "draft",
+        "time-wish": null,
+        "total-cost-cents": 0,
+        "unavailable-elements": null,
+        "updated-at": "2022-11-22T14:55:01.874Z",
+        "user-email": "iorderedapizza@test.com",
+        "user-phone": null,
+        "user-phone-country-code": null,
+        "user-phone-country-prefix": null,
+        "with-orkestro-delivery": false
+      },
+      "relationships": {
+        "addresses": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/addresses",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/addresses"
+          }
+        },
+        "elements": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/elements",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/elements"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/relationships/business",
+            "related": "/orders/833a6878-118c-4baa-a6f1-0526e3f06d40/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -286,14 +478,14 @@ title: Orders
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/orders/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/orders/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -317,10 +509,6 @@ title: Orders
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}
@@ -375,16 +563,16 @@ title: Orders
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/orders/${id}/reject`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/orders/${id}/reject`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -411,6 +599,68 @@ title: Orders
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "153aa44c-3fea-4e10-acd5-6a67ee9e77de",
+      "type": "orders",
+      "links": { "self": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de" },
+      "attributes": {
+        "acceptedAt": null,
+        "collectionAt": null,
+        "collectionCode": null,
+        "currency": "GBP",
+        "customerName": null,
+        "dishesCostCents": 51699,
+        "driverLocationLat": null,
+        "driverLocationLong": null,
+        "estimatedDeliveryIn": 0,
+        "estimatedTimeOfDropoff": null,
+        "estimatedTimeOfPickup": null,
+        "notes": {},
+        "otherRejectionReason": null,
+        "origin": null,
+        "hubriseSource": null,
+        "hubriseServiceType": null,
+        "pickupAtBusiness": true,
+        "placedAt": "2022-11-22T15:29:24.098Z",
+        "rejectReason": "kitchen_full",
+        "shippingCostCents": 0,
+        "shippingCostForBusinessCents": 0,
+        "shippingCostForCustomerCents": 0,
+        "shortId": 441,
+        "state": "rejected",
+        "timeWish": "as soon as possible",
+        "totalCostCents": 51699,
+        "unavailableElements": null,
+        "updatedAt": "2022-11-22T15:30:25.649Z",
+        "userEmail": "aleksandra.bochenska+clientnew@netguru.com",
+        "userPhone": "999999999",
+        "userPhoneCountryCode": "PL",
+        "userPhoneCountryPrefix": "48",
+        "withOrkestroDelivery": false
+      },
+      "relationships": {
+        "addresses": {
+          "links": {
+            "self": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de/relationships/addresses",
+            "related": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de/addresses"
+          }
+        },
+        "elements": {
+          "links": {
+            "self": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de/relationships/elements",
+            "related": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de/elements"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de/relationships/business",
+            "related": "/orders/153aa44c-3fea-4e10-acd5-6a67ee9e77de/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -447,16 +697,16 @@ title: Orders
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/orders/${id}/elements`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/orders/${id}/elements`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -483,6 +733,37 @@ title: Orders
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": [
+      {
+        "id": "c47dcd01-d875-4960-8df1-e436e3b04fd1",
+        "type": "elements",
+        "links": {
+          "self": "/elements/c47dcd01-d875-4960-8df1-e436e3b04fd1"
+        },
+        "attributes": {
+          "currency": "GBP",
+          "dish-name": "Test Dish",
+          "dish-price-per-item-cents": 3000,
+          "notes": null,
+          "subsum-cents": 3000,
+          "units": 1
+        },
+        "relationships": {
+          "element-options": {
+            "links": {
+              "self": "/elements/c47dcd01-d875-4960-8df1-e436e3b04fd1/relationships/element-options",
+              "related": "/elements/c47dcd01-d875-4960-8df1-e436e3b04fd1/element-options"
+            }
+          }
+        }
+      }
+    ],
+    "meta": {
+      "total-count": 1,
+      "total-pages": 1
+    }
+  }
   ```
 {% /codeBlock %}
 

@@ -58,16 +58,16 @@ title: Order Periods
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/order_periods`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/order_periods`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -94,6 +94,28 @@ title: Order Periods
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1",
+      "type": "order-periods",
+      "links": {
+        "self": "/order-periods/19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1"
+      },
+      "attributes": {
+        "opened-from": 1200,
+        "opened-to": 5600,
+        "weekday": 0
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/order-periods/19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1/relationships/business",
+            "related": "/order-periods/19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -149,16 +171,16 @@ title: Order Periods
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/order_periods/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/order_periods/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -185,6 +207,28 @@ title: Order Periods
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1",
+      "type": "order-periods",
+      "links": {
+        "self": "/order-periods/19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1"
+      },
+      "attributes": {
+        "opened-from": 3600,
+        "opened-to": 5600,
+        "weekday": 0
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/order-periods/19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1/relationships/business",
+            "related": "/order-periods/19d71aa7-6bbe-4dda-8f6f-16bddeaf26f1/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -212,14 +256,14 @@ title: Order Periods
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/order_periods/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/order_periods/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -243,10 +287,6 @@ title: Order Periods
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

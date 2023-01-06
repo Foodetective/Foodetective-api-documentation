@@ -76,16 +76,16 @@ title: Addresses
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/addresses`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -112,6 +112,28 @@ title: Addresses
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "8cb768d9-e663-4d61-889b-ed204cb04914",
+      "type": "addresses",
+      "links": { "self": "/addresses/8cb768d9-e663-4d61-889b-ed204cb04914" },
+      "attributes": {
+        "address-line": null,
+        "city": "Genève",
+        "country": "Switzerland",
+        "country-code": "CH",
+        "name": "shipping_address",
+        "notes": null,
+        "post-code": "1207",
+        "region": null,
+        "region-code": null,
+        "street": "Rue des Vollandes",
+        "street-number": "58",
+        "geolocation-lat": null,
+        "geolocation-lng": null
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -176,16 +198,16 @@ title: Addresses
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -212,6 +234,30 @@ title: Addresses
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "8cb768d9-e663-4d61-889b-ed204cb04914",
+      "type": "addresses",
+      "links": {
+        "self": "/addresses/8cb768d9-e663-4d61-889b-ed204cb04914"
+      },
+      "attributes": {
+        "address-line": null,
+        "city": "Genève",
+        "country": "Switzerland",
+        "country-code": "CH",
+        "name": "shipping_address",
+        "notes": "This is an address note",
+        "post-code": "1207",
+        "region": null,
+        "region-code": null,
+        "street": "Rue des Vollandes",
+        "street-number": "58",
+        "geolocation-lat": "46.2027289",
+        "geolocation-lng": "6.162741"
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -239,14 +285,14 @@ title: Addresses
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/addresses/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -270,10 +316,6 @@ title: Addresses
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

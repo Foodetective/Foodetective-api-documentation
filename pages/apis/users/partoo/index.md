@@ -1,5 +1,5 @@
 ---
-title: Stripe Products
+title: Partoo User intergrations
 ---
 {% section %}
 {% layoutTwoCol %}
@@ -7,35 +7,29 @@ title: Stripe Products
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  Return all Stripe Products.
+  Connect User to Partoo.
+
+  If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="sort" validation="query string" %}
-  Sort ascending or descending order.
-  {% /listitem %}
-  {% listitem title="page" validation="query integer" %}
-  Page offset to fetch.
-  {% /listitem %}
-  {% listitem title="per_page" validation="query integer" %}
-  Number of results to return per page.
+  {% listitem title="id" validation="path integer" type="Required" %}
+  Connect specific User to Partoo with provided User `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/api/v1/stripe_products"} %}
+{% codeBlock request={method: "POST", path: "/api/v1/users/{id}/integrations/partoo"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
-  {
-    const res = await fetch(`${BASE_URL}/api/v1/stripe_products`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)});
-
-    const data = await res.json();
-  }
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/users/${id}/integrations/partoo`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
+    }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -75,27 +69,26 @@ title: Stripe Products
 
 {% methodCopy %}
 {% methodInfo %}
-  # Stripe Product by id
-  Return a Stripe Product.
+  # Disconnect User on Partoo
+  Disconnect the User from Partoo.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Return a Stripe Product by specific `id`.
+  Disconnect specific User from Partoo with provided User `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/api/v1/stripe_products/{id}"} %}
+{% codeBlock request={method: "DELETE", path: "/api/v1/users/{id}/integrations/partoo"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
   {
-    const res = await fetch(`${BASE_URL}/api/v1/stripe_products/${id}`, {
-      method: 'GET',
+    const res = await fetch(`${BASE_URL}/api/v1/users/${id}/integrations/partoo`, {
+      method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)});
+      }});
 
     const data = await res.json();
   }
@@ -123,10 +116,6 @@ title: Stripe Products
   {% /tab %}
 {% /tabs %}
 {% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
-{% /codeBlock %}
 
 {% /layoutTwoCol %}
 {% /section %}
@@ -138,39 +127,43 @@ title: Stripe Products
 
 {% methodCopy %}
 {% methodInfo %}
-  # Stripe Plans
-  Return Stripe Plans for given Stripe Product.
+  # Partoo Business reviews
+  Search for the reviews of your businesses on Partoo.
 {% /methodInfo %}
 {% list title="Parameters" %}
-  {% listitem title="id" validation="path integer" type="Required" %}
-  Return a Stripe Product by specific `id`.
-  {% /listitem %}
-  {% listitem title="sort" validation="query string" %}
-  Sort ascending or descending order.
+  {% listitem title="partoo_business_ids" validation="String[]" type="Required" %}
+  Reviews for given business ids. You can provide multiple business `id`'s.
   {% /listitem %}
   {% listitem title="page" validation="query integer" %}
-  Page offset to fetch.
+  **Default:** `1`, page number.
   {% /listitem %}
   {% listitem title="per_page" validation="query integer" %}
-  Number of results to return per page.
+  **Default:** `30`, number of items to return per page. Currently **limited** to `100`.
+  {% /listitem %}
+
+  {% listitem title="include" validation="query string" %}
+  Include associations (*delimited with comma*). Available associations: addresses, groups, menus, open_periods, order_periods, orders, partners, pictures, products, reviews
+
+  **Example:** `orders,pictures`
+  {% /listitem %}
+  {% listitem title="language" validation="query string" %}
+  Return results of Business by language **ISO 639‑1** code.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
 
-{% codeBlock request={method: "GET", path: "/api/v1/stripe_products/{id}/stripe_plans"} %}
+{% codeBlock request={method: "GET", path: "/api/v1/users/integrations/partoo/reviews"} %}
 {% tabs %}
   {% tab label="js"%}
   ```js
-  {
-    const res = await fetch(`${BASE_URL}/api/v1/stripe_products/${id}/stripe_plans`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)});
-
-    const data = await res.json();
-  }
+    {
+      const res = await fetch(`${BASE_URL}/api/v1/users/integrations/partoo/reviews`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        }});
+      const data = await res.json();
+    }
   ```
   {% /tab %}
   {% tab label="py"%}

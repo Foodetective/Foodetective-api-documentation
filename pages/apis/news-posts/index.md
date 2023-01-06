@@ -26,16 +26,16 @@ title: News Posts
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/news_posts`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/news_posts`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -62,6 +62,50 @@ title: News Posts
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": [
+      {
+        "id": "39e52f2d-b866-41ee-9591-4847e5f78afa",
+        "type": "news-posts",
+        "links": {
+          "self": "/news-posts/39e52f2d-b866-41ee-9591-4847e5f78afa"
+        },
+        "attributes": {
+          "url": "www.google.com",
+          "headline": "We're on 🔥 !\r\n\r\n\r\nThe second line of text",
+          "date": "2022-02-09"
+        }
+      },
+      {
+        "id": "ceac10cd-13de-40d1-a48c-d883624a1f46",
+        "type": "news-posts",
+        "links": {
+          "self": "/news-posts/ceac10cd-13de-40d1-a48c-d883624a1f46"
+        },
+        "attributes": {
+          "url": "https://business.staging.foodtekk.com/",
+          "headline": "Some Headline for the NEWS POST :)",
+          "date": "2022-02-22"
+        }
+      },
+      {
+        "id": "b0b18ae5-47f7-4d74-98f0-f5d237fe9555",
+        "type": "news-posts",
+        "links": {
+          "self": "/news-posts/b0b18ae5-47f7-4d74-98f0-f5d237fe9555"
+        },
+        "attributes": {
+          "url": "https://www.google.com",
+          "headline": "This is 🎉",
+          "date": "2022-02-02"
+        }
+      }
+    ],
+    "meta": {
+      "total-count": 13,
+      "total-pages": 5
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -89,16 +133,16 @@ title: News Posts
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/news_posts/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/news_posts/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -125,6 +169,20 @@ title: News Posts
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "39e52f2d-b866-41ee-9591-4847e5f78afa",
+      "type": "news-posts",
+      "links": {
+        "self": "/news-posts/39e52f2d-b866-41ee-9591-4847e5f78afa"
+      },
+      "attributes": {
+        "url": "www.google.com",
+        "headline": "We're on 🔥 !\r\n\r\n\r\nThe second line of text",
+        "date": "2022-02-09"
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 

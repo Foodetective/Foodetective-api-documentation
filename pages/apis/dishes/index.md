@@ -25,16 +25,16 @@ title: Dishes
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/dishes/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/dishes/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -61,6 +61,50 @@ title: Dishes
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "4d422056-cfda-4887-9261-808448eedead",
+      "type": "dishes",
+      "links": {
+        "self": "/dishes/4d422056-cfda-4887-9261-808448eedead"
+      },
+      "attributes": {
+        "currency": "GBP",
+        "description": "This is a test dish description. This dish is so delicious you have to try it!",
+        "name": "Test Dish",
+        "on-uber-eats": false,
+        "price-per-item-cents": 3000,
+        "sku-ref": "dsh_1",
+        "unavailable": false
+      },
+      "relationships": {
+        "pictures": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/pictures",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/pictures"
+          }
+        },
+        "dish-option-categories": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/dish-option-categories",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/dish-option-categories"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/business",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/business"
+          }
+        },
+        "category": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/category",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/category"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -142,16 +186,16 @@ title: Dishes
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/dishes`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/dishes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -178,6 +222,50 @@ title: Dishes
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "4d422056-cfda-4887-9261-808448eedead",
+      "type": "dishes",
+      "links": {
+        "self": "/dishes/4d422056-cfda-4887-9261-808448eedead"
+      },
+      "attributes": {
+        "currency": "GBP",
+        "description": null,
+        "name": "Test Dish",
+        "on-uber-eats": false,
+        "price-per-item-cents": 3000,
+        "sku-ref": "dsh_1",
+        "unavailable": false
+      },
+      "relationships": {
+        "pictures": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/pictures",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/pictures"
+          }
+        },
+        "dish-option-categories": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/dish-option-categories",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/dish-option-categories"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/business",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/business"
+          }
+        },
+        "category": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/category",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/category"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -371,16 +459,16 @@ title: Dishes
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/dishes/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/dishes/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -407,6 +495,50 @@ title: Dishes
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "4d422056-cfda-4887-9261-808448eedead",
+      "type": "dishes",
+      "links": {
+        "self": "/dishes/4d422056-cfda-4887-9261-808448eedead"
+      },
+      "attributes": {
+        "currency": "GBP",
+        "description": "This is a test dish description. This dish is so delicious you have to try it!",
+        "name": "Test Dish",
+        "on-uber-eats": false,
+        "price-per-item-cents": 3000,
+        "sku-ref": "dsh_1",
+        "unavailable": false
+      },
+      "relationships": {
+        "pictures": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/pictures",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/pictures"
+          }
+        },
+        "dish-option-categories": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/dish-option-categories",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/dish-option-categories"
+          }
+        },
+        "business": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/business",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/business"
+          }
+        },
+        "category": {
+          "links": {
+            "self": "/dishes/4d422056-cfda-4887-9261-808448eedead/relationships/category",
+            "related": "/dishes/4d422056-cfda-4887-9261-808448eedead/category"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -434,14 +566,14 @@ title: Dishes
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/dishes/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/dishes/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -465,10 +597,6 @@ title: Dishes
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

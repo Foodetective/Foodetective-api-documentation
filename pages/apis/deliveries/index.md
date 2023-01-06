@@ -23,16 +23,16 @@ title: Deliveries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -59,6 +59,29 @@ title: Deliveries
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "b81e8fb8-c511-463d-ac30-f61217599771",
+      "type": "deliveries",
+      "links": {
+        "self": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771"
+      },
+      "attributes": {
+        "code": "CH-1207",
+        "currency": "GBP",
+        "free-from-cents": 2500,
+        "price-cents": 250
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771/relationships/business",
+            "related": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -160,16 +183,16 @@ title: Deliveries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/deliveries`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -196,6 +219,29 @@ title: Deliveries
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "b81e8fb8-c511-463d-ac30-f61217599771",
+      "type": "deliveries",
+      "links": {
+        "self": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771"
+      },
+      "attributes": {
+        "code": "CH-1207",
+        "currency": "GBP",
+        "free-from-cents": 2500,
+        "price-cents": 250
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771/relationships/business",
+            "related": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -251,16 +297,16 @@ title: Deliveries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -287,6 +333,29 @@ title: Deliveries
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "b81e8fb8-c511-463d-ac30-f61217599771",
+      "type": "deliveries",
+      "links": {
+        "self": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771"
+      },
+      "attributes": {
+        "code": "CH-1207",
+        "currency": "GBP",
+        "free-from-cents": 5000,
+        "price-cents": 250
+      },
+      "relationships": {
+        "business": {
+          "links": {
+            "self": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771/relationships/business",
+            "related": "/deliveries/b81e8fb8-c511-463d-ac30-f61217599771/business"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -314,14 +383,14 @@ title: Deliveries
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/deliveries/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -345,10 +414,6 @@ title: Deliveries
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

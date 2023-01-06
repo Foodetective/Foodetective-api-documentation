@@ -29,24 +29,24 @@ title: Business Connect Stripe
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/connect_stripe`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/connect_stripe`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: '1231',
+        data: {
+          id: '1231 ',
+          type: 'businesses'
         },
-        body: JSON.stringify({
-          id: '1231',
-          data: {
-            id: '1231 ',
-            type: 'businesses'
-          },
-          attributes: {
-            authorization_code: 'strip-authorization-code'
-          }
-        })});
-      const data = await res.json();
-    }
+        attributes: {
+          authorization_code: 'strip-authorization-code'
+        }
+      })});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}

@@ -34,14 +34,14 @@ title: Business Cards
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/cards`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/businesses/${id}/cards`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -68,37 +68,35 @@ title: Business Cards
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
-    {
-      "url": "/api/v1/businesses/{id}/cards",
-      "method": "GET",
-      "data": [
-        {
-          "id": "15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8",
-          "type": "cards",
-          "links": {
-            "self": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8"
-          },
-          "attributes": {
-            "stripe-source-id": "pm_1Jw7FIBtvCfXmRItGquxmkDn",
-            "last4": "4242",
-            "expiration-date": "2022-02-01",
-            "brand": "visa"
-          },
-          "relationships": {
-            "user": {
-              "links": {
-                "self": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8/relationships/user",
-                "related": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8/user"
-              }
+  {
+    "data": [
+      {
+        "id": "15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8",
+        "type": "cards",
+        "links": {
+          "self": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8"
+        },
+        "attributes": {
+          "stripe-source-id": "pm_1Jw7FIBtvCfXmRItGquxmkDn",
+          "last4": "4242",
+          "expiration-date": "2022-02-01",
+          "brand": "visa"
+        },
+        "relationships": {
+          "user": {
+            "links": {
+              "self": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8/relationships/user",
+              "related": "/cards/15cc2af5-a33a-4ccc-bc9b-1c74ecbc59a8/user"
             }
           }
-        },
-      ],
-      "meta": {
-        "total-count": 3,
-        "total-pages": 1
+        }
       }
+    ],
+    "meta": {
+      "total-count": 3,
+      "total-pages": 1
     }
+  }
   ```
 {% /codeBlock %}
 

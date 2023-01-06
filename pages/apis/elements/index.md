@@ -23,16 +23,16 @@ title: Elements
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/elements/${id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/elements/${id}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -59,6 +59,31 @@ title: Elements
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d",
+      "type": "elements",
+      "links": {
+        "self": "/elements/fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d"
+      },
+      "attributes": {
+        "currency": "GBP",
+        "dish-name": "Test Dish",
+        "dish-price-per-item-cents": 3000,
+        "notes": "This is an element note",
+        "subsum-cents": 3000,
+        "units": 1
+      },
+      "relationships": {
+        "element-options": {
+          "links": {
+            "self": "/elements/fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d/relationships/element-options",
+            "related": "/elements/fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d/element-options"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -145,16 +170,16 @@ title: Elements
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/elements`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/elements`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -181,6 +206,31 @@ title: Elements
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "f37e8d3b-67c6-4e6f-b7ad-62dac2187ac2",
+      "type": "elements",
+      "links": {
+        "self": "/elements/f37e8d3b-67c6-4e6f-b7ad-62dac2187ac2"
+      },
+      "attributes": {
+        "currency": "GBP",
+        "dish-name": "Test Dish",
+        "dish-price-per-item-cents": 3000,
+        "notes": null,
+        "subsum-cents": 3000,
+        "units": 1
+      },
+      "relationships": {
+        "element-options": {
+          "links": {
+            "self": "/elements/f37e8d3b-67c6-4e6f-b7ad-62dac2187ac2/relationships/element-options",
+            "related": "/elements/f37e8d3b-67c6-4e6f-b7ad-62dac2187ac2/element-options"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -233,16 +283,16 @@ title: Elements
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/elements/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)});
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/elements/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)});
 
-      const data = await res.json();
-    }
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -269,6 +319,31 @@ title: Elements
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+      "id": "fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d",
+      "type": "elements",
+      "links": {
+        "self": "/elements/fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d"
+      },
+      "attributes": {
+        "currency": "GBP",
+        "dish-name": "Test Dish",
+        "dish-price-per-item-cents": 3000,
+        "notes": "This is an element note",
+        "subsum-cents": 3000,
+        "units": 1
+      },
+      "relationships": {
+        "element-options": {
+          "links": {
+            "self": "/elements/fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d/relationships/element-options",
+            "related": "/elements/fe32f8a2-f0ee-4c05-84c2-48ba2380aa0d/element-options"
+          }
+        }
+      }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -296,14 +371,14 @@ title: Elements
 {% tabs %}
   {% tab label="js"%}
   ```js
-    {
-      const res = await fetch(`${BASE_URL}/api/v1/elements/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }});
-      const data = await res.json();
-    }
+  {
+    const res = await fetch(`${BASE_URL}/api/v1/elements/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }});
+    const data = await res.json();
+  }
   ```
   {% /tab %}
   {% tab label="py"%}
@@ -327,10 +402,6 @@ title: Elements
   ```
   {% /tab %}
 {% /tabs %}
-{% /codeBlock %}
-{% codeBlock title="RESPONSE" collapsable=true %}
-  ```json
-  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}
