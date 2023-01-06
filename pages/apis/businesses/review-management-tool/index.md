@@ -1,5 +1,5 @@
 ---
-title: Partoo Business intergrations
+title: Business intergrations
 ---
 {% section %}
 {% layoutTwoCol %}
@@ -7,13 +7,13 @@ title: Partoo Business intergrations
 {% methodCopy %}
 {% methodInfo %}
   # {% $markdoc.frontmatter.title %}
-  Connect given business to Partoo.
+  Connect given business to Review Management Tool.
 
   If any erros occur you can access the [errors guide](/errors).
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Connect specific business to Partoo with provided business `id`.
+  Connect specific business to Review Management Tool with provided business `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -69,12 +69,12 @@ title: Partoo Business intergrations
 
 {% methodCopy %}
 {% methodInfo %}
-  # Update Business on Partoo
-  Update given business on Partoo.
+  # Update Business
+  Update given business on Review Management Tool.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Update specific business to Partoo with provided business `id`.
+  Update specific business to Review Management Tool with provided business `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
@@ -132,12 +132,12 @@ title: Partoo Business intergrations
 
 {% methodCopy %}
 {% methodInfo %}
-  # Disconnect Business on Partoo
-  Disconnect the business from Partoo.
+  # Disconnect Business
+  Disconnect the business from Review Management Tool.
 {% /methodInfo %}
 {% list title="Parameters" %}
   {% listitem title="id" validation="path integer" type="Required" %}
-  Disconnect specific business from Partoo with provided business `id`.
+  Disconnect specific business from Review Management Tool with provided business `id`.
   {% /listitem %}
 {% /list %}
 {% /methodCopy %}
