@@ -292,6 +292,10 @@ export const items = [
       { href: "/apis/users/current-user", children: "Current User" },
       { href: "/apis/users/detectives", children: "Detectives" },
       {
+        href: "/apis/users/presence-management",
+        children: "Presence Management",
+      },
+      {
         href: "/apis/users/review-management-tool",
         children: "Review Management Tool",
       },
