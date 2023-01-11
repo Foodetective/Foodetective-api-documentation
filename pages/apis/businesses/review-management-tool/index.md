@@ -56,6 +56,15 @@ title: Business intergrations
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+        "id": "50404d91-bc45-43b2-8360-47f26b5ddc33",
+        "type": "partoo_integrations",
+        "attributes": {
+            "partoo_key": "63be7f4647f3875ac003e464"
+        }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -119,6 +128,15 @@ title: Business intergrations
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+        "id": "50404d91-bc45-43b2-8360-47f26b5ddc33",
+        "type": "partoo_integrations",
+        "attributes": {
+            "partoo_key": "63be7f4647f3875ac003e464"
+        }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -178,6 +196,19 @@ title: Business intergrations
   ```
   {% /tab %}
 {% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" collapsable=true %}
+  ```json
+  {
+    "data": {
+        "id": "50404d91-bc45-43b2-8360-47f26b5ddc33",
+        "type": "partoo_integrations",
+        "attributes": {
+            "partoo_key": null
+        }
+    }
+  }
+  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}

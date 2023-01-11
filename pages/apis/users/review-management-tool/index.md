@@ -56,6 +56,15 @@ title: User intergrations
 {% /codeBlock %}
 {% codeBlock title="RESPONSE" collapsable=true %}
   ```json
+  {
+    "data": {
+        "id": "aa8d3e35-6907-4566-8d7b-977564028b94",
+        "type": "partoo_integrations",
+        "attributes": {
+            "partoo_key": "63be7fd2371cc984f203e466"
+        }
+    }
+  }
   ```
 {% /codeBlock %}
 
@@ -115,6 +124,19 @@ title: User intergrations
   ```
   {% /tab %}
 {% /tabs %}
+{% /codeBlock %}
+{% codeBlock title="RESPONSE" collapsable=true %}
+  ```json
+  {
+    "data": {
+        "id": "aa8d3e35-6907-4566-8d7b-977564028b94",
+        "type": "partoo_integrations",
+        "attributes": {
+            "partoo_key": null
+        }
+    }
+  }
+  ```
 {% /codeBlock %}
 
 {% /layoutTwoCol %}
